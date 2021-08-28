@@ -1,12 +1,18 @@
 import React from 'react';
-import { atoms } from '../sprinkles.css';
 import { Button } from './components/Button';
+import { Stack } from './components/Stack';
 
 function App() {
     return (
-        <section className={atoms({ padding: 'large' })}>
+        <Stack
+            direction={{
+                mobile: 'horizontal',
+                tablet: 'vertical',
+                desktop: 'horizontal'
+            }}>
             <Button>Test</Button>
-        </section>
+            <Button size="small">Test</Button>
+        </Stack>
     );
 }
 

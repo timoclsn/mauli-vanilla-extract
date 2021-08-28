@@ -1,3 +1,5 @@
+import mapValues from 'lodash/mapValues';
+
 import { createAtomicStyles, createAtomsFn } from '@vanilla-extract/sprinkles';
 
 const space = {
@@ -5,18 +7,22 @@ const space = {
     small: '4px',
     medium: '8px',
     large: '16px'
-    // etc.
+};
+
+export type Breakpoints = keyof typeof breakpoints;
+export const breakpoints = {
+    mobile: 0,
+    tablet: 768,
+    desktop: 1024
 };
 
 const responsiveStyles = createAtomicStyles({
-    conditions: {
-        mobile: {},
-        tablet: { '@media': 'screen and (min-width: 768px)' },
-        desktop: { '@media': 'screen and (min-width: 1024px)' }
-    },
+    conditions: mapValues(breakpoints, (bp: number) =>
+        bp === 0 ? {} : { '@media': `screen and (min-width: ${bp}px)` }
+    ),
     defaultCondition: 'mobile',
     properties: {
-        display: ['none', 'flex', 'block', 'inline'],
+        display: ['none', 'flex', 'block', 'inline', 'inline-flex'],
         flexDirection: ['row', 'column'],
         justifyContent: [
             'stretch',
@@ -30,8 +36,8 @@ const responsiveStyles = createAtomicStyles({
         paddingTop: space,
         paddingBottom: space,
         paddingLeft: space,
-        paddingRight: space
-        // etc.
+        paddingRight: space,
+        gap: space
     },
     shorthands: {
         padding: ['paddingTop', 'paddingBottom', 'paddingLeft', 'paddingRight'],
@@ -48,7 +54,6 @@ const colors = {
     'gray-700': '#374151',
     'gray-800': '#1f2937',
     'gray-900': '#111827'
-    // etc.
 };
 
 const colorStyles = createAtomicStyles({
@@ -60,7 +65,6 @@ const colorStyles = createAtomicStyles({
     properties: {
         color: colors,
         background: colors
-        // etc.
     }
 });
 
