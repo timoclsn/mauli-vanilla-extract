@@ -1,6 +1,9 @@
-import mapValues from 'lodash/mapValues';
-
-import { createAtomicStyles, createAtomsFn } from '@vanilla-extract/sprinkles';
+import {
+    ConditionalValue,
+    createAtomicStyles,
+    createAtomsFn,
+    createMapValueFn
+} from '@vanilla-extract/sprinkles';
 
 const space = {
     none: 0,
@@ -9,17 +12,12 @@ const space = {
     large: '16px'
 };
 
-export type Breakpoints = keyof typeof breakpoints;
-export const breakpoints = {
-    mobile: 0,
-    tablet: 768,
-    desktop: 1024
-};
-
 const responsiveStyles = createAtomicStyles({
-    conditions: mapValues(breakpoints, (bp: number) =>
-        bp === 0 ? {} : { '@media': `screen and (min-width: ${bp}px)` }
-    ),
+    conditions: {
+        mobile: {},
+        tablet: { '@media': 'screen and (min-width: 768px)' },
+        desktop: { '@media': 'screen and (min-width: 1024px)' }
+    },
     defaultCondition: 'mobile',
     properties: {
         display: ['none', 'flex', 'block', 'inline', 'inline-flex'],
@@ -67,7 +65,11 @@ const colorStyles = createAtomicStyles({
         background: colors
     }
 });
-
+export type ResponsiveValue<Value extends string | number> = ConditionalValue<
+    typeof responsiveStyles,
+    Value
+>;
+export const mapResponsiveValue = createMapValueFn(responsiveStyles);
 export const atoms = createAtomsFn(responsiveStyles, colorStyles);
 
 // It's a good idea to export the Atoms type too

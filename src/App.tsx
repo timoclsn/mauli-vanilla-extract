@@ -6,8 +6,7 @@ function App() {
     return (
         <Stack
             direction={{
-                mobile: 'horizontal',
-                tablet: 'vertical',
+                mobile: 'vertical',
                 desktop: 'horizontal'
             }}>
             <Button>Test</Button>
