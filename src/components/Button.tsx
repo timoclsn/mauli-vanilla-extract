@@ -1,10 +1,7 @@
-import {
-    atoms,
-    mapResponsiveValue,
-    ResponsiveValue
-} from '../../sprinkles.css';
+import { mapResponsiveValue, ResponsiveValue } from '../../sprinkles.css';
 import React from 'react';
 import type { ReactNode } from 'react';
+import { Box } from './Box';
 
 const sizeToPaddingX = {
     normal: 'xl',
@@ -22,13 +19,21 @@ interface Props {
 }
 
 export function Button({ children, size = 'normal' }: Props) {
-    const styles = atoms({
-        display: 'inline-flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingX: mapResponsiveValue(size, (value) => sizeToPaddingX[value]),
-        paddingY: mapResponsiveValue(size, (value) => sizeToPaddingY[value])
-    });
-
-    return <button className={styles}>{children}</button>;
+    return (
+        <Box
+            as="button"
+            display="inline-flex"
+            alignItems="center"
+            justifyContent="center"
+            paddingX={mapResponsiveValue(
+                size,
+                (value) => sizeToPaddingX[value]
+            )}
+            paddingY={mapResponsiveValue(
+                size,
+                (value) => sizeToPaddingY[value]
+            )}>
+            {children}
+        </Box>
+    );
 }

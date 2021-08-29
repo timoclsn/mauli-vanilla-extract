@@ -1,10 +1,7 @@
-import {
-    atoms,
-    mapResponsiveValue,
-    ResponsiveValue
-} from '../../sprinkles.css';
+import { mapResponsiveValue, ResponsiveValue } from '../../sprinkles.css';
 import React from 'react';
 import type { ReactNode } from 'react';
+import { Box } from './Box';
 
 interface Props {
     children: ReactNode;
@@ -17,14 +14,15 @@ const directionToFlexDirection = {
 } as const;
 
 export function Stack({ children, direction = 'vertical' }: Props) {
-    const styles = atoms({
-        display: 'flex',
-        gap: 'xl',
-        flexDirection: mapResponsiveValue(
-            direction,
-            (value) => directionToFlexDirection[value]
-        )
-    });
-
-    return <div className={styles}>{children}</div>;
+    return (
+        <Box
+            display="flex"
+            gap="xl"
+            flexDirection={mapResponsiveValue(
+                direction,
+                (value) => directionToFlexDirection[value]
+            )}>
+            {children}
+        </Box>
+    );
 }
