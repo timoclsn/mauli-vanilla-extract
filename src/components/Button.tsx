@@ -1,32 +1,34 @@
-import { atoms } from '../../sprinkles.css';
+import {
+    atoms,
+    mapResponsiveValue,
+    ResponsiveValue
+} from '../../sprinkles.css';
 import React from 'react';
 import type { ReactNode } from 'react';
-import { composeStyles } from '@vanilla-extract/css';
 
-const baseStyles = atoms({
-    display: 'inline-flex',
-    alignItems: 'center',
-    justifyContent: 'center'
-});
+const sizeToPaddingX = {
+    normal: 'xl',
+    small: 'lg'
+} as const;
 
-const sizeStyles = {
-    normal: atoms({
-        paddingX: 'large',
-        paddingY: 'medium'
-    }),
-    small: atoms({
-        paddingX: 'medium',
-        paddingY: 'small'
-    })
-};
+const sizeToPaddingY = {
+    normal: 'lg',
+    small: 'md'
+} as const;
 
 interface Props {
     children: ReactNode;
-    size?: keyof typeof sizeStyles;
+    size?: ResponsiveValue<keyof typeof sizeToPaddingX>;
 }
 
 export function Button({ children, size = 'normal' }: Props) {
-    const styles = composeStyles(baseStyles, sizeStyles[size]);
+    const styles = atoms({
+        display: 'inline-flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingX: mapResponsiveValue(size, (value) => sizeToPaddingX[value]),
+        paddingY: mapResponsiveValue(size, (value) => sizeToPaddingY[value])
+    });
 
     return <button className={styles}>{children}</button>;
 }

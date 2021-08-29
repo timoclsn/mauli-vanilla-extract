@@ -1,3 +1,5 @@
+import { gray, indigo } from '@radix-ui/colors';
+
 import {
     ConditionalValue,
     createAtomicStyles,
@@ -6,11 +8,37 @@ import {
 } from '@vanilla-extract/sprinkles';
 
 const space = {
-    none: 0,
-    small: '4px',
-    medium: '8px',
-    large: '16px'
-};
+    none: '0',
+    xs: '0.25rem',
+    sm: '0.5rem',
+    md: '1rem',
+    lg: '1.5rem',
+    xl: '2rem',
+    '2xl': '4rem',
+    '3xl': '8rem'
+} as const;
+
+const sizes = {
+    full: '100%'
+} as const;
+
+const radii = {
+    xs: '0.25rem',
+    sm: '0.5rem',
+    md: '1rem',
+    lg: '1.5rem',
+    xl: '2rem',
+    '2xl': '4rem',
+    '3xl': '8rem',
+    round: '9999px'
+} as const;
+
+const contentWidth = {
+    xsmall: '480px',
+    small: '600px',
+    standard: '740px',
+    large: '1350px'
+} as const;
 
 const responsiveStyles = createAtomicStyles({
     conditions: {
@@ -20,39 +48,52 @@ const responsiveStyles = createAtomicStyles({
     },
     defaultCondition: 'mobile',
     properties: {
-        display: ['none', 'flex', 'block', 'inline', 'inline-flex'],
-        flexDirection: ['row', 'column'],
-        justifyContent: [
-            'stretch',
-            'flex-start',
-            'center',
-            'flex-end',
-            'space-around',
-            'space-between'
+        position: ['absolute', 'relative', 'fixed'],
+        display: [
+            'none',
+            'block',
+            'inline',
+            'inline-block',
+            'flex',
+            'inline-flex'
         ],
-        alignItems: ['stretch', 'flex-start', 'center', 'flex-end'],
+        alignItems: ['flex-start', 'center', 'flex-end'],
+        justifyContent: ['flex-start', 'center', 'flex-end', 'space-between'],
+        flexDirection: ['row', 'row-reverse', 'column', 'column-reverse'],
         paddingTop: space,
         paddingBottom: space,
         paddingLeft: space,
         paddingRight: space,
-        gap: space
+        marginTop: space,
+        marginBottom: space,
+        marginLeft: space,
+        marginRight: space,
+        gap: space,
+        pointerEvents: ['none', 'auto'],
+        opacity: [0, 1],
+        textAlign: ['left', 'center'],
+        maxWidth: contentWidth
     },
     shorthands: {
         padding: ['paddingTop', 'paddingBottom', 'paddingLeft', 'paddingRight'],
         paddingX: ['paddingLeft', 'paddingRight'],
         paddingY: ['paddingTop', 'paddingBottom'],
-        placeItems: ['justifyContent', 'alignItems']
+        margin: ['marginTop', 'marginBottom', 'marginLeft', 'marginRight'],
+        marginX: ['marginLeft', 'marginRight'],
+        marginY: ['marginTop', 'marginBottom']
     }
 });
 
+export type ResponsiveValue<Value extends string | number> = ConditionalValue<
+    typeof responsiveStyles,
+    Value
+>;
+export const mapResponsiveValue = createMapValueFn(responsiveStyles);
+
 const colors = {
-    'blue-50': '#eff6ff',
-    'blue-100': '#dbeafe',
-    'blue-200': '#bfdbfe',
-    'gray-700': '#374151',
-    'gray-800': '#1f2937',
-    'gray-900': '#111827'
-};
+    ...gray,
+    ...indigo
+} as const;
 
 const colorStyles = createAtomicStyles({
     conditions: {
@@ -65,12 +106,29 @@ const colorStyles = createAtomicStyles({
         background: colors
     }
 });
-export type ResponsiveValue<Value extends string | number> = ConditionalValue<
-    typeof responsiveStyles,
-    Value
->;
-export const mapResponsiveValue = createMapValueFn(responsiveStyles);
-export const atoms = createAtomsFn(responsiveStyles, colorStyles);
+
+const unresponsiveStyles = createAtomicStyles({
+    properties: {
+        flexWrap: ['wrap', 'nowrap'],
+        top: [0],
+        bottom: [0],
+        left: [0],
+        right: [0],
+        flexShrink: [0],
+        flexGrow: [0, 1],
+        zIndex: [-1, 0, 1],
+        width: sizes,
+        height: sizes,
+        borderRadius: radii,
+        cursor: ['pointer']
+    }
+});
+
+export const atoms = createAtomsFn(
+    responsiveStyles,
+    colorStyles,
+    unresponsiveStyles
+);
 
 // It's a good idea to export the Atoms type too
 export type Atoms = Parameters<typeof atoms>[0];

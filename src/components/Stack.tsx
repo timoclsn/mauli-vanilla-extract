@@ -19,7 +19,7 @@ const directionToFlexDirection = {
 export function Stack({ children, direction = 'vertical' }: Props) {
     const styles = atoms({
         display: 'flex',
-        gap: 'medium',
+        gap: 'xl',
         flexDirection: mapResponsiveValue(
             direction,
             (value) => directionToFlexDirection[value]
