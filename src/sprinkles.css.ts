@@ -1,4 +1,4 @@
-import { gray, indigo } from '@radix-ui/colors';
+import { vars } from './theme.css';
 
 import {
     ConditionalValue,
@@ -6,39 +6,6 @@ import {
     createAtomsFn,
     createMapValueFn
 } from '@vanilla-extract/sprinkles';
-
-const space = {
-    none: '0',
-    xs: '0.25rem',
-    sm: '0.5rem',
-    md: '1rem',
-    lg: '1.5rem',
-    xl: '2rem',
-    '2xl': '4rem',
-    '3xl': '8rem'
-} as const;
-
-const sizes = {
-    full: '100%'
-} as const;
-
-const radii = {
-    xs: '0.25rem',
-    sm: '0.5rem',
-    md: '1rem',
-    lg: '1.5rem',
-    xl: '2rem',
-    '2xl': '4rem',
-    '3xl': '8rem',
-    round: '9999px'
-} as const;
-
-const contentWidth = {
-    xsmall: '480px',
-    small: '600px',
-    standard: '740px',
-    large: '1350px'
-} as const;
 
 const responsiveStyles = createAtomicStyles({
     conditions: {
@@ -59,20 +26,19 @@ const responsiveStyles = createAtomicStyles({
         ],
         alignItems: ['flex-start', 'center', 'flex-end'],
         justifyContent: ['flex-start', 'center', 'flex-end', 'space-between'],
-        flexDirection: ['row', 'row-reverse', 'column', 'column-reverse'],
-        paddingTop: space,
-        paddingBottom: space,
-        paddingLeft: space,
-        paddingRight: space,
-        marginTop: space,
-        marginBottom: space,
-        marginLeft: space,
-        marginRight: space,
-        gap: space,
-        pointerEvents: ['none', 'auto'],
+        flexDirection: ['row', 'column'],
+        paddingTop: vars.space,
+        paddingBottom: vars.space,
+        paddingLeft: vars.space,
+        paddingRight: vars.space,
+        marginTop: vars.space,
+        marginBottom: vars.space,
+        marginLeft: { ...vars.space, auto: 'auto' },
+        marginRight: { ...vars.space, auto: 'auto' },
+        gap: vars.space,
         opacity: [0, 1],
-        textAlign: ['left', 'center'],
-        maxWidth: contentWidth
+        textAlign: ['left', 'center', 'right'],
+        maxWidth: vars.contentWidth
     },
     shorthands: {
         padding: ['paddingTop', 'paddingBottom', 'paddingLeft', 'paddingRight'],
@@ -90,20 +56,18 @@ export type ResponsiveValue<Value extends string | number> = ConditionalValue<
 >;
 export const mapResponsiveValue = createMapValueFn(responsiveStyles);
 
-const colors = {
-    ...gray,
-    ...indigo
-} as const;
-
 const colorStyles = createAtomicStyles({
     conditions: {
         lightMode: {},
-        darkMode: { '@media': '(prefers-color-scheme: dark)' }
+        darkMode: { '@media': '(prefers-color-scheme: dark)' },
+        hover: { selector: '&:hover' },
+        active: { selector: '&:active' },
+        focus: { selector: '&:focus' }
     },
     defaultCondition: 'lightMode',
     properties: {
-        color: colors,
-        background: colors
+        color: vars.colors,
+        background: vars.colors
     }
 });
 
@@ -117,18 +81,21 @@ const unresponsiveStyles = createAtomicStyles({
         flexShrink: [0],
         flexGrow: [0, 1],
         zIndex: [-1, 0, 1],
-        width: sizes,
-        height: sizes,
-        borderRadius: radii,
-        cursor: ['pointer']
+        width: vars.sizes,
+        height: vars.sizes,
+        borderRadius: vars.radii,
+        cursor: ['pointer'],
+        fontFamily: vars.fonts,
+        fontSize: vars.fontSizes,
+        fontWeight: vars.fontWeights,
+        lineHeight: vars.lineHeights
     }
 });
+
+export type Atoms = Parameters<typeof atoms>[0];
 
 export const atoms = createAtomsFn(
     responsiveStyles,
     colorStyles,
     unresponsiveStyles
 );
-
-// It's a good idea to export the Atoms type too
-export type Atoms = Parameters<typeof atoms>[0];

@@ -1,4 +1,4 @@
-import { mapResponsiveValue, ResponsiveValue } from '../../sprinkles.css';
+import { mapResponsiveValue, ResponsiveValue } from '../sprinkles.css';
 import React from 'react';
 import type { ReactNode } from 'react';
 import { Box } from './Box';

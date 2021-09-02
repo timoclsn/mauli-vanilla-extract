@@ -2,28 +2,38 @@ import React from 'react';
 import { Box } from './components/Box';
 import { Button } from './components/Button';
 import { Stack } from './components/Stack';
+import { Text } from './components/Text';
+import { themeClass } from './theme.css';
 
 function App() {
     return (
-        <Stack
-            direction={{
-                mobile: 'vertical',
-                desktop: 'horizontal'
-            }}>
-            <Button>Test</Button>
-            <Button size="small">Test</Button>
-            <Button
-                size={{
-                    mobile: 'small',
-                    tablet: 'normal',
-                    desktop: 'small'
+        <Box className={themeClass}>
+            <Stack
+                direction={{
+                    mobile: 'vertical',
+                    desktop: 'horizontal'
                 }}>
-                Test
-            </Button>
-            <Box as="section" padding="md" background="indigo10">
-                Test
-            </Box>
-        </Stack>
+                <Button>Test</Button>
+                <Button size="small">Test</Button>
+                <Button
+                    size={{
+                        mobile: 'small',
+                        tablet: 'normal',
+                        desktop: 'small'
+                    }}>
+                    Test
+                </Button>
+                <Box
+                    as="button"
+                    padding="md"
+                    background={{ hover: 'gray6', focus: 'indigo6' }}>
+                    Test
+                </Box>
+                <Text as="h1" variant="highlight" size="5xl">
+                    Das ist ein Text
+                </Text>
+            </Stack>
+        </Box>
     );
 }
 

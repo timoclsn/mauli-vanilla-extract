@@ -1,4 +1,4 @@
-import { mapResponsiveValue, ResponsiveValue } from '../../sprinkles.css';
+import { mapResponsiveValue, ResponsiveValue } from '../sprinkles.css';
 import React from 'react';
 import type { ReactNode } from 'react';
 import { Box } from './Box';
@@ -25,6 +25,8 @@ export function Button({ children, size = 'normal' }: Props) {
             display="inline-flex"
             alignItems="center"
             justifyContent="center"
+            background="indigo10"
+            color="gray1"
             paddingX={mapResponsiveValue(
                 size,
                 (value) => sizeToPaddingX[value]
