@@ -1,14 +1,15 @@
 import React from 'react';
 import type { ElementType, ReactNode } from 'react';
+
 import { Box } from './Box';
-import type { FontSizes, FontWeights } from '../theme.css';
+import type { BoxProps } from './Box';
 
 interface Props {
     children: ReactNode;
     as?: ElementType;
     variant?: 'normal' | 'highlight';
-    size?: FontSizes;
-    weight?: FontWeights;
+    size?: BoxProps['fontSize'];
+    weight?: BoxProps['fontWeight'];
 }
 
 export function Text({

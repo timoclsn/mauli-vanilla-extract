@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 
 import { mapResponsiveValue, ResponsiveValue } from '../sprinkles.css';
 import { Box } from './Box';
-import type { Space } from '../theme.css';
+import type { BoxProps } from './Box';
 
 const directionToFlexDirection = {
     vertical: 'column',
@@ -28,7 +28,7 @@ interface Props {
     children: ReactNode;
     as?: 'div' | 'ul' | 'ol';
     direction?: ResponsiveValue<keyof typeof directionToFlexDirection>;
-    space?: ResponsiveValue<Space>;
+    space?: BoxProps['gap'];
     align?: ResponsiveValue<keyof typeof alignToAlignItems>;
     justify?: ResponsiveValue<keyof typeof justifyToJustifyContent>;
     wrap?: boolean;

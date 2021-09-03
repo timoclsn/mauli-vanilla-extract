@@ -3,11 +3,10 @@ import { Box } from './components/Box';
 import { Button } from './components/Button';
 import { Stack } from './components/Stack';
 import { Text } from './components/Text';
-import { themeClass } from './theme.css';
 
 function App() {
     return (
-        <Box className={themeClass}>
+        <Box>
             <Stack
                 direction={{
                     mobile: 'vertical',
