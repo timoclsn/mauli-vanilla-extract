@@ -12,7 +12,8 @@ function App() {
                 direction={{
                     mobile: 'vertical',
                     desktop: 'horizontal'
-                }}>
+                }}
+                space={{ mobile: 'sm', tablet: 'md', desktop: 'lg' }}>
                 <Button>Test</Button>
                 <Button size="small">Test</Button>
                 <Button

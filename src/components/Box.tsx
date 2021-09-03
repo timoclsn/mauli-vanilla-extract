@@ -1,9 +1,10 @@
-import clsx from 'clsx';
-import type { AllHTMLAttributes, ElementType, ReactNode } from 'react';
 import React, { forwardRef } from 'react';
+import type { AllHTMLAttributes, ElementType, ReactNode } from 'react';
+import clsx from 'clsx';
+
 import * as resetStyles from '../reset.css';
-import type { Atoms } from '../sprinkles.css';
 import { atoms } from '../sprinkles.css';
+import type { Atoms } from '../sprinkles.css';
 
 export interface BoxProps
     extends Omit<
