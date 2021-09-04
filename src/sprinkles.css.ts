@@ -88,7 +88,8 @@ const unresponsiveStyles = createAtomicStyles({
         fontFamily: vars.fonts,
         fontSize: vars.fontSizes,
         fontWeight: vars.fontWeights,
-        lineHeight: vars.lineHeights
+        lineHeight: vars.lineHeights,
+        textDecoration: ['none', 'underline']
     }
 });
 

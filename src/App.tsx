@@ -1,37 +1,53 @@
 import React from 'react';
+import { ArrowRight } from 'react-feather';
+
 import { Box } from './components/Box';
-import { Button } from './components/Button';
 import { Stack } from './components/Stack';
-import { Text } from './components/Text';
+import { Button } from './components/Button';
 
 function App() {
     return (
-        <Box>
+        <Box padding="xl">
             <Stack
                 direction={{
                     mobile: 'vertical',
                     desktop: 'horizontal'
                 }}
-                space={{ mobile: 'sm', tablet: 'md', desktop: 'lg' }}>
-                <Button>Test</Button>
-                <Button size="small">Test</Button>
-                <Button
-                    size={{
-                        mobile: 'small',
-                        tablet: 'normal',
-                        desktop: 'small'
-                    }}>
+                space={{ mobile: 'sm', tablet: 'md', desktop: 'lg' }}
+                align="center">
+                <Button onClick={() => console.log('Test')}>Test</Button>
+                <Button onClick={() => console.log('Test')}>
+                    <ArrowRight />
                     Test
                 </Button>
-                <Box
-                    as="button"
-                    padding="md"
-                    background={{ hover: 'gray6', focus: 'indigo6' }}>
+                <Button variant="ghost" onClick={() => console.log('Test')}>
                     Test
-                </Box>
-                <Text as="h1" variant="highlight" size="5xl">
-                    Das ist ein Text
-                </Text>
+                </Button>
+                <Button variant="link" onClick={() => console.log('Test')}>
+                    Test
+                </Button>
+                <Button color="highlight" onClick={() => console.log('Test')}>
+                    Test
+                </Button>
+                <Button
+                    variant="ghost"
+                    color="highlight"
+                    onClick={() => console.log('Test')}>
+                    Test
+                </Button>
+                <Button
+                    variant="link"
+                    color="highlight"
+                    onClick={() => console.log('Test')}>
+                    Test
+                </Button>
+                <Button as="a" href="https://timoclasen.de">
+                    Link
+                </Button>
+                <Button variant="link" as="a" href="https://timoclasen.de">
+                    <ArrowRight />
+                    Link
+                </Button>
             </Stack>
         </Box>
     );
