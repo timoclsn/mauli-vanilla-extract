@@ -16,18 +16,20 @@ type AsProps =
     | {
           as?: 'button';
           type?: 'button' | 'submit' | 'reset';
-          onClick: () => void;
+          onClick?: () => void;
+          disabled?: boolean;
           href?: never;
           target?: never;
           rel?: never;
       }
     | {
           as?: 'a';
-          type?: never;
-          onClick?: never;
-          href: string;
+          href?: string;
           target?: '_blank';
           rel?: 'noopener noreferrer';
+          type?: never;
+          onClick?: never;
+          disabled?: never;
       };
 
 type Props = CommmonProps & AsProps;
