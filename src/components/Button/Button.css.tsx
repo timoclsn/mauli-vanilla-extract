@@ -33,7 +33,8 @@ export const base = atoms({
     alignItems: 'center',
     justifyContent: 'center',
     cursor: 'pointer',
-    textDecoration: 'none'
+    textDecoration: 'none',
+    gap: 'md'
 });
 
 export const size = styleVariants({
@@ -43,8 +44,7 @@ export const size = styleVariants({
             [paddingY]: vars.space.md
         },
         fontSize: vars.fontSizes.md,
-        fontWeight: vars.fontWeights.bold,
-        gap: vars.space.md
+        fontWeight: vars.fontWeights.bold
     },
     small: {
         vars: {
@@ -52,8 +52,7 @@ export const size = styleVariants({
             [paddingY]: vars.space.sm
         },
         fontSize: vars.fontSizes.sm,
-        fontWeight: vars.fontWeights.normal,
-        gap: vars.space.md
+        fontWeight: vars.fontWeights.normal
     }
 });
 

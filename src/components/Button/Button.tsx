@@ -1,8 +1,9 @@
 import React from 'react';
 import type { ReactNode } from 'react';
+import clsx from 'clsx';
+
 import { Box } from '../Box';
 import * as styles from './Button.css';
-import clsx from 'clsx';
 
 interface CommmonProps {
     children: ReactNode;
@@ -12,7 +13,7 @@ interface CommmonProps {
     fullWith?: boolean;
 }
 
-type AsProps =
+type ConditionalProps =
     | {
           as?: 'button';
           type?: 'button' | 'submit' | 'reset';
@@ -32,7 +33,7 @@ type AsProps =
           disabled?: never;
       };
 
-type Props = CommmonProps & AsProps;
+type Props = CommmonProps & ConditionalProps;
 
 export function Button({
     children,
