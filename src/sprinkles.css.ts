@@ -1,11 +1,12 @@
-import { vars } from './theme.css';
-
+import type { ConditionalValue } from '@vanilla-extract/sprinkles';
 import {
-    ConditionalValue,
     createAtomicStyles,
     createAtomsFn,
     createMapValueFn
 } from '@vanilla-extract/sprinkles';
+
+import { vars } from './theme.css';
+import { createFontSizeStyleObjects } from './themeUtils';
 
 const responsiveStyles = createAtomicStyles({
     conditions: {
@@ -38,7 +39,9 @@ const responsiveStyles = createAtomicStyles({
         gap: vars.space,
         opacity: [0, 1],
         textAlign: ['left', 'center', 'right'],
-        maxWidth: vars.contentWidth
+        maxWidth: vars.contentWidth,
+        fontSize: createFontSizeStyleObjects(vars.fontSizes),
+        lineHeight: vars.lineHeights
     },
     shorthands: {
         padding: ['paddingTop', 'paddingBottom', 'paddingLeft', 'paddingRight'],
@@ -71,7 +74,7 @@ const colorStyles = createAtomicStyles({
     }
 });
 
-const unresponsiveStyles = createAtomicStyles({
+const unconditionalStyles = createAtomicStyles({
     properties: {
         flexWrap: ['wrap', 'nowrap'],
         top: [0],
@@ -86,9 +89,7 @@ const unresponsiveStyles = createAtomicStyles({
         borderRadius: vars.radii,
         cursor: ['pointer'],
         fontFamily: vars.fonts,
-        fontSize: vars.fontSizes,
         fontWeight: vars.fontWeights,
-        lineHeight: vars.lineHeights,
         textDecoration: ['none', 'underline']
     }
 });
@@ -98,5 +99,5 @@ export type Atoms = Parameters<typeof atoms>[0];
 export const atoms = createAtomsFn(
     responsiveStyles,
     colorStyles,
-    unresponsiveStyles
+    unconditionalStyles
 );

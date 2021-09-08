@@ -1,37 +1,36 @@
 import React from 'react';
-import type { ElementType, ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
-import { Box } from '../Box';
+import { Text } from '../Text';
 import type { BoxProps } from '../Box';
 
 interface Props {
     children: ReactNode;
-    as?: ElementType;
+    as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
     variant?: 'normal' | 'highlight';
     size?: BoxProps['fontSize'];
     lineHeight?: BoxProps['lineHeight'];
     weight?: BoxProps['fontWeight'];
 }
 
-export function Text({
+export function Heading({
     children,
-    as: Element = 'span',
-    variant = 'normal',
-    size = 'md',
+    as: Element = 'h1',
+    variant = 'highlight',
+    size = 'xl',
     lineHeight = 'md',
-    weight = 'normal',
+    weight = 'bold',
     ...props
 }: Props) {
     return (
-        <Box
+        <Text
             as={Element}
-            fontFamily="sans"
-            fontSize={size}
+            size={size}
             lineHeight={lineHeight}
-            fontWeight={weight}
-            color={variant === 'highlight' ? 'indigo11' : 'gray12'}
+            weight={weight}
+            variant={variant}
             {...props}>
             {children}
-        </Box>
+        </Text>
     );
 }

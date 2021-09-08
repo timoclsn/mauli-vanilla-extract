@@ -1,31 +1,55 @@
 import { createGlobalTheme } from '@vanilla-extract/css';
 import { gray, indigo } from '@radix-ui/colors';
+import { precomputeValues } from '@capsizecss/vanilla-extract';
+
+const fontMetrics = {
+    capHeight: 2048,
+    ascent: 2728,
+    descent: -680,
+    lineGap: 0,
+    unitsPerEm: 2816
+};
 
 export const vars = createGlobalTheme(':root', {
     fonts: {
         sans: 'Inter, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif'
     },
     fontSizes: {
-        xs: '0.75rem',
-        sm: '0.875rem',
-        md: '1rem',
-        lg: '1.125rem',
-        xl: '1.25rem',
-        '2xl': '1.5rem',
-        '3xl': '1.875rem',
-        '4xl': '2.25rem',
-        '5xl': '3rem'
+        xs: precomputeValues({
+            fontSize: 12,
+            fontMetrics
+        }),
+        sm: precomputeValues({
+            fontSize: 14,
+            fontMetrics
+        }),
+        md: precomputeValues({
+            fontSize: 16,
+            fontMetrics
+        }),
+        lg: precomputeValues({
+            fontSize: 18,
+            fontMetrics
+        }),
+        xl: precomputeValues({
+            fontSize: 20,
+            fontMetrics
+        }),
+        '2xl': precomputeValues({
+            fontSize: 24,
+            fontMetrics
+        }),
+        '3xl': precomputeValues({
+            fontSize: 48,
+            fontMetrics
+        })
     },
     lineHeights: {
         xs: '1',
         sm: '1.25',
         md: '1.5',
         lg: '1.75',
-        xl: '2',
-        '2xl': '2.25',
-        '3xl': '2.5',
-        '4xl': '2.75',
-        '5xl': '3'
+        xl: '2'
     },
     fontWeights: {
         normal: '400',

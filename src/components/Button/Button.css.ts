@@ -52,7 +52,7 @@ export const size = styleVariants({
             [paddingX]: vars.space.lg,
             [paddingY]: vars.space.md
         },
-        fontSize: vars.fontSizes.md,
+        fontSize: vars.fontSizes.md.fontSize,
         fontWeight: vars.fontWeights.bold
     },
     small: {
@@ -60,7 +60,7 @@ export const size = styleVariants({
             [paddingX]: vars.space.md,
             [paddingY]: vars.space.sm
         },
-        fontSize: vars.fontSizes.sm,
+        fontSize: vars.fontSizes.sm.fontSize,
         fontWeight: vars.fontWeights.normal
     }
 });
