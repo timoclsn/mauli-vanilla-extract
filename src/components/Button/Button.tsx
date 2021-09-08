@@ -11,6 +11,7 @@ interface CommmonProps {
     variant?: keyof typeof styles.variant;
     color?: keyof typeof styles.color;
     fullWith?: boolean;
+    className?: string;
 }
 
 type ConditionalProps =
@@ -43,19 +44,20 @@ export function Button({
     variant = 'solid',
     color = 'normal',
     fullWith = false,
+    className,
     ...props
 }: Props) {
-    const className = clsx(
-        styles.base,
-        styles.size[size],
-        styles.variant[variant],
-        styles.color[color]
-    );
     return (
         <Box
             as={as}
             type={as === 'button' ? type : undefined}
-            className={className}
+            className={clsx(
+                styles.base,
+                styles.size[size],
+                styles.variant[variant],
+                styles.color[color],
+                className
+            )}
             width={fullWith ? 'full' : undefined}
             {...props}>
             {children}

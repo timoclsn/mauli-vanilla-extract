@@ -1,4 +1,4 @@
-import { createVar, styleVariants } from '@vanilla-extract/css';
+import { createVar, style, styleVariants } from '@vanilla-extract/css';
 
 import { atoms } from '../../sprinkles.css';
 import { vars } from '../../theme.css';
@@ -10,6 +10,7 @@ const solidBorderActive = createVar();
 const solidBgActive = createVar();
 const solidBorderFocus = createVar();
 const solidBgDisabled = createVar();
+
 const ghostText = createVar();
 const ghostBorder = createVar();
 const ghostBgHover = createVar();
@@ -18,6 +19,7 @@ const ghostTextFocus = createVar();
 const ghostBorderFocus = createVar();
 const ghostTextDisabled = createVar();
 const ghostBorderDisabled = createVar();
+
 const linkText = createVar();
 const linkTextHover = createVar();
 const linkTextActive = createVar();
@@ -27,15 +29,22 @@ const linkTextDisabled = createVar();
 const paddingX = createVar();
 const paddingY = createVar();
 
-export const base = atoms({
-    fontFamily: 'sans',
-    display: 'inline-flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    cursor: 'pointer',
-    textDecoration: 'none',
-    gap: 'md'
-});
+export const base = style([
+    atoms({
+        fontFamily: 'sans',
+        display: 'inline-flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        cursor: 'pointer',
+        textDecoration: 'none',
+        gap: 'sm'
+    }),
+    {
+        ':focus': {
+            outline: 'none'
+        }
+    }
+]);
 
 export const size = styleVariants({
     normal: {
@@ -72,7 +81,7 @@ export const variant = styleVariants({
             backgroundColor: solidBgActive,
             boxShadow: `inset 0 0 0 2px ${solidBorderActive}`
         },
-        ':focus': {
+        ':focus-visible': {
             boxShadow: `inset 0 0 0 2px ${solidBorderFocus}`
         },
         ':disabled': {
@@ -93,7 +102,7 @@ export const variant = styleVariants({
         ':active': {
             backgroundColor: ghostBgActive
         },
-        ':focus': {
+        ':focus-visible': {
             color: ghostTextFocus,
             boxShadow: `inset 0 0 0 2px ${ghostBorderFocus}`
         },
@@ -111,7 +120,7 @@ export const variant = styleVariants({
         ':active': {
             color: linkTextActive
         },
-        ':focus': {
+        ':focus-visible': {
             color: linkTextFocus
         },
         ':disabled': {
@@ -126,8 +135,8 @@ export const color = styleVariants({
             [solidText]: vars.colors.gray2,
             [solidBg]: vars.colors.gray12,
             [solidBorderHover]: vars.colors.gray11,
-            [solidBorderActive]: vars.colors.gray11,
             [solidBgActive]: vars.colors.gray12,
+            [solidBorderActive]: vars.colors.gray11,
             [solidBorderFocus]: vars.colors.gray11,
             [solidBgDisabled]: vars.colors.gray7,
 
@@ -152,8 +161,8 @@ export const color = styleVariants({
             [solidText]: vars.colors.indigo2,
             [solidBg]: vars.colors.indigo9,
             [solidBorderHover]: vars.colors.indigo12,
-            [solidBorderActive]: vars.colors.indigo12,
             [solidBgActive]: vars.colors.indigo11,
+            [solidBorderActive]: vars.colors.indigo12,
             [solidBorderFocus]: vars.colors.indigo12,
             [solidBgDisabled]: vars.colors.indigo7,
 
