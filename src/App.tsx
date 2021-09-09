@@ -6,6 +6,7 @@ import { Stack } from './components/Stack';
 import { Button } from './components/Button';
 import { Text } from './components/Text';
 import { Heading } from './components/Heading';
+import { Card } from './components/Card';
 
 function App() {
     return (
@@ -22,6 +23,18 @@ function App() {
                     }}
                     space={{ mobile: 'sm', tablet: 'md', desktop: 'lg' }}
                     align="center">
+                    <Card variant="highlight">
+                        <Stack>
+                            <Heading variant="normal" size="2xl">
+                                Card Normal
+                            </Heading>
+                            <Text as="p">
+                                dsj ad sadhsa dhsdg asdgsa gdsagd asdgsgd agd
+                                sgadsagd.
+                            </Text>
+                        </Stack>
+                    </Card>
+
                     <Button onClick={() => console.log('Test')}>Test</Button>
                     <Button onClick={() => console.log('Test')}>
                         <ArrowRight />
