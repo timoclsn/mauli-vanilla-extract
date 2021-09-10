@@ -3,14 +3,11 @@ import type { ReactNode } from 'react';
 import clsx from 'clsx';
 
 import { Box } from '../Box';
-import * as styles from './Button.css';
+import { button } from './Button.css';
+import type { ButtonVaraints } from './Button.css';
 
 interface CommmonProps {
     children: ReactNode;
-    size?: keyof typeof styles.size;
-    variant?: keyof typeof styles.variant;
-    color?: keyof typeof styles.color;
-    fullWith?: boolean;
     className?: string;
 }
 
@@ -34,7 +31,7 @@ type ConditionalProps =
           disabled?: never;
       };
 
-type Props = CommmonProps & ConditionalProps;
+type Props = CommmonProps & ButtonVaraints & ConditionalProps;
 
 export function Button({
     children,
@@ -43,7 +40,7 @@ export function Button({
     size = 'normal',
     variant = 'solid',
     color = 'normal',
-    fullWith = false,
+    fullWith,
     className,
     ...props
 }: Props) {
@@ -52,13 +49,9 @@ export function Button({
             as={as}
             type={as === 'button' ? type : undefined}
             className={clsx(
-                styles.base,
-                styles.size[size],
-                styles.variant[variant],
-                styles.color[color],
+                button({ size, variant, color, fullWith }),
                 className
             )}
-            width={fullWith ? 'full' : undefined}
             {...props}>
             {children}
         </Box>
