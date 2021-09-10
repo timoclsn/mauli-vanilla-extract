@@ -13,7 +13,7 @@ interface Props {
 export function Container({
     children,
     as = 'div',
-    size = 'md',
+    size = 'lg',
     ...props
 }: Props) {
     return (

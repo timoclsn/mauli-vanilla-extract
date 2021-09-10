@@ -15,7 +15,7 @@ export function Inline({
     children,
     as = 'div',
     space = 'sm',
-    wrap,
+    wrap = true,
     ...props
 }: Props) {
     return (

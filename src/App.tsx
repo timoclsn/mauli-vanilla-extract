@@ -7,72 +7,107 @@ import { Button } from './components/Button';
 import { Text } from './components/Text';
 import { Heading } from './components/Heading';
 import { Card } from './components/Card';
+import { Container } from './components/Container';
+import { Inline } from './components/Inline';
+import { Label } from './components/Label';
 
 function App() {
     return (
-        <Box padding="xl">
-            <Stack space="md">
-                <Heading size={{ mobile: 'xl', tablet: '2xl', desktop: '3xl' }}>
-                    Mauli Design System
-                </Heading>
-                <Text as="p">[WIP] Design System Playground</Text>
-                <Stack
-                    direction={{
-                        mobile: 'vertical',
-                        desktop: 'horizontal'
-                    }}
-                    space={{ mobile: 'sm', tablet: 'md', desktop: 'lg' }}
-                    align="center">
-                    <Card variant="highlight">
-                        <Stack>
-                            <Heading variant="normal" size="2xl">
-                                Card Normal
-                            </Heading>
-                            <Text as="p">
-                                dsj ad sadhsa dhsdg asdgsa gdsagd asdgsgd agd
-                                sgadsagd.
-                            </Text>
-                        </Stack>
-                    </Card>
+        <Container>
+            <Box
+                padding={{
+                    mobile: 'md',
+                    tablet: '2xl'
+                }}>
+                <Stack space="2xl">
+                    <Stack>
+                        <Heading as="h1">Mauli Design System</Heading>
+                        <Text as="p" variant="highlight">
+                            [WIP] Design System Playground
+                        </Text>
+                    </Stack>
 
-                    <Button onClick={() => console.log('Test')}>Test</Button>
-                    <Button onClick={() => console.log('Test')}>
-                        <ArrowRight />
-                        Test
-                    </Button>
-                    <Button variant="ghost" onClick={() => console.log('Test')}>
-                        Test
-                    </Button>
-                    <Button variant="link" onClick={() => console.log('Test')}>
-                        Test
-                    </Button>
-                    <Button
-                        color="highlight"
-                        onClick={() => console.log('Test')}>
-                        Test
-                    </Button>
-                    <Button
-                        variant="ghost"
-                        color="highlight"
-                        onClick={() => console.log('Test')}>
-                        Test
-                    </Button>
-                    <Button
-                        variant="link"
-                        color="highlight"
-                        onClick={() => console.log('Test')}>
-                        Test
-                    </Button>
-                    <Button as="a" href="https://timoclasen.de">
-                        Link
-                    </Button>
-                    <Button variant="link" as="a" href="https://timoclasen.de">
-                        <ArrowRight />
-                        Link
-                    </Button>
+                    <Stack
+                        direction={{
+                            mobile: 'vertical',
+                            tablet: 'horizontal'
+                        }}>
+                        <Card fullWidth>
+                            <Stack>
+                                <Heading variant="normal" size="2xl">
+                                    Card Normal
+                                </Heading>
+                                <Text as="p">
+                                    dsj ad sadhsa dhsdg asdgsa gdsagd asdgsgd
+                                    agd sgadsagd.
+                                </Text>
+                                <Inline>
+                                    <Label>Label</Label>
+                                    <Label>Label</Label>
+                                    <Label>Label</Label>
+                                    <Label>Label</Label>
+                                    <Label>Label</Label>
+                                    <Label>Label</Label>
+                                    <Label>Label</Label>
+                                    <Label>Label</Label>
+                                </Inline>
+                                <Stack
+                                    direction={{
+                                        mobile: 'vertical',
+                                        tablet: 'horizontal'
+                                    }}
+                                    justify="end"
+                                    align={{
+                                        mobile: 'start',
+                                        tablet: 'center'
+                                    }}
+                                    fullWith>
+                                    <Button
+                                        color="highlight"
+                                        onClick={() => alert('Test')}>
+                                        <ArrowRight />
+                                        Button
+                                    </Button>
+                                    <Button variant="ghost">Ghost</Button>
+                                    <Button
+                                        as="a"
+                                        variant="link"
+                                        href="https:timoclasen.de"
+                                        target="_blank">
+                                        <ArrowRight />
+                                        Link
+                                    </Button>
+                                </Stack>
+                            </Stack>
+                        </Card>
+
+                        <Card variant="highlight" fullWidth>
+                            <Stack>
+                                <Heading variant="normal" size="2xl">
+                                    Card Highlight
+                                </Heading>
+                                <Text as="p">
+                                    Lorem ipsum dolor sit amet, consectetuer
+                                    adipiscing elit. Aenean commodo ligula eget
+                                    dolor. Aenean massa. Cum sociis natoque
+                                    penatibus et magnis dis parturient montes,
+                                    nascetur ridiculus mus. Donec quam felis,
+                                    ultricies nec, pellentesque eu, pretium
+                                    quis, sem. Nulla consequat massa quis enim.
+                                    Donec pede justo, fringilla vel, aliquet
+                                    nec, vulputate eget, arcu. In enim justo,
+                                    rhoncus ut, imperdiet a, venenatis vitae,
+                                    justo. Nullam dictum felis eu pede mollis
+                                    pretium. Integer tincidunt. Cras dapibus.
+                                    Vivamus elementum semper nisi. Aenean
+                                    vulputate eleifend tellus.
+                                </Text>
+                            </Stack>
+                        </Card>
+                    </Stack>
                 </Stack>
-            </Stack>
-        </Box>
+            </Box>
+        </Container>
     );
 }
 
