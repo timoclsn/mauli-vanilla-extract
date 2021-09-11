@@ -21,8 +21,8 @@ function App() {
                 }}>
                 <Stack space="2xl">
                     <Stack>
-                        <Heading as="h1">Mauli Design System</Heading>
-                        <Text as="p" variant="highlight">
+                        <Heading>Mauli Design System</Heading>
+                        <Text as="p" color="highlight">
                             [WIP] Design System Playground
                         </Text>
                     </Stack>
@@ -34,7 +34,7 @@ function App() {
                         }}>
                         <Card fullWidth>
                             <Stack>
-                                <Heading variant="normal" size="2xl">
+                                <Heading color="dark" size="2xl">
                                     Card Normal
                                 </Heading>
                                 <Text as="p">
@@ -81,12 +81,12 @@ function App() {
                             </Stack>
                         </Card>
 
-                        <Card variant="highlight" fullWidth>
+                        <Card color="highlight" fullWidth>
                             <Stack>
-                                <Heading variant="normal" size="2xl">
+                                <Heading color="light" size="2xl">
                                     Card Highlight
                                 </Heading>
-                                <Text as="p">
+                                <Text as="p" color="light">
                                     Lorem ipsum dolor sit amet, consectetuer
                                     adipiscing elit. Aenean commodo ligula eget
                                     dolor. Aenean massa. Cum sociis natoque

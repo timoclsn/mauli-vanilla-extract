@@ -4,10 +4,10 @@ import type { ElementType, ReactNode } from 'react';
 import { Box } from '../Box';
 import type { BoxProps } from '../Box';
 
-interface Props {
+export interface TextProps {
     children: ReactNode;
     as?: ElementType;
-    variant?: 'normal' | 'highlight';
+    color?: 'dark' | 'light' | 'highlight';
     size?: BoxProps['fontSize'];
     lineHeight?: BoxProps['lineHeight'];
     weight?: BoxProps['fontWeight'];
@@ -17,12 +17,12 @@ interface Props {
 export function Text({
     children,
     as: Element = 'span',
-    variant = 'normal',
+    color = 'dark',
     size = 'md',
     lineHeight = 'md',
     weight = 'normal',
     ...props
-}: Props) {
+}: TextProps) {
     return (
         <Box
             as={Element}
@@ -30,7 +30,13 @@ export function Text({
             fontSize={size}
             lineHeight={lineHeight}
             fontWeight={weight}
-            color={variant === 'highlight' ? 'indigo11' : 'gray12'}
+            color={
+                color === 'highlight'
+                    ? 'indigo11'
+                    : color === 'dark'
+                    ? 'gray12'
+                    : 'gray1'
+            }
             {...props}>
             {children}
         </Box>

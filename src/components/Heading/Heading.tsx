@@ -2,12 +2,13 @@ import React from 'react';
 import type { ReactNode } from 'react';
 
 import { Text } from '../Text';
+import type { TextProps } from '../Text';
 import type { BoxProps } from '../Box';
 
 interface Props {
     children: ReactNode;
     as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-    variant?: 'normal' | 'highlight';
+    color?: TextProps['color'];
     size?: BoxProps['fontSize'];
     lineHeight?: BoxProps['lineHeight'];
     weight?: BoxProps['fontWeight'];
@@ -17,7 +18,7 @@ interface Props {
 export function Heading({
     children,
     as: Element = 'h1',
-    variant = 'highlight',
+    color = 'highlight',
     size = '3xl',
     lineHeight = 'md',
     weight = 'bold',
@@ -29,7 +30,7 @@ export function Heading({
             size={size}
             lineHeight={lineHeight}
             weight={weight}
-            variant={variant}
+            color={color}
             {...props}>
             {children}
         </Text>

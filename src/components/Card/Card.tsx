@@ -6,7 +6,7 @@ import { Box } from '../Box';
 interface Props {
     children: ReactNode;
     as?: ElementType;
-    variant?: 'normal' | 'highlight';
+    color?: 'normal' | 'highlight';
     fullWidth?: boolean;
     className?: string;
 }
@@ -14,7 +14,7 @@ interface Props {
 export function Card({
     children,
     as = 'div',
-    variant = 'normal',
+    color = 'normal',
     fullWidth,
     ...props
 }: Props) {
@@ -23,7 +23,7 @@ export function Card({
             as={as}
             borderRadius="lg"
             padding="xl"
-            background={variant === 'normal' ? 'gray9' : 'indigo9'}
+            background={color === 'normal' ? 'gray3' : 'indigo9'}
             width={fullWidth ? 'full' : undefined}
             {...props}>
             {children}
