@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Children } from 'react';
 import type { ReactNode } from 'react';
 import clsx from 'clsx';
 
@@ -44,6 +44,7 @@ export function Button({
     className,
     ...props
 }: Props) {
+    const buttonItems = Children.toArray(children);
     return (
         <Box
             as={as}
@@ -53,7 +54,11 @@ export function Button({
                 className
             )}
             {...props}>
-            {children}
+            {buttonItems.map((item, index) => (
+                <Box as="span" key={index} display="inline" flex="none">
+                    {item}
+                </Box>
+            ))}
         </Box>
     );
 }

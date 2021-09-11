@@ -15,13 +15,14 @@ function App() {
     return (
         <Container>
             <Box
+                fontFamily="sans"
                 padding={{
                     mobile: 'md',
                     tablet: '2xl'
                 }}>
                 <Stack space="2xl">
                     <Stack>
-                        <Heading>Mauli Design System</Heading>
+                        <Heading lineHeight="xs">Mauli Design System</Heading>
                         <Text as="p" color="highlight">
                             [WIP] Design System Playground
                         </Text>

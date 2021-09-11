@@ -35,7 +35,6 @@ export type ButtonVaraints = Parameters<typeof button>[0];
 export const button = recipe({
     base: [
         atoms({
-            fontFamily: 'sans',
             display: 'inline-flex',
             alignItems: 'center',
             justifyContent: 'center',
