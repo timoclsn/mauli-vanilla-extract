@@ -8,6 +8,7 @@ interface Props {
     children: ReactNode;
     as?: 'div' | 'main' | 'aside' | 'header' | 'footer' | 'section';
     size?: BoxProps['maxWidth'];
+    className?: string;
 }
 
 export function Container({

@@ -24,7 +24,7 @@ const justifyToJustifyContent = {
     between: 'space-between'
 } as const;
 
-interface Props {
+export interface StackProps {
     children: ReactNode;
     as?: 'div' | 'ul' | 'ol';
     direction?: ResponsiveValue<keyof typeof directionToFlexDirection>;
@@ -44,7 +44,7 @@ export function Stack({
     justify = 'start',
     wrap = false,
     fullWith = false
-}: Props) {
+}: StackProps) {
     return (
         <Box
             as={as}

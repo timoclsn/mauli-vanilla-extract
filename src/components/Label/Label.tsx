@@ -5,9 +5,10 @@ import { Box } from '../Box';
 
 interface Props {
     children: ReactNode;
+    className?: string;
 }
 
-export function Label({ children }: Props) {
+export function Label({ children, ...props }: Props) {
     return (
         <Box
             fontSize="sm"
@@ -16,7 +17,8 @@ export function Label({ children }: Props) {
             paddingY="sm"
             color="indigo2"
             background="indigo9"
-            borderRadius="round">
+            borderRadius="round"
+            {...props}>
             {children}
         </Box>
     );

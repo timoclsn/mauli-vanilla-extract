@@ -11,6 +11,7 @@ interface Props {
     size?: BoxProps['fontSize'];
     lineHeight?: BoxProps['lineHeight'];
     weight?: BoxProps['fontWeight'];
+    className?: string;
 }
 
 export function Text({

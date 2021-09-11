@@ -8,6 +8,7 @@ interface Props {
     as?: ElementType;
     variant?: 'normal' | 'highlight';
     fullWidth?: boolean;
+    className?: string;
 }
 
 export function Card({
