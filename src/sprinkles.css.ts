@@ -40,7 +40,9 @@ const responsiveStyles = createAtomicStyles({
         opacity: [0, 1],
         textAlign: ['left', 'center', 'right'],
         maxWidth: vars.contentWidth,
-        fontSize: createFontSizeStyleObjects(vars.fontSizes),
+        fontSize: createFontSizeStyleObjects<keyof typeof vars.fontSizes>(
+            vars.fontSizes
+        ),
         lineHeight: vars.lineHeights
     },
     shorthands: {
