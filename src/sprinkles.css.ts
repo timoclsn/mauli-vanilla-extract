@@ -62,10 +62,7 @@ export const mapResponsiveValue = createMapValueFn(responsiveStyles);
 const colorStyles = createAtomicStyles({
     conditions: {
         lightMode: {},
-        darkMode: { '@media': '(prefers-color-scheme: dark)' },
-        hover: { selector: '&:hover' },
-        active: { selector: '&:active' },
-        focus: { selector: '&:focus' }
+        darkMode: { '@media': '(prefers-color-scheme: dark)' }
     },
     defaultCondition: 'lightMode',
     properties: {
@@ -73,6 +70,13 @@ const colorStyles = createAtomicStyles({
         background: vars.colors
     }
 });
+
+export type ColorValue<Value extends string | number> = ConditionalValue<
+    typeof colorStyles,
+    Value
+>;
+
+export const mapColorValue = createMapValueFn(colorStyles);
 
 const unconditionalStyles = createAtomicStyles({
     properties: {

@@ -1,7 +1,8 @@
 import React from 'react';
 import type { ReactNode } from 'react';
 
-import { mapResponsiveValue, ResponsiveValue } from '../../sprinkles.css';
+import { mapResponsiveValue } from '../../sprinkles.css';
+import type { ResponsiveValue } from '../../sprinkles.css';
 import { Box } from '../Box';
 import type { BoxProps } from '../Box';
 

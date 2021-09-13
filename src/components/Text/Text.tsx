@@ -1,13 +1,21 @@
 import React from 'react';
 import type { ElementType, ReactNode } from 'react';
 
+import { mapColorValue } from '../../sprinkles.css';
+import type { ColorValue } from '../../sprinkles.css';
 import { Box } from '../Box';
 import type { BoxProps } from '../Box';
+
+const colorToColor = {
+    dark: 'gray12',
+    light: 'gray1',
+    highlight: 'indigo11'
+} as const;
 
 export interface TextProps {
     children: ReactNode;
     as?: ElementType;
-    color?: 'dark' | 'light' | 'highlight';
+    color?: ColorValue<keyof typeof colorToColor>;
     size?: BoxProps['fontSize'];
     lineHeight?: BoxProps['lineHeight'];
     weight?: BoxProps['fontWeight'];
@@ -30,13 +38,7 @@ export function Text({
             fontSize={size}
             lineHeight={lineHeight}
             fontWeight={weight}
-            color={
-                color === 'highlight'
-                    ? 'indigo11'
-                    : color === 'dark'
-                    ? 'gray12'
-                    : 'gray1'
-            }
+            color={mapColorValue(color, (value) => colorToColor[value])}
             {...props}>
             {children}
         </Box>
