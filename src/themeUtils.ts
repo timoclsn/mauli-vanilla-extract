@@ -1,22 +1,14 @@
-import { createStyleObject } from '@capsizecss/core';
 import type { StyleRule } from '@vanilla-extract/css';
 
-export function createFontSizeStyleObjects<T extends string>(
-    fontSizes: Record<
-        T,
-        {
-            fontSize: string;
-            lineHeight: string;
-            capHeightTrim: string;
-            baselineTrim: string;
-        }
-    >
+export function mapThemeObject<Input extends Record<string, unknown>>(
+    obj: Input,
+    fn: <Key extends keyof Input>(value: Input[Key]) => StyleRule
 ) {
-    const mappedFontSizes: Partial<Record<T, StyleRule>> = {};
+    const result: Partial<Record<keyof Input, StyleRule>> = {};
 
-    for (const key in fontSizes) {
-        mappedFontSizes[key] = createStyleObject(fontSizes[key]);
+    for (const key in obj) {
+        result[key] = fn(obj[key]);
     }
 
-    return mappedFontSizes;
+    return result;
 }

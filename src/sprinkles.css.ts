@@ -1,3 +1,4 @@
+import { createStyleObject } from '@capsizecss/core';
 import type { ConditionalValue } from '@vanilla-extract/sprinkles';
 import {
     createAtomicStyles,
@@ -6,7 +7,7 @@ import {
 } from '@vanilla-extract/sprinkles';
 
 import { vars } from './theme.css';
-import { createFontSizeStyleObjects } from './themeUtils';
+import { mapThemeObject } from './themeUtils';
 
 const responsiveStyles = createAtomicStyles({
     conditions: {
@@ -40,8 +41,8 @@ const responsiveStyles = createAtomicStyles({
         opacity: [0, 1],
         textAlign: ['left', 'center', 'right'],
         maxWidth: vars.contentWidth,
-        fontSize: createFontSizeStyleObjects<keyof typeof vars.fontSizes>(
-            vars.fontSizes
+        fontSize: mapThemeObject(vars.fontSizes, (value) =>
+            createStyleObject(value)
         ),
         lineHeight: vars.lineHeights
     },
