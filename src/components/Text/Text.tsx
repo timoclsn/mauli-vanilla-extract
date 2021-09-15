@@ -27,7 +27,7 @@ export function Text({
     as: Element = 'span',
     color = 'dark',
     size = 'md',
-    lineHeight = 'md',
+    lineHeight,
     weight = 'normal',
     ...props
 }: TextProps) {

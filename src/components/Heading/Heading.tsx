@@ -19,8 +19,8 @@ export function Heading({
     children,
     as: Element = 'h1',
     color = 'highlight',
-    size = '3xl',
-    lineHeight = 'md',
+    size = '5xl',
+    lineHeight,
     weight = 'bold',
     ...props
 }: Props) {

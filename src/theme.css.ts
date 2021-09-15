@@ -17,30 +17,52 @@ export const vars = createGlobalTheme(':root', {
     fontSizes: {
         xs: precomputeValues({
             fontSize: 12,
+            leading: 16,
             fontMetrics
         }),
         sm: precomputeValues({
             fontSize: 14,
+            leading: 18,
             fontMetrics
         }),
         md: precomputeValues({
             fontSize: 16,
+            leading: 24,
             fontMetrics
         }),
         lg: precomputeValues({
             fontSize: 18,
+            leading: 28,
             fontMetrics
         }),
         xl: precomputeValues({
             fontSize: 20,
+            leading: 28,
             fontMetrics
         }),
         '2xl': precomputeValues({
             fontSize: 24,
+            leading: 32,
             fontMetrics
         }),
         '3xl': precomputeValues({
+            fontSize: 30,
+            leading: 36,
+            fontMetrics
+        }),
+        '4xl': precomputeValues({
+            fontSize: 36,
+            leading: 40,
+            fontMetrics
+        }),
+        '5xl': precomputeValues({
             fontSize: 48,
+            leading: 48,
+            fontMetrics
+        }),
+        '6xl': precomputeValues({
+            fontSize: 60,
+            leading: 60,
             fontMetrics
         })
     },

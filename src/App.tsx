@@ -22,7 +22,7 @@ function App() {
                 }}>
                 <Stack space="2xl">
                     <Stack>
-                        <Heading lineHeight="xs">Mauli Design System</Heading>
+                        <Heading>Mauli Design System</Heading>
                         <Text as="p" color="highlight">
                             [WIP] Design System Playground
                         </Text>
