@@ -12,7 +12,7 @@ export const base = style({
     WebkitTapHighlightColor: 'transparent'
 });
 
-export const button = style({
+const button = style({
     background: 0,
     border: 0,
     WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)'
