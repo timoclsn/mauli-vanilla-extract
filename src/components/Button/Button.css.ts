@@ -1,7 +1,7 @@
 import { createVar } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
-import { atoms } from '../../sprinkles.css';
+import { sprinkles } from '../../sprinkles.css';
 import { vars } from '../../theme.css';
 
 const solidText = createVar();
@@ -34,7 +34,7 @@ export type ButtonVaraints = Parameters<typeof button>[0];
 
 export const button = recipe({
     base: [
-        atoms({
+        sprinkles({
             display: 'inline-flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -192,7 +192,7 @@ export const button = recipe({
         },
 
         fullWith: {
-            true: atoms({ width: 'full' })
+            true: sprinkles({ width: 'full' })
         }
     },
 

@@ -3,15 +3,15 @@ import type { AllHTMLAttributes, ElementType, ReactNode } from 'react';
 import clsx from 'clsx';
 
 import * as resetStyles from '../../reset.css';
-import { atoms } from '../../sprinkles.css';
-import type { Atoms } from '../../sprinkles.css';
+import { sprinkles } from '../../sprinkles.css';
+import type { Sprinkles } from '../../sprinkles.css';
 
 export interface BoxProps
     extends Omit<
             AllHTMLAttributes<HTMLElement>,
             'as' | 'width' | 'height' | 'color'
         >,
-        Atoms {
+        Sprinkles {
     children: ReactNode;
     as?: ElementType;
     className?: string;
@@ -25,7 +25,7 @@ export const Box = forwardRef<HTMLElement, BoxProps>(function Box(
     const nativeProps: Record<string, unknown> = {};
 
     for (const key in props) {
-        if (atoms.properties.has(key as keyof Atoms)) {
+        if (sprinkles.properties.has(key as keyof Sprinkles)) {
             atomProps[key] = props[key as keyof typeof props];
         } else {
             nativeProps[key] = props[key as keyof typeof props];
@@ -35,7 +35,7 @@ export const Box = forwardRef<HTMLElement, BoxProps>(function Box(
     const styles = clsx(
         resetStyles.base,
         resetStyles.element[Element as keyof typeof resetStyles.element],
-        atoms(atomProps),
+        sprinkles(atomProps),
         className
     );
 

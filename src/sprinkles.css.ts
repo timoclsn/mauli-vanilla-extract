@@ -1,15 +1,15 @@
 import { createStyleObject } from '@capsizecss/core';
 import type { ConditionalValue } from '@vanilla-extract/sprinkles';
 import {
-    createAtomicStyles,
-    createAtomsFn,
+    defineProperties,
+    createSprinkles,
     createMapValueFn
 } from '@vanilla-extract/sprinkles';
 
 import { vars } from './theme.css';
 import { mapThemeObject } from './themeUtils';
 
-const responsiveStyles = createAtomicStyles({
+const responsiveProperties = defineProperties({
     conditions: {
         mobile: {},
         tablet: { '@media': 'screen and (min-width: 768px)' },
@@ -57,12 +57,12 @@ const responsiveStyles = createAtomicStyles({
 });
 
 export type ResponsiveValue<Value extends string | number> = ConditionalValue<
-    typeof responsiveStyles,
+    typeof responsiveProperties,
     Value
 >;
-export const mapResponsiveValue = createMapValueFn(responsiveStyles);
+export const mapResponsiveValue = createMapValueFn(responsiveProperties);
 
-const colorStyles = createAtomicStyles({
+const colorProperties = defineProperties({
     conditions: {
         lightMode: {},
         darkMode: { '@media': '(prefers-color-scheme: dark)' }
@@ -75,13 +75,13 @@ const colorStyles = createAtomicStyles({
 });
 
 export type ColorValue<Value extends string | number> = ConditionalValue<
-    typeof colorStyles,
+    typeof colorProperties,
     Value
 >;
 
-export const mapColorValue = createMapValueFn(colorStyles);
+export const mapColorValue = createMapValueFn(colorProperties);
 
-const unconditionalStyles = createAtomicStyles({
+const unconditionalProperties = defineProperties({
     properties: {
         flexWrap: ['wrap', 'nowrap'],
         top: [0],
@@ -100,10 +100,10 @@ const unconditionalStyles = createAtomicStyles({
     }
 });
 
-export type Atoms = Parameters<typeof atoms>[0];
+export type Sprinkles = Parameters<typeof sprinkles>[0];
 
-export const atoms = createAtomsFn(
-    responsiveStyles,
-    colorStyles,
-    unconditionalStyles
+export const sprinkles = createSprinkles(
+    responsiveProperties,
+    colorProperties,
+    unconditionalProperties
 );
