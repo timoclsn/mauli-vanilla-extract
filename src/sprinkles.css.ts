@@ -1,3 +1,4 @@
+import mapValues from 'lodash/mapValues';
 import { createStyleObject } from '@capsizecss/core';
 import type { ConditionalValue } from '@vanilla-extract/sprinkles';
 import {
@@ -7,7 +8,6 @@ import {
 } from '@vanilla-extract/sprinkles';
 
 import { vars } from './theme.css';
-import { mapThemeObject } from './themeUtils';
 
 const responsiveProperties = defineProperties({
     conditions: {
@@ -41,8 +41,8 @@ const responsiveProperties = defineProperties({
         opacity: [0, 1],
         textAlign: ['left', 'center', 'right'],
         maxWidth: vars.contentWidth,
-        fontSize: mapThemeObject(vars.fontSizes, (value) =>
-            createStyleObject(value)
+        fontSize: mapValues(vars.fontSizes, (fontSize) =>
+            createStyleObject(fontSize)
         ),
         lineHeight: vars.lineHeights
     },
