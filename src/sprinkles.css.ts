@@ -88,7 +88,7 @@ const unconditionalProperties = defineProperties({
         bottom: [0],
         left: [0],
         right: [0],
-        flex: ['none', 1],
+        flexShrink: [0],
         zIndex: [-1, 0, 1],
         width: vars.sizes,
         height: vars.sizes,

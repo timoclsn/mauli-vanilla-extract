@@ -1,4 +1,4 @@
-import React, { Children } from 'react';
+import React from 'react';
 import type { ReactNode } from 'react';
 import clsx from 'clsx';
 
@@ -25,7 +25,7 @@ type ConditionalProps =
           as?: 'a';
           href?: string;
           target?: '_blank';
-          rel?: 'noopener noreferrer';
+          rel?: 'noopener noreferrer' | 'noopener';
           type?: never;
           onClick?: never;
           disabled?: never;
@@ -44,7 +44,6 @@ export function Button({
     className,
     ...props
 }: Props) {
-    const buttonItems = Children.toArray(children);
     return (
         <Box
             as={as}
@@ -54,11 +53,7 @@ export function Button({
                 className
             )}
             {...props}>
-            {buttonItems.map((item, index) => (
-                <Box as="span" key={index} display="inline" flex="none">
-                    {item}
-                </Box>
-            ))}
+            {children}
         </Box>
     );
 }

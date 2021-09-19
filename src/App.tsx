@@ -62,6 +62,7 @@ function App() {
                                         mobile: 'start',
                                         tablet: 'center'
                                     }}
+                                    wrap
                                     fullWith>
                                     <Button
                                         color="highlight"
