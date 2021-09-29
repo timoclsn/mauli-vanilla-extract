@@ -1,5 +1,6 @@
 import { createVar } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
+import type { RecipeVariants } from '@vanilla-extract/recipes';
 
 import { sprinkles } from '../../sprinkles.css';
 import { vars } from '../../theme.css';
@@ -30,7 +31,7 @@ const linkTextDisabled = createVar();
 const paddingX = createVar();
 const paddingY = createVar();
 
-export type ButtonVaraints = Parameters<typeof button>[0];
+export type ButtonVaraints = RecipeVariants<typeof button>;
 
 export const button = recipe({
     base: [
