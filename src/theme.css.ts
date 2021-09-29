@@ -1,14 +1,7 @@
 import { createGlobalTheme } from '@vanilla-extract/css';
 import { gray, indigo } from '@radix-ui/colors';
 import { precomputeValues } from '@capsizecss/core';
-
-const fontMetrics = {
-    capHeight: 2048,
-    ascent: 2728,
-    descent: -680,
-    lineGap: 0,
-    unitsPerEm: 2816
-};
+import fontMetrics from '@capsizecss/metrics/inter';
 
 export const vars = createGlobalTheme(':root', {
     fonts: {
