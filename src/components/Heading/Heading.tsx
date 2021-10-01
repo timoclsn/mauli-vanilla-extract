@@ -3,15 +3,14 @@ import type { ReactNode } from 'react';
 
 import { Text } from '../Text';
 import type { TextProps } from '../Text';
-import type { BoxProps } from '../Box';
 
 interface Props {
     children: ReactNode;
     as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
     color?: TextProps['color'];
-    size?: BoxProps['fontSize'];
-    lineHeight?: BoxProps['lineHeight'];
-    weight?: BoxProps['fontWeight'];
+    size?: TextProps['size'];
+    lineHeight?: TextProps['lineHeight'];
+    weight?: TextProps['weight'];
     className?: string;
 }
 
