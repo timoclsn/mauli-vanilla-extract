@@ -14,11 +14,11 @@ interface Props {
 export function Container({
     children,
     as = 'div',
-    size = 'lg',
+    size = '1280px',
     ...props
 }: Props) {
     return (
-        <Box as={as} maxWidth={size} paddingX="md" marginX="auto" {...props}>
+        <Box as={as} maxWidth={size} paddingX="2x" marginX="auto" {...props}>
             {children}
         </Box>
     );

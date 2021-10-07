@@ -10,6 +10,7 @@ import { Card } from './components/Card';
 import { Container } from './components/Container';
 import { Inline } from './components/Inline';
 import { Label } from './components/Label';
+import { sprinkles } from './sprinkles.css';
 
 function App() {
     return (
@@ -17,10 +18,10 @@ function App() {
             <Box
                 fontFamily="sans"
                 padding={{
-                    mobile: 'md',
-                    tablet: '2xl'
+                    default: '2x',
+                    '640px': '8x'
                 }}>
-                <Stack space="2xl">
+                <Stack space="8x">
                     <Stack>
                         <Heading>Mauli Design System</Heading>
                         <Text as="p" color="highlight">
@@ -30,14 +31,12 @@ function App() {
 
                     <Stack
                         direction={{
-                            mobile: 'vertical',
-                            tablet: 'horizontal'
+                            default: 'vertical',
+                            '640px': 'horizontal'
                         }}>
                         <Card fullWidth>
                             <Stack>
-                                <Heading color="dark" size="2xl">
-                                    Card Normal
-                                </Heading>
+                                <Heading color="dark">Card Normal</Heading>
                                 <Text as="p">
                                     dsj ad sadhsa dhsdg asdgsa gdsagd asdgsgd
                                     agd sgadsagd.
@@ -54,16 +53,16 @@ function App() {
                                 </Inline>
                                 <Stack
                                     direction={{
-                                        mobile: 'vertical',
-                                        tablet: 'horizontal'
+                                        default: 'vertical',
+                                        '640px': 'horizontal'
                                     }}
                                     justify="end"
                                     align={{
-                                        mobile: 'start',
-                                        tablet: 'center'
+                                        default: 'start',
+                                        '640px': 'center'
                                     }}
                                     wrap
-                                    fullWith>
+                                    className={sprinkles({ width: 'full' })}>
                                     <Button
                                         color="highlight"
                                         onClick={() => alert('Test')}>
@@ -85,9 +84,7 @@ function App() {
 
                         <Card color="highlight" fullWidth>
                             <Stack>
-                                <Heading color="light" size="2xl">
-                                    Card Highlight
-                                </Heading>
+                                <Heading color="light">Card Highlight</Heading>
                                 <Text as="p" color="light">
                                     Lorem ipsum dolor sit amet, consectetuer
                                     adipiscing elit. Aenean commodo ligula eget

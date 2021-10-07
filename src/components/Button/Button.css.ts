@@ -41,8 +41,8 @@ export const button = recipe({
             justifyContent: 'center',
             cursor: 'pointer',
             textDecoration: 'none',
-            gap: 'sm',
-            flexShrink: 0
+            gap: '1x',
+            fontSize: '16px'
         }),
         {
             ':focus': {
@@ -55,25 +55,23 @@ export const button = recipe({
         size: {
             normal: [
                 sprinkles({
-                    fontSize: 'md',
                     fontWeight: 'bold'
                 }),
                 {
                     vars: {
-                        [paddingX]: vars.space.lg,
-                        [paddingY]: vars.space.md
+                        [paddingX]: vars.space['3x'],
+                        [paddingY]: vars.space['2x']
                     }
                 }
             ],
             small: [
                 sprinkles({
-                    fontSize: 'sm',
                     fontWeight: 'normal'
                 }),
                 {
                     vars: {
-                        [paddingX]: vars.space.lg,
-                        [paddingY]: vars.space.md
+                        [paddingX]: vars.space['2x'],
+                        [paddingY]: vars.space['1x']
                     }
                 }
             ]

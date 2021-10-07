@@ -3,101 +3,63 @@ import { gray, indigo } from '@radix-ui/colors';
 import { precomputeValues } from '@capsizecss/core';
 import fontMetrics from '@capsizecss/metrics/inter';
 
+const grid = 8;
+const baseline = 4;
+
+const px = (value: number) => `${value}px`;
+
 export const vars = createGlobalTheme(':root', {
     fonts: {
         sans: 'Inter, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif'
     },
     fontSizes: {
-        xs: precomputeValues({
-            fontSize: 12,
-            leading: 16,
-            fontMetrics
-        }),
-        sm: precomputeValues({
-            fontSize: 14,
-            leading: 18,
-            fontMetrics
-        }),
-        md: precomputeValues({
+        '16px': precomputeValues({
             fontSize: 16,
-            leading: 24,
+            leading: baseline * 6,
             fontMetrics
         }),
-        lg: precomputeValues({
-            fontSize: 18,
-            leading: 28,
+        '32px': precomputeValues({
+            fontSize: 32,
+            leading: baseline * 10,
             fontMetrics
         }),
-        xl: precomputeValues({
-            fontSize: 20,
-            leading: 28,
-            fontMetrics
-        }),
-        '2xl': precomputeValues({
-            fontSize: 24,
-            leading: 32,
-            fontMetrics
-        }),
-        '3xl': precomputeValues({
-            fontSize: 30,
-            leading: 36,
-            fontMetrics
-        }),
-        '4xl': precomputeValues({
-            fontSize: 36,
-            leading: 40,
-            fontMetrics
-        }),
-        '5xl': precomputeValues({
+        '48px': precomputeValues({
             fontSize: 48,
-            leading: 48,
-            fontMetrics
-        }),
-        '6xl': precomputeValues({
-            fontSize: 60,
-            leading: 60,
+            leading: baseline * 12,
             fontMetrics
         })
-    },
-    lineHeights: {
-        xs: '1',
-        sm: '1.25',
-        md: '1.5',
-        lg: '1.75',
-        xl: '2'
     },
     fontWeights: {
         normal: '400',
         bold: '700'
     },
     space: {
-        none: '0',
-        xs: '0.25rem',
-        sm: '0.5rem',
-        md: '1rem',
-        lg: '1.5rem',
-        xl: '2rem',
-        '2xl': '4rem',
-        '3xl': '8rem'
+        '1x': px(1 * grid),
+        '2x': px(2 * grid),
+        '3x': px(3 * grid),
+        '4x': px(4 * grid),
+        '5x': px(5 * grid),
+        '6x': px(6 * grid),
+        '7x': px(7 * grid),
+        '8x': px(8 * grid),
+        '9x': px(9 * grid)
     },
     sizes: {
         full: '100%'
     },
     radii: {
-        xs: '0.25rem',
-        sm: '0.5rem',
-        md: '1rem',
-        lg: '1.5rem',
-        xl: '2rem',
-        '2xl': '4rem',
-        '3xl': '8rem',
+        '1x': px(1 * grid),
+        '2x': px(2 * grid),
+        '3x': px(3 * grid),
+        '4x': px(4 * grid),
         round: '9999px'
     },
     contentWidth: {
-        xs: '480px',
-        sm: '600px',
-        md: '740px',
-        lg: '1350px'
+        '320px': px(320),
+        '640px': px(640),
+        '768px': px(768),
+        '1024px': px(1024),
+        '1280px': px(1280)
     },
     colors: {
         ...gray,

@@ -11,11 +11,13 @@ import { vars } from './theme.css';
 
 const responsiveProperties = defineProperties({
     conditions: {
-        mobile: {},
-        tablet: { '@media': 'screen and (min-width: 768px)' },
-        desktop: { '@media': 'screen and (min-width: 1024px)' }
+        default: {},
+        '640px': { '@media': 'screen and (min-width: 640px)' },
+        '768px': { '@media': 'screen and (min-width: 768px)' },
+        '1024px': { '@media': 'screen and (min-width: 1024px)' },
+        '1280px': { '@media': 'screen and (min-width: 1280px)' }
     },
-    defaultCondition: 'mobile',
+    defaultCondition: 'default',
     properties: {
         position: ['absolute', 'relative', 'fixed'],
         display: [
@@ -43,8 +45,7 @@ const responsiveProperties = defineProperties({
         maxWidth: vars.contentWidth,
         fontSize: mapValues(vars.fontSizes, (fontSize) =>
             createStyleObject(fontSize)
-        ),
-        lineHeight: vars.lineHeights
+        )
     },
     shorthands: {
         padding: ['paddingTop', 'paddingBottom', 'paddingLeft', 'paddingRight'],
@@ -88,7 +89,7 @@ const unconditionalProperties = defineProperties({
         bottom: [0],
         left: [0],
         right: [0],
-        flexShrink: [0],
+        flex: [0],
         zIndex: [-1, 0, 1],
         width: vars.sizes,
         height: vars.sizes,

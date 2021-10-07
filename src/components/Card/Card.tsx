@@ -21,8 +21,8 @@ export function Card({
     return (
         <Box
             as={as}
-            borderRadius="lg"
-            padding="xl"
+            borderRadius="4x"
+            padding="4x"
             background={color === 'normal' ? 'gray3' : 'indigo9'}
             width={fullWidth ? 'full' : undefined}
             {...props}>

@@ -17,7 +17,6 @@ export interface TextProps {
     as?: ElementType;
     color?: ColorValue<keyof typeof colorToColor>;
     size?: BoxProps['fontSize'];
-    lineHeight?: BoxProps['lineHeight'];
     weight?: BoxProps['fontWeight'];
     className?: string;
 }
@@ -26,8 +25,7 @@ export function Text({
     children,
     as: Element = 'span',
     color = 'dark',
-    size = 'md',
-    lineHeight,
+    size = '16px',
     weight = 'normal',
     ...props
 }: TextProps) {
@@ -36,7 +34,6 @@ export function Text({
             as={Element}
             fontFamily="sans"
             fontSize={size}
-            lineHeight={lineHeight}
             fontWeight={weight}
             color={mapColorValue(color, (value) => colorToColor[value])}
             {...props}>

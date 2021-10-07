@@ -9,15 +9,15 @@ interface Props {
     children: ReactNode;
     as?: StackProps['as'];
     space?: BoxProps['gap'];
-    wrap?: boolean;
+    noWrap?: boolean;
     className?: string;
 }
 
 export function Inline({
     children,
     as = 'div',
-    space = 'sm',
-    wrap = true,
+    space = '1x',
+    noWrap = false,
     ...props
 }: Props) {
     return (
@@ -25,7 +25,7 @@ export function Inline({
             as={as}
             direction="horizontal"
             space={space}
-            wrap={wrap}
+            wrap={!noWrap}
             {...props}>
             {children}
         </Stack>
