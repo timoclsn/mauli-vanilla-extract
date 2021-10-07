@@ -40,7 +40,6 @@ export function Button({
     size = 'normal',
     variant = 'solid',
     color = 'normal',
-    fullWith,
     className,
     ...props
 }: Props) {
@@ -49,7 +48,7 @@ export function Button({
             as={as}
             type={as === 'button' ? type : undefined}
             className={clsx(
-                buttonVaraints({ size, variant, color, fullWith }),
+                buttonVaraints({ size, variant, color }),
                 buttonClass,
                 className
             )}

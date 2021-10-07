@@ -197,10 +197,6 @@ export const buttonVaraints = recipe({
                     [linkTextDisabled]: vars.colors.indigo7
                 }
             }
-        },
-
-        fullWith: {
-            true: sprinkles({ width: 'full' })
         }
     },
 
