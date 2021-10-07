@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import clsx from 'clsx';
 
 import { Box } from '../Box';
-import { button } from './Button.css';
+import { buttonVaraints, buttonClass } from './Button.css';
 import type { ButtonVaraints } from './Button.css';
 
 interface CommmonProps {
@@ -49,7 +49,8 @@ export function Button({
             as={as}
             type={as === 'button' ? type : undefined}
             className={clsx(
-                button({ size, variant, color, fullWith }),
+                buttonVaraints({ size, variant, color, fullWith }),
+                buttonClass,
                 className
             )}
             {...props}>

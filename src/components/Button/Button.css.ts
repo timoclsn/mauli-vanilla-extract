@@ -1,4 +1,4 @@
-import { createVar } from '@vanilla-extract/css';
+import { createVar, globalStyle, style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 import type { RecipeVariants } from '@vanilla-extract/recipes';
 
@@ -31,9 +31,9 @@ const linkTextDisabled = createVar();
 const paddingX = createVar();
 const paddingY = createVar();
 
-export type ButtonVaraints = RecipeVariants<typeof button>;
+export type ButtonVaraints = RecipeVariants<typeof buttonVaraints>;
 
-export const button = recipe({
+export const buttonVaraints = recipe({
     base: [
         sprinkles({
             display: 'inline-flex',
@@ -209,4 +209,11 @@ export const button = recipe({
         variant: 'solid',
         color: 'normal'
     }
+});
+
+export const buttonClass = style({});
+
+globalStyle(`${buttonClass} svg`, {
+    width: '24px',
+    height: '24px'
 });
