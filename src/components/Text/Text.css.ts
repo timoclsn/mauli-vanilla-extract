@@ -4,16 +4,16 @@ import { createVar, style } from '@vanilla-extract/css';
 
 import { sprinkles } from '../../sprinkles.css';
 
-const lineClamp = createVar();
+const noOfLines = createVar();
 
-const lineClampBase = style([
+const lineClamp = style([
     sprinkles({
         overflow: 'hidden'
     }),
     {
         display: '-webkit-box',
         WebkitBoxOrient: 'vertical',
-        ['WebkitLineClamp' as string]: lineClamp
+        ['WebkitLineClamp' as string]: noOfLines
     }
 ]);
 
@@ -33,42 +33,42 @@ export const textVariants = recipe({
             1: [
                 {
                     vars: {
-                        [lineClamp]: '1'
+                        [noOfLines]: '1'
                     }
                 },
-                lineClampBase
+                lineClamp
             ],
             2: [
                 {
                     vars: {
-                        [lineClamp]: '2'
+                        [noOfLines]: '2'
                     }
                 },
-                lineClampBase
+                lineClamp
             ],
             3: [
                 {
                     vars: {
-                        [lineClamp]: '3'
+                        [noOfLines]: '3'
                     }
                 },
-                lineClampBase
+                lineClamp
             ],
             4: [
                 {
                     vars: {
-                        [lineClamp]: '4'
+                        [noOfLines]: '4'
                     }
                 },
-                lineClampBase
+                lineClamp
             ],
             5: [
                 {
                     vars: {
-                        [lineClamp]: '5'
+                        [noOfLines]: '5'
                     }
                 },
-                lineClampBase
+                lineClamp
             ]
         }
     }

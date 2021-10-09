@@ -31,26 +31,26 @@ const linkTextDisabled = createVar();
 const paddingX = createVar();
 const paddingY = createVar();
 
+export const base = style([
+    sprinkles({
+        display: 'inline-flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        cursor: 'pointer',
+        textDecoration: 'none',
+        gap: '1x',
+        fontSize: '16px'
+    }),
+    {
+        ':focus': {
+            outline: 'none'
+        }
+    }
+]);
+
 export type ButtonVaraints = RecipeVariants<typeof buttonVaraints>;
 
 export const buttonVaraints = recipe({
-    base: [
-        sprinkles({
-            display: 'inline-flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            cursor: 'pointer',
-            textDecoration: 'none',
-            gap: '1x',
-            fontSize: '16px'
-        }),
-        {
-            ':focus': {
-                outline: 'none'
-            }
-        }
-    ],
-
     variants: {
         size: {
             normal: [
@@ -207,9 +207,7 @@ export const buttonVaraints = recipe({
     }
 });
 
-export const buttonClass = style({});
-
-globalStyle(`${buttonClass} svg`, {
+globalStyle(`${base} svg`, {
     width: '24px',
     height: '24px'
 });
