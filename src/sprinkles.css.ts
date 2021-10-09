@@ -97,7 +97,12 @@ const unconditionalProperties = defineProperties({
         cursor: ['pointer'],
         fontFamily: vars.fonts,
         fontWeight: vars.fontWeights,
-        textDecoration: ['none', 'underline']
+        textDecoration: ['none', 'underline'],
+        textTransform: ['uppercase', 'lowercase', 'capitalize'],
+        textAlign: ['left', 'center', 'right'],
+        textOverflow: ['ellipsis'],
+        overflow: ['hidden'],
+        whiteSpace: ['nowrap']
     }
 });
 

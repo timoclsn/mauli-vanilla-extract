@@ -13,19 +13,54 @@ export const vars = createGlobalTheme(':root', {
         sans: 'Inter, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif'
     },
     fontSizes: {
+        '12px': precomputeValues({
+            fontSize: 12,
+            leading: baseline * 4,
+            fontMetrics
+        }),
+        '14px': precomputeValues({
+            fontSize: 14,
+            leading: baseline * 5,
+            fontMetrics
+        }),
         '16px': precomputeValues({
             fontSize: 16,
             leading: baseline * 6,
             fontMetrics
         }),
-        '32px': precomputeValues({
-            fontSize: 32,
+        '18px': precomputeValues({
+            fontSize: 18,
+            leading: baseline * 7,
+            fontMetrics
+        }),
+        '20px': precomputeValues({
+            fontSize: 20,
+            leading: baseline * 7,
+            fontMetrics
+        }),
+        '24px': precomputeValues({
+            fontSize: 24,
+            leading: baseline * 8,
+            fontMetrics
+        }),
+        '30px': precomputeValues({
+            fontSize: 30,
+            leading: baseline * 9,
+            fontMetrics
+        }),
+        '36px': precomputeValues({
+            fontSize: 36,
             leading: baseline * 10,
             fontMetrics
         }),
         '48px': precomputeValues({
             fontSize: 48,
             leading: baseline * 12,
+            fontMetrics
+        }),
+        '60px': precomputeValues({
+            fontSize: 60,
+            leading: baseline * 15,
             fontMetrics
         })
     },

@@ -24,7 +24,7 @@ function App() {
                 <Stack space="8x">
                     <Stack>
                         <Heading>Mauli Design System</Heading>
-                        <Text as="p" color="highlight">
+                        <Text color="highlight">
                             [WIP] Design System Playground
                         </Text>
                     </Stack>
@@ -37,9 +37,10 @@ function App() {
                         <Card fullWidth>
                             <Stack>
                                 <Heading color="dark">Card Normal</Heading>
-                                <Text as="p">
+                                <Text>
                                     dsj ad sadhsa dhsdg asdgsa gdsagd asdgsgd
-                                    agd sgadsagd.
+                                    agd sgadsagdsasadsadsadsa dsa dsad sadsah
+                                    dsahd sakdhashdk.
                                 </Text>
                                 <Inline>
                                     <Label>Label</Label>
@@ -85,7 +86,7 @@ function App() {
                         <Card color="highlight" fullWidth>
                             <Stack>
                                 <Heading color="light">Card Highlight</Heading>
-                                <Text as="p" color="light">
+                                <Text color="light" truncate={5}>
                                     Lorem ipsum dolor sit amet, consectetuer
                                     adipiscing elit. Aenean commodo ligula eget
                                     dolor. Aenean massa. Cum sociis natoque
