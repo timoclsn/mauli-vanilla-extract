@@ -23,8 +23,10 @@ function App() {
                 }}>
                 <Stack space="8x">
                     <Stack>
-                        <Heading>Mauli Design System</Heading>
-                        <Text color="highlight">
+                        <Heading as="h1" size="60px">
+                            Mauli Design System
+                        </Heading>
+                        <Text size="20px" color="highlight">
                             [WIP] Design System Playground
                         </Text>
                     </Stack>

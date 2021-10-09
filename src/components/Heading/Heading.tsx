@@ -6,18 +6,23 @@ import type { TextProps } from '../Text';
 
 interface Props {
     children: ReactNode;
-    as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+    as?: 'h1' | 'h2' | 'h3' | 'h4';
     color?: TextProps['color'];
     size?: TextProps['size'];
     weight?: TextProps['weight'];
+    decoration?: TextProps['decoration'];
+    transform?: TextProps['transform'];
+    align?: TextProps['align'];
+    noWrap?: TextProps['noWrap'];
+    truncate?: TextProps['truncate'];
     className?: string;
 }
 
 export function Heading({
     children,
-    as: Element = 'h1',
+    as: Element = 'h2',
     color = 'highlight',
-    size = '48px',
+    size = '24px',
     weight = 'bold',
     ...props
 }: Props) {
