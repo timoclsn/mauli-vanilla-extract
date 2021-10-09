@@ -20,14 +20,14 @@ interface Props {
 
 export function Heading({
     children,
-    as: Element = 'h2',
+    as = 'h2',
     color = 'highlight',
     size = '24px',
     weight = 'bold',
     ...props
 }: Props) {
     return (
-        <Text as={Element} size={size} weight={weight} color={color} {...props}>
+        <Text as={as} size={size} weight={weight} color={color} {...props}>
             {children}
         </Text>
     );

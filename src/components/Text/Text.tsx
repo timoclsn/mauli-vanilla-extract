@@ -31,7 +31,7 @@ export type TextProps = Props & TextVariants;
 
 export function Text({
     children,
-    as: Element = 'p',
+    as = 'p',
     color = 'dark',
     size = '16px',
     weight = 'normal',
@@ -53,7 +53,7 @@ export function Text({
     }
     return (
         <Box
-            as={Element}
+            as={as}
             title={truncate ? title : undefined}
             fontFamily="sans"
             fontSize={size}
