@@ -27,6 +27,11 @@ const body = style({
     lineHeight: 1
 });
 
+const a = style({
+    color: 'inherit',
+    textDecoration: 'none'
+});
+
 const list = style({
     listStyle: 'none'
 });
@@ -81,5 +86,6 @@ export const element = {
     body,
     table,
     mark,
-    select
+    select,
+    a
 };
