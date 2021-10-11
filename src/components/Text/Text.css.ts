@@ -17,9 +17,9 @@ const lineClamp = style([
     }
 ]);
 
-export type TextVariants = RecipeVariants<typeof textVariants>;
+export type Variants = RecipeVariants<typeof variants>;
 
-export const textVariants = recipe({
+export const variants = recipe({
     variants: {
         truncate: {
             true: [

@@ -49,9 +49,9 @@ export const base = style([
     }
 ]);
 
-export type ButtonVaraints = RecipeVariants<typeof buttonVaraints>;
+export type Varaints = RecipeVariants<typeof variants>;
 
-export const buttonVaraints = recipe({
+export const variants = recipe({
     variants: {
         size: {
             normal: [

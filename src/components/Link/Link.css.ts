@@ -3,9 +3,9 @@ import type { RecipeVariants } from '@vanilla-extract/recipes';
 
 import { sprinkles } from '../../sprinkles.css';
 
-export type LinkVariants = RecipeVariants<typeof linkVariants>;
+export type Variants = RecipeVariants<typeof variants>;
 
-export const linkVariants = recipe({
+export const variants = recipe({
     variants: {
         variant: {
             normal: [

@@ -3,8 +3,8 @@ import clsx from 'clsx';
 
 import { Box } from '../Box';
 import type { BoxProps } from '../Box';
-import { buttonVaraints, base } from './Button.css';
-import type { ButtonVaraints } from './Button.css';
+import * as styles from './Button.css';
+import type { Varaints } from './Button.css';
 
 interface CommmonProps {
     children: BoxProps['children'];
@@ -31,7 +31,7 @@ type ConditionalProps =
           disabled?: never;
       };
 
-type Props = CommmonProps & ButtonVaraints & ConditionalProps;
+type Props = CommmonProps & Varaints & ConditionalProps;
 
 export function Button({
     children,
@@ -48,8 +48,8 @@ export function Button({
             as={as}
             type={as === 'button' ? type : undefined}
             className={clsx(
-                base,
-                buttonVaraints({ size, variant, color }),
+                styles.base,
+                styles.variants({ size, variant, color }),
                 className
             )}
             {...props}>

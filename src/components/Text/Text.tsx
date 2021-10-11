@@ -3,8 +3,8 @@ import type { ElementType } from 'react';
 
 import { Box } from '../Box';
 import type { BoxProps } from '../Box';
-import { textVariants } from './Text.css';
-import type { TextVariants } from './Text.css';
+import * as styles from './Text.css';
+import type { Variants } from './Text.css';
 import { mapColorValue } from '../../sprinkles.css';
 import type { ColorValue } from '../../sprinkles.css';
 
@@ -27,7 +27,7 @@ interface Props {
     className?: string;
 }
 
-export type TextProps = Props & TextVariants;
+export type TextProps = Props & Variants;
 
 export function Text({
     children,
@@ -66,7 +66,9 @@ export function Text({
             className={className}
             {...props}>
             {truncate ? (
-                <span className={textVariants({ truncate })}>{children}</span>
+                <span className={styles.variants({ truncate })}>
+                    {children}
+                </span>
             ) : (
                 children
             )}

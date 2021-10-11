@@ -3,8 +3,8 @@ import clsx from 'clsx';
 
 import { Box } from '../Box';
 import type { BoxProps } from '../Box';
-import { linkVariants } from './Link.css';
-import type { LinkVariants } from './Link.css';
+import * as styles from './Link.css';
+import type { Variants } from './Link.css';
 
 interface Props {
     children: BoxProps['children'];
@@ -14,13 +14,13 @@ interface Props {
     className?: string;
 }
 
-type LinkProps = Props & LinkVariants;
+type LinkProps = Props & Variants;
 
 export function Link({ children, variant, className, ...props }: LinkProps) {
     return (
         <Box
             as="a"
-            className={clsx(linkVariants({ variant }), className)}
+            className={clsx(styles.variants({ variant }), className)}
             {...props}>
             {children}
         </Box>

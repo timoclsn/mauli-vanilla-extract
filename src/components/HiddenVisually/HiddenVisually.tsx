@@ -9,5 +9,5 @@ interface Props {
 }
 
 export function HiddenVisually({ children }: Props) {
-    return <Box className={styles.root}>{children}</Box>;
+    return <Box className={styles.base}>{children}</Box>;
 }
