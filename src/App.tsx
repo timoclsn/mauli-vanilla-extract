@@ -34,7 +34,7 @@ function App() {
                             default: 'vertical',
                             '640px': 'horizontal'
                         }}>
-                        <Link href="#">
+                        <Link url="#">
                             <Card fullWidth>
                                 <Stack>
                                     <Heading color="dark">Card Normal</Heading>
@@ -77,8 +77,8 @@ function App() {
                                         <Button
                                             as="a"
                                             variant="link"
-                                            href="https:timoclasen.de"
-                                            target="_blank">
+                                            url="https:timoclasen.de"
+                                            external>
                                             <ArrowRight />
                                             Link
                                         </Button>
@@ -91,12 +91,12 @@ function App() {
                             <Stack>
                                 <Heading color="light">Card Highlight</Heading>
                                 <Text color="light" truncate={5}>
-                                    <Link href="#">Lorem</Link> ipsum dolor sit
+                                    <Link url="#">Lorem</Link> ipsum dolor sit
                                     amet, consectetuer adipiscing elit.{' '}
                                     <Link
                                         variant="normal"
-                                        href="https://timoclasen.de"
-                                        target="_blank">
+                                        url="https://timoclasen.de"
+                                        external>
                                         Aenean commodo
                                     </Link>{' '}
                                     ligula eget dolor. Aenean massa. Cum sociis
@@ -104,7 +104,7 @@ function App() {
                                     montes, nascetur ridiculus mus. Donec quam
                                     felis, ultricies nec, pellentesque eu,
                                     pretium quis, sem.{' '}
-                                    <Link variant="highlight" href="#">
+                                    <Link variant="highlight" url="#">
                                         Nulla consequat
                                     </Link>{' '}
                                     massa quis enim. Donec pede justo, fringilla

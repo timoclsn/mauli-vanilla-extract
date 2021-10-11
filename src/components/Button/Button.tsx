@@ -17,15 +17,13 @@ type ConditionalProps =
           type?: 'button' | 'submit' | 'reset';
           onClick?: () => void;
           disabled?: boolean;
-          href?: never;
-          target?: never;
-          rel?: never;
+          url?: never;
+          external?: never;
       }
     | {
           as?: 'a';
-          href?: string;
-          target?: '_blank';
-          rel?: 'noopener noreferrer' | 'noopener';
+          url?: string;
+          external?: boolean;
           type?: never;
           onClick?: never;
           disabled?: never;
@@ -40,6 +38,7 @@ export function Button({
     size = 'normal',
     variant = 'solid',
     color = 'normal',
+    url,
     className,
     ...props
 }: Props) {
@@ -47,6 +46,9 @@ export function Button({
         <Box
             as={as}
             type={as === 'button' ? type : undefined}
+            href={url}
+            target={external ? '_blank' : undefined}
+            rel={external ? 'noopener noreferrer' : undefined}
             className={clsx(
                 styles.base,
                 styles.variants({ size, variant, color }),
