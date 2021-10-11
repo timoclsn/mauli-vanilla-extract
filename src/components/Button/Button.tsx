@@ -13,7 +13,6 @@ interface CommmonProps {
 
 type ConditionalProps =
     | {
-          as?: 'button';
           type?: 'button' | 'submit' | 'reset';
           onClick?: () => void;
           disabled?: boolean;
@@ -21,7 +20,6 @@ type ConditionalProps =
           external?: never;
       }
     | {
-          as?: 'a';
           url?: string;
           external?: boolean;
           type?: never;
@@ -33,19 +31,20 @@ type Props = CommmonProps & Varaints & ConditionalProps;
 
 export function Button({
     children,
-    as = 'button',
     type = 'button',
     size = 'normal',
     variant = 'solid',
     color = 'normal',
     url,
+    external,
     className,
     ...props
 }: Props) {
+    const Element = url ? 'a' : 'button';
     return (
         <Box
-            as={as}
-            type={as === 'button' ? type : undefined}
+            as={Element}
+            type={Element === 'button' ? type : undefined}
             href={url}
             target={external ? '_blank' : undefined}
             rel={external ? 'noopener noreferrer' : undefined}

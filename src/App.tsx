@@ -75,7 +75,6 @@ function App() {
                                         </Button>
                                         <Button variant="ghost">Ghost</Button>
                                         <Button
-                                            as="a"
                                             variant="link"
                                             url="https:timoclasen.de"
                                             external>
