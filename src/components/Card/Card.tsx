@@ -1,10 +1,11 @@
 import React from 'react';
-import type { ElementType, ReactNode } from 'react';
+import type { ElementType } from 'react';
 
 import { Box } from '../Box';
+import type { BoxProps } from '../Box';
 
 interface Props {
-    children: ReactNode;
+    children: BoxProps['children'];
     as?: ElementType;
     color?: 'normal' | 'highlight';
     fullWidth?: boolean;

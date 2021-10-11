@@ -1,11 +1,11 @@
 import React from 'react';
-import type { ReactNode } from 'react';
 
 import { Text } from '../Text';
 import type { TextProps } from '../Text';
+import type { BoxProps } from '../Box';
 
 interface Props {
-    children: ReactNode;
+    children: BoxProps['children'];
     as?: 'h1' | 'h2' | 'h3' | 'h4';
     color?: TextProps['color'];
     size?: TextProps['size'];

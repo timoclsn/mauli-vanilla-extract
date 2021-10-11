@@ -1,13 +1,13 @@
 import React from 'react';
-import type { ReactNode } from 'react';
 import clsx from 'clsx';
 
 import { Box } from '../Box';
+import type { BoxProps } from '../Box';
 import { linkVariants } from './Link.css';
 import type { LinkVariants } from './Link.css';
 
 interface Props {
-    children: ReactNode;
+    children: BoxProps['children'];
     href?: string;
     target?: '_blank';
     rel?: 'noopener noreferrer' | 'noopener';

@@ -1,12 +1,11 @@
 import React from 'react';
-import type { ReactNode } from 'react';
 
 import type { BoxProps } from '../Box';
 import { Stack } from '../Stack';
 import type { StackProps } from '../Stack';
 
 interface Props {
-    children: ReactNode;
+    children: BoxProps['children'];
     as?: StackProps['as'];
     space?: BoxProps['gap'];
     noWrap?: boolean;

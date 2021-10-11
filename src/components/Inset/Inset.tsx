@@ -1,11 +1,10 @@
 import React from 'react';
-import type { ReactNode } from 'react';
 
 import { Box } from '../Box';
 import type { BoxProps } from '../Box';
 
 interface Props {
-    children: ReactNode;
+    children: BoxProps['children'];
     inset?: BoxProps['padding'];
     insetX?: BoxProps['paddingX'];
     insetY?: BoxProps['paddingY'];

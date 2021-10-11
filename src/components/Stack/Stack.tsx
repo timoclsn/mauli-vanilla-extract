@@ -1,5 +1,4 @@
 import React from 'react';
-import type { ReactNode } from 'react';
 
 import { Box } from '../Box';
 import type { BoxProps } from '../Box';
@@ -26,7 +25,7 @@ const justifyToJustifyContent = {
 } as const;
 
 export interface StackProps {
-    children: ReactNode;
+    children: BoxProps['children'];
     as?: 'div' | 'ul' | 'ol';
     direction?: ResponsiveValue<keyof typeof directionToFlexDirection>;
     space?: BoxProps['gap'];
