@@ -12,6 +12,8 @@ import { Label } from './components/Label';
 import { sprinkles } from './sprinkles.css';
 import { Link } from './components/Link';
 import { Inset } from './components/Inset';
+import { Box } from './components/Box';
+import { HiddenVisually } from './components/HiddenVisually';
 
 function App() {
     return (
@@ -113,6 +115,12 @@ function App() {
                                     Cras dapibus. Vivamus elementum semper nisi.
                                     Aenean vulputate eleifend tellus.
                                 </Text>
+                                <Box color="gray1">
+                                    <ArrowRight />
+                                    <HiddenVisually>
+                                        Pfeil nach rechts
+                                    </HiddenVisually>
+                                </Box>
                             </Stack>
                         </Card>
                     </Stack>
