@@ -1,4 +1,5 @@
 import React from 'react';
+import type { ReactElement } from 'react';
 import clsx from 'clsx';
 
 import { Box } from '../Box';
@@ -8,7 +9,7 @@ import * as styles from './List.css';
 import type { Varaints } from './List.css';
 
 interface ListBaseProps {
-    children: BoxProps['children'];
+    children: ReactElement<ListItemProps> | ReactElement<ListItemProps>[];
     className?: string;
 }
 
