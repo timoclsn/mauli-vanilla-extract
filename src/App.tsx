@@ -14,6 +14,7 @@ import { Link } from './components/Link';
 import { Inset } from './components/Inset';
 import { Box } from './components/Box';
 import { HiddenVisually } from './components/HiddenVisually';
+import { List, ListItem } from './components/List';
 
 function App() {
     return (
@@ -43,6 +44,12 @@ function App() {
                                         asdgsgd agd sgadsagdsasadsadsadsa dsa
                                         dsad sadsah dsahd sakdhashdk.
                                     </Text>
+                                    <List type="greek">
+                                        <ListItem>Item</ListItem>
+                                        <ListItem>Item</ListItem>
+                                        <ListItem>Item</ListItem>
+                                        <ListItem>Item</ListItem>
+                                    </List>
                                     <Inline>
                                         <Label>Label</Label>
                                         <Label>Label</Label>
