@@ -12,6 +12,7 @@ export function Label({ children, ...props }: Props) {
     return (
         <Box
             fontSize="16px"
+            fontFamily="sans"
             paddingX="2x"
             paddingY="1x"
             color="indigo2"

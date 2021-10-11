@@ -39,7 +39,8 @@ export const base = style([
         cursor: 'pointer',
         textDecoration: 'none',
         gap: '1x',
-        fontSize: '16px'
+        fontSize: '16px',
+        fontFamily: 'sans'
     }),
     {
         ':focus': {

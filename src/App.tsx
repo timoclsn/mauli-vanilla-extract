@@ -1,7 +1,6 @@
 import React from 'react';
 import { ArrowRight } from 'react-feather';
 
-import { Box } from './components/Box';
 import { Stack } from './components/Stack';
 import { Button } from './components/Button';
 import { Text } from './components/Text';
@@ -12,16 +11,12 @@ import { Inline } from './components/Inline';
 import { Label } from './components/Label';
 import { sprinkles } from './sprinkles.css';
 import { Link } from './components/Link';
+import { Inset } from './components/Inset';
 
 function App() {
     return (
         <Container>
-            <Box
-                fontFamily="sans"
-                padding={{
-                    default: '2x',
-                    '640px': '8x'
-                }}>
+            <Inset insetX="2x" insetY="4x">
                 <Stack space="8x">
                     <Stack>
                         <Heading as="h1" size="60px">
@@ -122,7 +117,7 @@ function App() {
                         </Card>
                     </Stack>
                 </Stack>
-            </Box>
+            </Inset>
         </Container>
     );
 }

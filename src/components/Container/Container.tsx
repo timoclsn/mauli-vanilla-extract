@@ -7,18 +7,18 @@ import { Box } from '../Box';
 interface Props {
     children: ReactNode;
     as?: 'div' | 'main' | 'aside' | 'header' | 'footer' | 'section';
-    size?: BoxProps['maxWidth'];
+    width?: BoxProps['maxWidth'];
     className?: string;
 }
 
 export function Container({
     children,
     as = 'div',
-    size = '1280px',
+    width = '1280px',
     ...props
 }: Props) {
     return (
-        <Box as={as} maxWidth={size} paddingX="2x" marginX="auto" {...props}>
+        <Box as={as} maxWidth={width} marginX="auto" {...props}>
             {children}
         </Box>
     );

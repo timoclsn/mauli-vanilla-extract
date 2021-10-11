@@ -1,12 +1,12 @@
 import React, { Children } from 'react';
 import type { ElementType, ReactNode } from 'react';
 
-import { mapColorValue } from '../../sprinkles.css';
-import type { ColorValue } from '../../sprinkles.css';
 import { Box } from '../Box';
 import type { BoxProps } from '../Box';
 import { textVariants } from './Text.css';
 import type { TextVariants } from './Text.css';
+import { mapColorValue } from '../../sprinkles.css';
+import type { ColorValue } from '../../sprinkles.css';
 
 const colorToColor = {
     dark: 'gray12',

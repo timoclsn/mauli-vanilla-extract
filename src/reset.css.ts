@@ -1,4 +1,9 @@
-import { style } from '@vanilla-extract/css';
+import { globalStyle, style } from '@vanilla-extract/css';
+
+globalStyle('html, body', {
+    margin: 0,
+    padding: 0
+});
 
 export const base = style({
     margin: 0,

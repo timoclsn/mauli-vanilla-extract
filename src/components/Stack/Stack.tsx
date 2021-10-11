@@ -1,10 +1,10 @@
 import React from 'react';
 import type { ReactNode } from 'react';
 
-import { mapResponsiveValue } from '../../sprinkles.css';
-import type { ResponsiveValue } from '../../sprinkles.css';
 import { Box } from '../Box';
 import type { BoxProps } from '../Box';
+import { mapResponsiveValue } from '../../sprinkles.css';
+import type { ResponsiveValue } from '../../sprinkles.css';
 
 const directionToFlexDirection = {
     vertical: 'column',
