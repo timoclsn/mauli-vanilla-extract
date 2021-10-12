@@ -15,6 +15,7 @@ import { Inset } from './components/Inset';
 import { Box } from './components/Box';
 import { HiddenVisually } from './components/HiddenVisually';
 import { List, ListItem } from './components/List';
+import { Bleed } from './components/Bleed';
 
 function App() {
     return (
@@ -132,6 +133,59 @@ function App() {
                     </Stack>
                 </Stack>
             </Inset>
+            <Container width="640px">
+                <Inset insetX="2x">
+                    <Stack>
+                        <Text>
+                            Lorem ipsum dolor sit amet, consetetur sadipscing
+                            elitr, sed diam nonumy eirmod tempor invidunt ut
+                            labore et dolore magna aliquyam erat, sed diam
+                            voluptua. At vero eos et accusam et justo duo
+                            dolores et ea rebum. Stet clita kasd gubergren, no
+                            sea takimata sanctus est Lorem ipsum dolor sit amet.
+                            Lorem ipsum dolor sit amet, consetetur sadipscing
+                            elitr, sed diam nonumy eirmod tempor invidunt ut
+                            labore et dolore magna aliquyam erat, sed diam
+                            voluptua. At vero eos et accusam et justo duo
+                            dolores et ea rebum. Stet clita kasd gubergren, no
+                            sea takimata sanctus est Lorem ipsum dolor sit amet.
+                            Lorem ipsum dolor sit amet, consetetur sadipscing
+                            elitr, sed diam nonumy eirmod tempor invidunt ut
+                            labore et dolore magna aliquyam erat, sed diam
+                            voluptua. At vero eos et accusam et justo duo
+                            dolores et ea rebum.
+                        </Text>
+                        <Bleed>
+                            <Box background="indigo9">
+                                <Inset insetY="4x">
+                                    <Text
+                                        align="center"
+                                        color="light"
+                                        weight="bold">
+                                        I am bleeding!
+                                    </Text>
+                                </Inset>
+                            </Box>
+                        </Bleed>
+                        <Text>
+                            Ut wisi enim ad minim veniam, quis nostrud exerci
+                            tation ullamcorper suscipit lobortis nisl ut aliquip
+                            ex ea commodo consequat. Duis autem vel eum iriure
+                            dolor in hendrerit in vulputate velit esse molestie
+                            consequat, vel illum dolore eu feugiat nulla
+                            facilisis at vero eros et accumsan et iusto odio
+                            dignissim qui blandit praesent luptatum zzril
+                            delenit augue duis dolore te feugait nulla facilisi.
+                            Nam liber tempor cum soluta nobis eleifend option
+                            congue nihil imperdiet doming id quod mazim placerat
+                            facer possim assum. Lorem ipsum dolor sit amet,
+                            consectetuer adipiscing elit, sed diam nonummy nibh
+                            euismod tincidunt ut laoreet dolore magna aliquam
+                            erat volutpat.
+                        </Text>
+                    </Stack>
+                </Inset>
+            </Container>
         </Container>
     );
 }
