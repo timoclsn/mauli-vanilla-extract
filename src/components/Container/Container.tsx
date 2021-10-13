@@ -4,21 +4,21 @@ import { Box } from '../Box';
 import type { BoxProps } from '../Box';
 
 interface Props {
-    children: BoxProps['children'];
-    as?: 'div' | 'main' | 'aside' | 'header' | 'footer' | 'section';
-    width?: BoxProps['maxWidth'];
-    className?: string;
+  children: BoxProps['children'];
+  as?: 'div' | 'main' | 'aside' | 'header' | 'footer' | 'section';
+  width?: BoxProps['maxWidth'];
+  className?: string;
 }
 
 export function Container({
-    children,
-    as = 'div',
-    width = '1280px',
-    ...props
+  children,
+  as = 'div',
+  width = '1280px',
+  ...props
 }: Props) {
-    return (
-        <Box as={as} maxWidth={width} marginX="auto" {...props}>
-            {children}
-        </Box>
-    );
+  return (
+    <Box as={as} maxWidth={width} marginX="auto" {...props}>
+      {children}
+    </Box>
+  );
 }

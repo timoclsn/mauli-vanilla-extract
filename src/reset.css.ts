@@ -1,96 +1,96 @@
 import { globalStyle, style } from '@vanilla-extract/css';
 
 globalStyle('html, body', {
-    margin: 0,
-    padding: 0
+  margin: 0,
+  padding: 0,
 });
 
 export const base = style({
-    margin: 0,
-    padding: 0,
-    border: 0,
-    minWidth: 0,
-    boxSizing: 'border-box',
-    fontSize: '100%',
-    font: 'inherit',
-    verticalAlign: 'baseline',
-    WebkitTapHighlightColor: 'transparent'
+  margin: 0,
+  padding: 0,
+  border: 0,
+  minWidth: 0,
+  boxSizing: 'border-box',
+  fontSize: '100%',
+  font: 'inherit',
+  verticalAlign: 'baseline',
+  WebkitTapHighlightColor: 'transparent',
 });
 
 const button = style({
-    background: 0,
-    border: 0,
-    WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)'
+  background: 0,
+  border: 0,
+  WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
 });
 
 // HTML5 display-role reset for older browsers
 const block = style({
-    display: 'block'
+  display: 'block',
 });
 
 const body = style({
-    lineHeight: 1
+  lineHeight: 1,
 });
 
 const a = style({
-    color: 'inherit',
-    textDecoration: 'none'
+  color: 'inherit',
+  textDecoration: 'none',
 });
 
 const list = style({
-    listStyle: 'none'
+  listStyle: 'none',
 });
 
 const quote = style({
-    quotes: 'none',
-    selectors: {
-        '&:before, &:after': {
-            content: "''"
-        }
-    }
+  quotes: 'none',
+  selectors: {
+    '&:before, &:after': {
+      content: "''",
+    },
+  },
 });
 
 const table = style({
-    borderCollapse: 'collapse',
-    borderSpacing: 0
+  borderCollapse: 'collapse',
+  borderSpacing: 0,
 });
 
 // Custom reset rules
 const mark = style({
-    backgroundColor: 'transparent',
-    color: 'inherit'
+  backgroundColor: 'transparent',
+  color: 'inherit',
 });
 
 const select = style({
-    appearance: 'none',
-    selectors: {
-        '&::-ms-expand': {
-            display: 'none'
-        }
-    }
+  appearance: 'none',
+  selectors: {
+    '&::-ms-expand': {
+      display: 'none',
+    },
+  },
 });
 
 export const element = {
-    article: block,
-    aside: block,
-    button,
-    details: block,
-    figcaption: block,
-    figure: block,
-    footer: block,
-    header: block,
-    hgroup: block,
-    menu: block,
-    nav: block,
-    section: block,
-    textarea: block,
-    ul: list,
-    ol: list,
-    blockquote: quote,
-    q: quote,
-    body,
-    table,
-    mark,
-    select,
-    a
+  article: block,
+  aside: block,
+  button,
+  details: block,
+  figcaption: block,
+  figure: block,
+  footer: block,
+  header: block,
+  hgroup: block,
+  menu: block,
+  nav: block,
+  section: block,
+  textarea: block,
+  ul: list,
+  ol: list,
+  blockquote: quote,
+  q: quote,
+  body,
+  table,
+  mark,
+  select,
+  a,
 };

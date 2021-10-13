@@ -6,29 +6,29 @@ import { sprinkles } from '../../sprinkles.css';
 export type Variants = RecipeVariants<typeof variants>;
 
 export const variants = recipe({
-    variants: {
-        variant: {
-            normal: [
-                sprinkles({
-                    textDecoration: 'underline'
-                }),
-                {
-                    ':hover': {
-                        opacity: 0.8
-                    }
-                }
-            ],
-            highlight: [
-                sprinkles({
-                    textDecoration: 'underline',
-                    fontWeight: 'bold'
-                }),
-                {
-                    ':hover': {
-                        opacity: 0.8
-                    }
-                }
-            ]
-        }
-    }
+  variants: {
+    variant: {
+      normal: [
+        sprinkles({
+          textDecoration: 'underline',
+        }),
+        {
+          ':hover': {
+            opacity: 0.8,
+          },
+        },
+      ],
+      highlight: [
+        sprinkles({
+          textDecoration: 'underline',
+          fontWeight: 'bold',
+        }),
+        {
+          ':hover': {
+            opacity: 0.8,
+          },
+        },
+      ],
+    },
+  },
 });

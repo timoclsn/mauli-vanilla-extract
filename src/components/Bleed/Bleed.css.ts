@@ -11,24 +11,24 @@ const width = createVar();
 export type Varaints = RecipeVariants<typeof variants>;
 
 export const variants = recipe({
-    base: {
-        width: width,
-        marginLeft: `calc(50% - ${calc.divide(width, 2)})`
+  base: {
+    width: width,
+    marginLeft: `calc(50% - ${calc.divide(width, 2)})`,
+  },
+  variants: {
+    bleed: {
+      full: {
+        vars: {
+          [width]: '100vw',
+        },
+      },
+      ...mapValues(vars.contentWidth, (contentWidth) => {
+        return {
+          vars: {
+            [width]: contentWidth,
+          },
+        };
+      }),
     },
-    variants: {
-        bleed: {
-            full: {
-                vars: {
-                    [width]: '100vw'
-                }
-            },
-            ...mapValues(vars.contentWidth, (contentWidth) => {
-                return {
-                    vars: {
-                        [width]: contentWidth
-                    }
-                };
-            })
-        }
-    }
+  },
 });
