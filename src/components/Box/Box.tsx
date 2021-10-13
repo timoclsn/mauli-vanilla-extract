@@ -12,7 +12,7 @@ export interface BoxProps
       'as' | 'width' | 'height' | 'color'
     >,
     Sprinkles {
-  children: ReactNode;
+  children?: ReactNode;
   as?: ElementType;
   className?: string;
 }

@@ -16,6 +16,7 @@ import { Box } from './components/Box';
 import { HiddenVisually } from './components/HiddenVisually';
 import { List, ListItem } from './components/List';
 import { Bleed } from './components/Bleed';
+import { Skeleton } from './components/Skeleton';
 
 function App() {
   return (
@@ -160,6 +161,20 @@ function App() {
               consectetuer adipiscing elit, sed diam nonummy nibh euismod
               tincidunt ut laoreet dolore magna aliquam erat volutpat.
             </Text>
+            <Box width="full">
+              <Stack direction="horizontal" space="3x">
+                <Box>
+                  <Skeleton circle size="80px" />
+                </Box>
+                <Box width="full">
+                  <Stack>
+                    <Skeleton width="3/4" height="24px" />
+                    <Skeleton width="1/2" height="24px" />
+                    <Skeleton width="2/3" height="24px" />
+                  </Stack>
+                </Box>
+              </Stack>
+            </Box>
           </Stack>
         </Inset>
       </Container>
