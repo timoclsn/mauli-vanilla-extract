@@ -48,11 +48,7 @@ export function Button({
       href={url}
       target={external ? '_blank' : undefined}
       rel={external ? 'noopener noreferrer' : undefined}
-      className={clsx(
-        styles.base,
-        styles.variants({ size, variant, color }),
-        className
-      )}
+      className={clsx(styles.variants({ size, variant, color }), className)}
       {...props}
     >
       {children}
