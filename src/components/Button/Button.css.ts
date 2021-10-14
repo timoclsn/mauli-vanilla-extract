@@ -31,7 +31,7 @@ const linkTextDisabled = createVar();
 const paddingX = createVar();
 const paddingY = createVar();
 
-export const base = style([
+const base = style([
   sprinkles({
     display: 'inline-flex',
     alignItems: 'center',
