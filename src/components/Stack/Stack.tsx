@@ -11,6 +11,7 @@ const directionToFlexDirection = {
 } as const;
 
 const alignToAlignItems = {
+  stretch: 'stretch',
   start: 'flex-start',
   end: 'flex-end',
   center: 'center',
@@ -40,7 +41,7 @@ export function Stack({
   as = 'div',
   direction = 'vertical',
   space = '2x',
-  align = 'start',
+  align = 'stretch',
   justify = 'start',
   wrap = false,
   ...props

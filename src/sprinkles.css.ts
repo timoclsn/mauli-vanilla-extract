@@ -21,7 +21,7 @@ const responsiveProperties = defineProperties({
   properties: {
     position: ['absolute', 'relative', 'fixed'],
     display: ['none', 'block', 'inline', 'inline-block', 'flex', 'inline-flex'],
-    alignItems: ['flex-start', 'center', 'flex-end', 'baseline'],
+    alignItems: ['stretch', 'flex-start', 'center', 'flex-end', 'baseline'],
     justifyContent: ['flex-start', 'center', 'flex-end', 'space-between'],
     flexDirection: ['row', 'column'],
     paddingTop: vars.space,

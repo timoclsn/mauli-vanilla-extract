@@ -9,7 +9,6 @@ import { Card } from './components/Card';
 import { Container } from './components/Container';
 import { Inline } from './components/Inline';
 import { Label } from './components/Label';
-import { sprinkles } from './sprinkles.css';
 import { Link } from './components/Link';
 import { Inset } from './components/Inset';
 import { Box } from './components/Box';
@@ -73,9 +72,6 @@ function App() {
                       '640px': 'center',
                     }}
                     wrap
-                    className={sprinkles({
-                      width: 'full',
-                    })}
                   >
                     <Button color="highlight" onClick={() => alert('Test')}>
                       <ArrowRight />
@@ -161,16 +157,19 @@ function App() {
               consectetuer adipiscing elit, sed diam nonummy nibh euismod
               tincidunt ut laoreet dolore magna aliquam erat volutpat.
             </Text>
-            <Box width="full">
-              <Stack direction="horizontal" space="3x">
+            <Box width="full" paddingY="5x">
+              <Stack direction="horizontal" align="center">
                 <Box>
-                  <Skeleton circle size="80px" />
+                  <Skeleton circle size="64px" />
                 </Box>
                 <Box width="full">
                   <Stack>
-                    <Skeleton width="3/4" height="24px" />
-                    <Skeleton width="1/2" height="24px" />
-                    <Skeleton width="2/3" height="24px" />
+                    <Heading size="24px">
+                      <Skeleton width="1/3" />
+                    </Heading>
+                    <Text>
+                      <Skeleton count={3} />
+                    </Text>
                   </Stack>
                 </Box>
               </Stack>
