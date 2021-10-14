@@ -2,38 +2,39 @@ import { createVar, keyframes } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 import type { RecipeVariants } from '@vanilla-extract/recipes';
 
-import { sprinkles } from '../../sprinkles.css';
 import { vars } from '../../theme.css';
 
 const color = createVar();
 const highlightColor = createVar();
 
 const pulse = keyframes({
-  '0%': {
-    backgroundPosition: '-200px 0',
-  },
   '100%': {
-    backgroundPosition: 'calc(200px + 100%) 0',
+    transform: 'translateX(100%)',
   },
 });
 
 export type Varaints = RecipeVariants<typeof variants>;
 
 export const variants = recipe({
-  base: [
-    sprinkles({
-      display: 'inline-block',
-    }),
-    {
-      borderRadius: '4px',
-      lineHeight: '1',
-      backgroundColor: color,
-      backgroundImage: `linear-gradient(90deg, ${color}, ${highlightColor}, ${color})`,
-      backgroundSize: '200px 100%',
-      backgroundRepeat: 'no-repeat',
-      animation: `${pulse} 1.2s ease-in-out infinite`,
+  base: {
+    borderRadius: '4px',
+    lineHeight: '1',
+    backgroundColor: color,
+    selectors: {
+      '&::before': {
+        content: ' ',
+        display: 'block',
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        height: '100%',
+        backgroundRepeat: 'no-repeat',
+        backgroundImage: `linear-gradient(90deg, ${color}, ${highlightColor}, ${color})`,
+        transform: 'translateX(-100%)',
+        animation: `${pulse} 1.2s ease-in-out infinite`,
+      },
     },
-  ],
+  },
 
   variants: {
     color: {

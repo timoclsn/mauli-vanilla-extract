@@ -37,8 +37,11 @@ export function Skeleton({
   return (
     <Box
       as="span"
-      className={clsx(styles.variants({ color, circle }), className)}
+      display="inline-block"
+      position="relative"
+      overflow="hidden"
       width={width}
+      className={clsx(styles.variants({ color, circle }), className)}
       style={{
         height: size ? size : height ? height : undefined,
         width: size ? size : undefined,
