@@ -14,6 +14,7 @@ type ConditionalProps =
   | {
       width?: BoxProps['width'];
       height?: string;
+      count?: number;
       size?: never;
       circle?: never;
     }
@@ -22,30 +23,42 @@ type ConditionalProps =
       size?: string;
       width?: never;
       height?: never;
+      count?: never;
     };
 
 type SkeletonProps = CommmonProps & ConditionalProps & Varaints;
 
 export function Skeleton({
-  className,
+  count = 1,
   color = 'normal',
   width = 'full',
   height,
   size,
   circle,
+  className,
+  ...props
 }: SkeletonProps) {
-  return (
-    <Box
-      as="span"
-      display="inline-block"
-      position="relative"
-      overflow="hidden"
-      width={width}
-      className={clsx(styles.variants({ color, circle }), className)}
-      style={{
-        height: size ? size : height ? height : undefined,
-        width: size ? size : undefined,
-      }}
-    />
-  );
+  const elements = [];
+
+  for (let i = 0; i < count; i++) {
+    elements.push(
+      <Box
+        as="span"
+        display="inline-block"
+        position="relative"
+        overflow="hidden"
+        width={width}
+        className={clsx(styles.variants({ color, circle }), className)}
+        style={{
+          height: size ? size : height ? height : undefined,
+          width: size ? size : undefined,
+        }}
+        {...props}
+      >
+        &zwnj;
+      </Box>
+    );
+  }
+
+  return <>{elements}</>;
 }
