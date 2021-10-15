@@ -16,7 +16,7 @@ export const variants = recipe({
     marginLeft: `calc(50% - ${calc.divide(width, 2)})`,
   },
   variants: {
-    bleed: {
+    width: {
       full: {
         vars: {
           [width]: '100vw',
