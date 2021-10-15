@@ -1,5 +1,8 @@
 import { recipe } from '@vanilla-extract/recipes';
 import type { RecipeVariants } from '@vanilla-extract/recipes';
+import { createVar } from '@vanilla-extract/css';
+
+const listStyleType = createVar();
 
 export type Varaints = RecipeVariants<typeof variants>;
 
@@ -7,23 +10,34 @@ export const variants = recipe({
   base: {
     paddingLeft: '1em',
     listStylePosition: 'outside',
+    listStyleType: listStyleType,
   },
   variants: {
     type: {
       bullet: {
-        listStyleType: 'disc',
+        vars: {
+          [listStyleType]: 'disc',
+        },
       },
       number: {
-        listStyleType: 'decimal',
+        vars: {
+          [listStyleType]: 'decimal',
+        },
       },
       latin: {
-        listStyleType: 'lower-latin',
+        vars: {
+          [listStyleType]: 'lower-latin',
+        },
       },
       roman: {
-        listStyleType: 'lower-roman',
+        vars: {
+          [listStyleType]: 'lower-roman',
+        },
       },
       greek: {
-        listStyleType: 'lower-greek',
+        vars: {
+          [listStyleType]: 'lower-greek',
+        },
       },
     },
   },
