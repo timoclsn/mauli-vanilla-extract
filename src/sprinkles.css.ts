@@ -34,7 +34,6 @@ const responsiveProperties = defineProperties({
     marginRight: { ...vars.space, auto: 'auto' },
     gap: vars.space,
     opacity: [0, 1],
-    textAlign: ['left', 'center', 'right'],
     maxWidth: vars.contentWidth,
     fontSize: mapValues(vars.fontSizes, (fontSize) =>
       createStyleObject(fontSize)
@@ -90,7 +89,7 @@ const unconditionalProperties = defineProperties({
     cursor: ['pointer'],
     fontFamily: vars.fonts,
     fontWeight: vars.fontWeights,
-    textDecoration: ['none', 'underline'],
+    textDecoration: ['none', 'underline', 'line-through'],
     textTransform: ['uppercase', 'lowercase', 'capitalize'],
     textAlign: ['left', 'center', 'right'],
     textOverflow: ['ellipsis'],
