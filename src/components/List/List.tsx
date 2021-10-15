@@ -5,11 +5,13 @@ import clsx from 'clsx';
 import { Box } from '../Box';
 import type { BoxProps } from '../Box';
 import { Text } from '../Text';
+import type { TextProps } from '../Text';
 import * as styles from './List.css';
 import type { Varaints } from './List.css';
 
 interface ListBaseProps {
   children: ReactElement<ListItemProps> | ReactElement<ListItemProps>[];
+  color?: TextProps['color'];
   className?: string;
 }
 

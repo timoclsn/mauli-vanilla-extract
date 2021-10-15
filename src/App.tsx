@@ -108,6 +108,12 @@ function App() {
                   pretium. Integer tincidunt. Cras dapibus. Vivamus elementum
                   semper nisi. Aenean vulputate eleifend tellus.
                 </Text>
+                <List type="number" color="light">
+                  <ListItem>Item</ListItem>
+                  <ListItem>Item</ListItem>
+                  <ListItem>Item</ListItem>
+                  <ListItem>Item</ListItem>
+                </List>
                 <Box color="gray1">
                   <ArrowRight />
                   <HiddenVisually>Pfeil nach rechts</HiddenVisually>
