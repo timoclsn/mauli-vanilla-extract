@@ -9,7 +9,7 @@ interface Props {
   as?: StackProps['as'];
   space?: BoxProps['gap'];
   noWrap?: boolean;
-  className?: string;
+  className?: BoxProps['className'];
 }
 
 export function Inline({

@@ -1,6 +1,5 @@
 import React from 'react';
 import type { ReactElement } from 'react';
-import clsx from 'clsx';
 
 import { Box } from '../Box';
 import type { BoxProps } from '../Box';
@@ -12,7 +11,7 @@ import type { Varaints } from './List.css';
 interface ListBaseProps {
   children: ReactElement<ListItemProps> | ReactElement<ListItemProps>[];
   color?: TextProps['color'];
-  className?: string;
+  className?: BoxProps['className'];
 }
 
 type ListProps = ListBaseProps & Varaints;
@@ -26,7 +25,7 @@ export function List({
   return (
     <Text
       as={type === 'bullet' ? 'ul' : 'ol'}
-      className={clsx(styles.variants({ type }), className)}
+      className={[styles.variants({ type }), className]}
       {...props}
     >
       {children}

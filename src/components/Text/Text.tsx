@@ -24,7 +24,7 @@ interface Props {
   transform?: BoxProps['textTransform'];
   align?: BoxProps['textAlign'];
   noWrap?: boolean;
-  className?: string;
+  className?: BoxProps['className'];
 }
 
 export type TextProps = Props & Variants;
@@ -63,7 +63,6 @@ export function Text({
       textTransform={transform}
       textAlign={align}
       whiteSpace={noWrap ? 'nowrap' : undefined}
-      className={className}
       {...props}
     >
       {truncate ? (

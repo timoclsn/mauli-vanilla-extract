@@ -6,11 +6,12 @@ import * as styles from './HiddenVisually.css';
 
 interface Props {
   children: BoxProps['children'];
+  className?: BoxProps['className'];
 }
 
-export function HiddenVisually({ children }: Props) {
+export function HiddenVisually({ children, className, ...props }: Props) {
   return (
-    <Box as="span" className={styles.base}>
+    <Box as="span" className={[styles.base, className]} {...props}>
       {children}
     </Box>
   );

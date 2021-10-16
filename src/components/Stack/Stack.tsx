@@ -33,7 +33,7 @@ export interface StackProps {
   align?: ResponsiveValue<keyof typeof alignToAlignItems>;
   justify?: ResponsiveValue<keyof typeof justifyToJustifyContent>;
   wrap?: boolean;
-  className?: string;
+  className?: BoxProps['className'];
 }
 
 export function Stack({

@@ -5,7 +5,7 @@ import type { BoxProps } from '../Box';
 
 interface Props {
   children: BoxProps['children'];
-  className?: string;
+  className?: BoxProps['className'];
 }
 
 export function Label({ children, ...props }: Props) {

@@ -1,5 +1,4 @@
 import React from 'react';
-import clsx from 'clsx';
 
 import { Box } from '../Box';
 import type { BoxProps } from '../Box';
@@ -8,7 +7,7 @@ import type { Varaints } from './Button.css';
 
 interface CommmonProps {
   children: BoxProps['children'];
-  className?: string;
+  className?: BoxProps['className'];
 }
 
 type ConditionalProps =
@@ -48,7 +47,7 @@ export function Button({
       href={url}
       target={external ? '_blank' : undefined}
       rel={external ? 'noopener noreferrer' : undefined}
-      className={clsx(styles.variants({ size, variant, color }), className)}
+      className={[styles.variants({ size, variant, color }), className]}
       {...props}
     >
       {children}

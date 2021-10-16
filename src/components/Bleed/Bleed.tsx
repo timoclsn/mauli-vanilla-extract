@@ -1,5 +1,4 @@
 import React from 'react';
-import clsx from 'clsx';
 
 import { Box } from '../Box';
 import type { BoxProps } from '../Box';
@@ -8,15 +7,13 @@ import type { Varaints } from './Bleed.css';
 
 interface Props {
   children: BoxProps['children'];
-  className?: string;
+  className?: BoxProps['className'];
 }
 
 type BleedProps = Props & Varaints;
 
 export function Bleed({ children, width = 'full', className }: BleedProps) {
   return (
-    <Box className={clsx(styles.variants({ width }), className)}>
-      {children}
-    </Box>
+    <Box className={[styles.variants({ width }), className]}>{children}</Box>
   );
 }

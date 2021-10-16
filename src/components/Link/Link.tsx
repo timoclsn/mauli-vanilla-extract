@@ -1,5 +1,4 @@
 import React from 'react';
-import clsx from 'clsx';
 
 import { Box } from '../Box';
 import type { BoxProps } from '../Box';
@@ -10,7 +9,7 @@ interface Props {
   children: BoxProps['children'];
   url?: string;
   external?: boolean;
-  className?: string;
+  className?: BoxProps['className'];
 }
 
 type LinkProps = Props & Variants;
@@ -29,7 +28,7 @@ export function Link({
       href={url}
       target={external ? '_blank' : undefined}
       rel={external ? 'noopener noreferrer' : undefined}
-      className={clsx(styles.variants({ variant }), className)}
+      className={[styles.variants({ variant }), className]}
       {...props}
     >
       {children}

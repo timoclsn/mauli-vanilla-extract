@@ -20,7 +20,7 @@ interface Props {
   children: TextProps['children'];
   level?: HeadingLevel;
   color?: TextProps['color'];
-  className?: string;
+  className?: TextProps['className'];
 }
 
 export function Heading({

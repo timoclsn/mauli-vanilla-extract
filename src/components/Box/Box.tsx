@@ -1,6 +1,7 @@
 import React, { forwardRef } from 'react';
 import type { AllHTMLAttributes, ElementType, ReactNode } from 'react';
 import clsx from 'clsx';
+import type { ClassValue } from 'clsx';
 
 import * as resetStyles from '../../reset.css';
 import { sprinkles } from '../../sprinkles.css';
@@ -9,12 +10,12 @@ import type { Sprinkles } from '../../sprinkles.css';
 export interface BoxProps
   extends Omit<
       AllHTMLAttributes<HTMLElement>,
-      'as' | 'width' | 'height' | 'color'
+      'as' | 'width' | 'height' | 'color' | 'className'
     >,
     Sprinkles {
   children?: ReactNode;
   as?: ElementType;
-  className?: string;
+  className?: ClassValue;
 }
 
 export const Box = forwardRef<HTMLElement, BoxProps>(function Box(

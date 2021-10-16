@@ -8,7 +8,7 @@ interface Props {
   inset?: BoxProps['padding'];
   insetX?: BoxProps['paddingX'];
   insetY?: BoxProps['paddingY'];
-  className?: string;
+  className?: BoxProps['className'];
 }
 
 export function Inset({ children, inset, insetX, insetY, ...props }: Props) {

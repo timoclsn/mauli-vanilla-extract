@@ -7,7 +7,7 @@ interface Props {
   children: BoxProps['children'];
   as?: 'div' | 'main' | 'aside' | 'header' | 'footer' | 'section';
   width?: BoxProps['maxWidth'];
-  className?: string;
+  className?: BoxProps['className'];
 }
 
 export function Container({

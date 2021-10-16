@@ -1,5 +1,4 @@
 import React from 'react';
-import clsx from 'clsx';
 
 import { Box } from '../Box';
 import type { BoxProps } from '../Box';
@@ -7,7 +6,7 @@ import * as styles from './Skeleton.css';
 import type { Varaints } from './Skeleton.css';
 
 interface CommmonProps {
-  className?: string;
+  className?: BoxProps['className'];
 }
 
 type ConditionalProps =
@@ -49,7 +48,7 @@ export function Skeleton({
         position="relative"
         overflow="hidden"
         width={width}
-        className={clsx(styles.variants({ color, circle }), className)}
+        className={[styles.variants({ color, circle }), className]}
         style={{
           height: size ? size : height ? height : undefined,
           width: size ? size : undefined,

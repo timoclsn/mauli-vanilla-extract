@@ -9,7 +9,7 @@ interface Props {
   as?: ElementType;
   color?: 'normal' | 'highlight';
   fullWidth?: boolean;
-  className?: string;
+  className?: BoxProps['className'];
 }
 
 export function Card({
