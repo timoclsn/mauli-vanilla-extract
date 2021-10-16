@@ -12,6 +12,7 @@ const levelToFontSize = {
 } as const;
 
 const HeadingLevel = Object.keys(levelToFontSize);
+const LowestLevel = parseInt(HeadingLevel[HeadingLevel.length - 1]);
 
 type HeadingLevel = keyof typeof levelToFontSize;
 
@@ -32,20 +33,14 @@ export function Heading({
     <>
       <LevelContext.Consumer>
         {(accessibilityLevel) => {
-          if (accessibilityLevel < parseInt(HeadingLevel[0])) {
+          if (accessibilityLevel < 1) {
             throw new Error(
               'Heading component must be a descendant of HeadingLevel component.'
             );
           }
-          if (
-            accessibilityLevel >
-              parseInt(HeadingLevel[HeadingLevel.length - 1]) ||
-            accessibilityLevel > 6
-          ) {
+          if (accessibilityLevel > LowestLevel || accessibilityLevel > 6) {
             throw new Error(
-              `HeadingLevel cannot be nested ${accessibilityLevel} times. The maximum is ${
-                HeadingLevel[HeadingLevel.length - 1]
-              } levels.`
+              `HeadingLevel cannot be nested ${accessibilityLevel} times. The maximum is ${LowestLevel} levels.`
             );
           }
           return (
