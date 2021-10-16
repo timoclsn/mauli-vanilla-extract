@@ -43,6 +43,7 @@ export function Skeleton({
   for (let i = 0; i < count; i++) {
     elements.push(
       <Box
+        key={i}
         as="span"
         display="inline-block"
         position="relative"
