@@ -23,9 +23,7 @@ function App() {
       <Inset insetX="2x" insetY="4x">
         <Stack space="8x">
           <Stack>
-            <Heading as="h1" level={1}>
-              Mauli Design System
-            </Heading>
+            <Heading level={1}>Mauli Design System</Heading>
             <Text size="20px" color="highlight">
               [WIP] Design System Playground
             </Text>

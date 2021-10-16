@@ -20,14 +20,14 @@ interface Props {
 
 export function Heading({
   children,
-  as = 'h2',
+  as,
   level = 2,
   color = 'highlight',
   ...props
 }: Props) {
   return (
     <Text
-      as={as}
+      as={as ? as : `h${level}`}
       size={levelToFontSize[level]}
       weight="bold"
       color={color}
