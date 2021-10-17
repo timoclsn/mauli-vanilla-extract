@@ -11,6 +11,7 @@ import type { Varaints } from './List.css';
 interface ListBaseProps {
   children: ReactElement<ListItemProps> | ReactElement<ListItemProps>[];
   color?: TextProps['color'];
+  size?: TextProps['size'];
   className?: BoxProps['className'];
 }
 
@@ -28,6 +29,7 @@ export function List({ type = 'bullet', className, ...props }: ListProps) {
 
 interface ListItemProps {
   children: BoxProps['children'];
+  className?: BoxProps['className'];
 }
 
 export function ListItem({ ...props }: ListItemProps) {
