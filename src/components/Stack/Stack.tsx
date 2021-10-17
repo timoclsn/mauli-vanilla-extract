@@ -5,6 +5,8 @@ import type { BoxProps } from '../Box';
 import { mapResponsiveValue } from '../../sprinkles.css';
 import type { ResponsiveValue } from '../../sprinkles.css';
 
+const validElements = ['div', 'ul', 'ol'] as const;
+
 const directionToFlexDirection = {
   vertical: 'column',
   horizontal: 'row',
@@ -27,7 +29,7 @@ const justifyToJustifyContent = {
 
 export interface StackProps {
   children: BoxProps['children'];
-  as?: 'div' | 'ul' | 'ol';
+  as?: typeof validElements[number];
   direction?: ResponsiveValue<keyof typeof directionToFlexDirection>;
   space?: BoxProps['gap'];
   align?: ResponsiveValue<keyof typeof alignToAlignItems>;

@@ -2,10 +2,26 @@ import React, { Children } from 'react';
 
 import { Box } from '../Box';
 import type { BoxProps } from '../Box';
-import * as styles from './Text.css';
-import type { Variants } from './Text.css';
 import { mapColorValue } from '../../sprinkles.css';
 import type { ColorValue } from '../../sprinkles.css';
+import * as styles from './Text.css';
+import type { Variants } from './Text.css';
+
+const validElements = [
+  'h1',
+  'h2',
+  'h3',
+  'h4',
+  'h5',
+  'h6',
+  'p',
+  'ul',
+  'ol',
+  'span',
+  'strong',
+  'small',
+  'label',
+] as const;
 
 const colorToColor = {
   dark: 'gray12',
@@ -15,7 +31,7 @@ const colorToColor = {
 
 interface Props {
   children: BoxProps['children'];
-  as?: BoxProps['as'];
+  as?: typeof validElements[number];
   color?: ColorValue<keyof typeof colorToColor>;
   size?: BoxProps['fontSize'];
   weight?: BoxProps['fontWeight'];

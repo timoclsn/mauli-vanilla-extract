@@ -3,9 +3,18 @@ import React from 'react';
 import { Box } from '../Box';
 import type { BoxProps } from '../Box';
 
+const validElements = [
+  'div',
+  'article',
+  'aside',
+  'details',
+  'main',
+  'section',
+] as const;
+
 interface Props {
   children: BoxProps['children'];
-  as?: BoxProps['as'];
+  as?: typeof validElements[number];
   color?: 'normal' | 'highlight';
   fullWidth?: boolean;
   className?: BoxProps['className'];

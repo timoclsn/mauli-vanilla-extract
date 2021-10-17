@@ -1,15 +1,14 @@
 import React from 'react';
 
-import type { BoxProps } from '../Box';
 import { Stack } from '../Stack';
 import type { StackProps } from '../Stack';
 
 interface Props {
-  children: BoxProps['children'];
+  children: StackProps['children'];
   as?: StackProps['as'];
-  space?: BoxProps['gap'];
+  space?: StackProps['space'];
   noWrap?: boolean;
-  className?: BoxProps['className'];
+  className?: StackProps['className'];
 }
 
 export function Inline({

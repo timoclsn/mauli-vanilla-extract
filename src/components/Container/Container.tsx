@@ -3,9 +3,20 @@ import React from 'react';
 import { Box } from '../Box';
 import type { BoxProps } from '../Box';
 
+const validElements = [
+  'div',
+  'article',
+  'aside',
+  'details',
+  'main',
+  'section',
+  'header',
+  'footer',
+] as const;
+
 interface Props {
   children: BoxProps['children'];
-  as?: 'div' | 'main' | 'aside' | 'header' | 'footer' | 'section';
+  as?: typeof validElements[number];
   width?: BoxProps['maxWidth'];
   className?: BoxProps['className'];
 }
