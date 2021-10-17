@@ -22,13 +22,11 @@ export const variants = recipe({
           [width]: '100vw',
         },
       },
-      ...mapValues(vars.contentWidth, (contentWidth) => {
-        return {
-          vars: {
-            [width]: contentWidth,
-          },
-        };
-      }),
+      ...mapValues(vars.contentWidth, (contentWidth) => ({
+        vars: {
+          [width]: contentWidth,
+        },
+      })),
     },
   },
 });
