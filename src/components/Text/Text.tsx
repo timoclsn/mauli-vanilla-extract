@@ -55,7 +55,6 @@ export function Text({
   align,
   truncate,
   noWrap,
-  className,
   ...props
 }: TextProps) {
   let title = '';
