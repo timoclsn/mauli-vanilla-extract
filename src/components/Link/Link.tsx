@@ -15,7 +15,6 @@ interface Props {
 type LinkProps = Props & Variants;
 
 export function Link({
-  children,
   url,
   external,
   variant,
@@ -30,8 +29,6 @@ export function Link({
       rel={external ? 'noopener noreferrer' : undefined}
       className={[styles.variants({ variant }), className]}
       {...props}
-    >
-      {children}
-    </Box>
+    />
   );
 }

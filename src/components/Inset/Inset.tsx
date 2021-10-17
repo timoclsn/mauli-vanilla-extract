@@ -11,7 +11,7 @@ interface Props {
   className?: BoxProps['className'];
 }
 
-export function Inset({ children, inset, insetX, insetY, ...props }: Props) {
+export function Inset({ inset, insetX, insetY, ...props }: Props) {
   return (
     <Box
       as="div"
@@ -19,8 +19,6 @@ export function Inset({ children, inset, insetX, insetY, ...props }: Props) {
       paddingX={insetX}
       paddingY={insetY}
       {...props}
-    >
-      {children}
-    </Box>
+    />
   );
 }

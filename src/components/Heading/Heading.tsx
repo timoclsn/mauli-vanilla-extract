@@ -23,12 +23,7 @@ interface Props {
   className?: TextProps['className'];
 }
 
-export function Heading({
-  children,
-  level = 2,
-  color = 'highlight',
-  ...props
-}: Props) {
+export function Heading({ level = 2, color = 'highlight', ...props }: Props) {
   return (
     <>
       <LevelContext.Consumer>
@@ -50,9 +45,7 @@ export function Heading({
               weight="bold"
               color={color}
               {...props}
-            >
-              {children}
-            </Text>
+            />
           );
         }}
       </LevelContext.Consumer>

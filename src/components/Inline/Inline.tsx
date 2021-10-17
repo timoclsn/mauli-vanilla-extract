@@ -13,7 +13,6 @@ interface Props {
 }
 
 export function Inline({
-  children,
   as = 'div',
   space = '1x',
   noWrap = false,
@@ -26,8 +25,6 @@ export function Inline({
       space={space}
       wrap={!noWrap}
       {...props}
-    >
-      {children}
-    </Stack>
+    />
   );
 }

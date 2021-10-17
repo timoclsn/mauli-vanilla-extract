@@ -37,7 +37,6 @@ export interface StackProps {
 }
 
 export function Stack({
-  children,
   as = 'div',
   direction = 'vertical',
   space = '2x',
@@ -65,8 +64,6 @@ export function Stack({
       )}
       flexWrap={wrap ? 'wrap' : undefined}
       {...props}
-    >
-      {children}
-    </Box>
+    />
   );
 }

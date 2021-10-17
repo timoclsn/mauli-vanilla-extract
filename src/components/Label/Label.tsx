@@ -8,7 +8,7 @@ interface Props {
   className?: BoxProps['className'];
 }
 
-export function Label({ children, ...props }: Props) {
+export function Label({ ...props }: Props) {
   return (
     <Box
       fontSize="16px"
@@ -19,8 +19,6 @@ export function Label({ children, ...props }: Props) {
       background="indigo9"
       borderRadius="round"
       {...props}
-    >
-      {children}
-    </Box>
+    />
   );
 }

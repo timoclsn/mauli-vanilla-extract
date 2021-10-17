@@ -29,7 +29,6 @@ type ConditionalProps =
 type Props = CommmonProps & Varaints & ConditionalProps;
 
 export function Button({
-  children,
   type = 'button',
   size = 'normal',
   variant = 'solid',
@@ -49,8 +48,6 @@ export function Button({
       rel={external ? 'noopener noreferrer' : undefined}
       className={[styles.variants({ size, variant, color }), className]}
       {...props}
-    >
-      {children}
-    </Box>
+    />
   );
 }

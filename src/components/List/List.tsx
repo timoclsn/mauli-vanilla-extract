@@ -16,20 +16,13 @@ interface ListBaseProps {
 
 type ListProps = ListBaseProps & Varaints;
 
-export function List({
-  children,
-  type = 'bullet',
-  className,
-  ...props
-}: ListProps) {
+export function List({ type = 'bullet', className, ...props }: ListProps) {
   return (
     <Text
       as={type === 'bullet' ? 'ul' : 'ol'}
       className={[styles.variants({ type }), className]}
       {...props}
-    >
-      {children}
-    </Text>
+    />
   );
 }
 
@@ -37,6 +30,6 @@ interface ListItemProps {
   children: BoxProps['children'];
 }
 
-export function ListItem({ children }: ListItemProps) {
-  return <Box as="li">{children}</Box>;
+export function ListItem({ ...props }: ListItemProps) {
+  return <Box as="li" {...props} />;
 }

@@ -10,15 +10,6 @@ interface Props {
   className?: BoxProps['className'];
 }
 
-export function Container({
-  children,
-  as = 'div',
-  width = '1280px',
-  ...props
-}: Props) {
-  return (
-    <Box as={as} maxWidth={width} marginX="auto" {...props}>
-      {children}
-    </Box>
-  );
+export function Container({ as = 'div', width = '1280px', ...props }: Props) {
+  return <Box as={as} maxWidth={width} marginX="auto" {...props} />;
 }

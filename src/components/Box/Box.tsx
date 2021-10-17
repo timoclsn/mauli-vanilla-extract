@@ -19,7 +19,7 @@ export interface BoxProps
 }
 
 export const Box = forwardRef<HTMLElement, BoxProps>(function Box(
-  { children, as: Element = 'div', className, ...props },
+  { as: Element = 'div', className, ...props },
   ref
 ) {
   const atomProps: Record<string, unknown> = {};
@@ -40,9 +40,5 @@ export const Box = forwardRef<HTMLElement, BoxProps>(function Box(
     className
   );
 
-  return (
-    <Element ref={ref} className={styles} {...nativeProps}>
-      {children}
-    </Element>
-  );
+  return <Element ref={ref} className={styles} {...nativeProps} />;
 });

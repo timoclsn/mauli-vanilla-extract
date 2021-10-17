@@ -1,5 +1,4 @@
 import React, { Children } from 'react';
-import type { ElementType } from 'react';
 
 import { Box } from '../Box';
 import type { BoxProps } from '../Box';
@@ -16,7 +15,7 @@ const colorToColor = {
 
 interface Props {
   children: BoxProps['children'];
-  as?: ElementType;
+  as?: BoxProps['as'];
   color?: ColorValue<keyof typeof colorToColor>;
   size?: BoxProps['fontSize'];
   weight?: BoxProps['fontWeight'];

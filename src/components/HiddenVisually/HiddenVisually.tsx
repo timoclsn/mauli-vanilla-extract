@@ -9,10 +9,6 @@ interface Props {
   className?: BoxProps['className'];
 }
 
-export function HiddenVisually({ children, className, ...props }: Props) {
-  return (
-    <Box as="span" className={[styles.base, className]} {...props}>
-      {children}
-    </Box>
-  );
+export function HiddenVisually({ className, ...props }: Props) {
+  return <Box as="span" className={[styles.base, className]} {...props} />;
 }
