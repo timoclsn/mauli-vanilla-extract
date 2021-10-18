@@ -27,7 +27,8 @@ function App() {
             <Stack>
               <Heading level={1}>Mauli Design System</Heading>
               <Text size="20px" color="highlight">
-                [WIP] Design System Playground
+                Experimental design system exploration with React and Vanilla
+                Extract.
               </Text>
             </Stack>
 

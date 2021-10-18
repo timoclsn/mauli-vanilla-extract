@@ -1,3 +1,3 @@
 # Mauli Vanilla Extract
 
-Testing a design system / component library implementation with vanilla extract.
+Experimental design system exploration with [React](https://reactjs.org) and [Vanilla Extract](https://vanilla-extract.style).
