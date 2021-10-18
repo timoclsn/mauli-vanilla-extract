@@ -8,6 +8,15 @@ const baseline = 4;
 
 const px = (value: number) => `${value}px`;
 
+export const breakpoints = {
+  '640px': px(640),
+  '768px': px(768),
+  '1024px': px(1024),
+  '1280px': px(1280),
+} as const;
+
+export type Breakpoints = keyof typeof breakpoints;
+
 export const vars = createGlobalTheme(':root', {
   fonts: {
     sans: 'Inter, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',

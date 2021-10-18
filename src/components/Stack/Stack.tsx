@@ -12,6 +12,10 @@ const directionToFlexDirection = {
   horizontal: 'row',
 } as const;
 
+export type ResponsiveDirection = ResponsiveValue<
+  keyof typeof directionToFlexDirection
+>;
+
 const alignToAlignItems = {
   stretch: 'stretch',
   start: 'flex-start',
@@ -30,7 +34,7 @@ const justifyToJustifyContent = {
 export interface StackProps {
   children: BoxProps['children'];
   as?: typeof validElements[number];
-  direction?: ResponsiveValue<keyof typeof directionToFlexDirection>;
+  direction?: ResponsiveDirection;
   space?: BoxProps['gap'];
   align?: ResponsiveValue<keyof typeof alignToAlignItems>;
   justify?: ResponsiveValue<keyof typeof justifyToJustifyContent>;

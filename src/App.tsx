@@ -17,6 +17,8 @@ import { List, ListItem } from './components/List';
 import { Bleed } from './components/Bleed';
 import { Skeleton } from './components/Skeleton';
 import { HeadingLevel } from './components/Heading/HeadingLevel';
+import { Columns } from './components/Columns';
+import { Column } from './components/Column';
 
 function App() {
   return (
@@ -209,6 +211,14 @@ function App() {
           </HeadingLevel>
         </HeadingLevel>
       </Stack>
+      <Columns space="4x" collapseBelow="640px">
+        <Column width="1/3">
+          <Box background="indigo5">Column 1</Box>
+        </Column>
+        <Column>
+          <Box background="gray5">Column 2</Box>
+        </Column>
+      </Columns>
     </Container>
   );
 }

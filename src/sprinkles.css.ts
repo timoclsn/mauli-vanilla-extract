@@ -7,15 +7,14 @@ import {
   createMapValueFn,
 } from '@vanilla-extract/sprinkles';
 
-import { vars } from './theme.css';
+import { vars, breakpoints } from './theme.css';
 
 const responsiveProperties = defineProperties({
   conditions: {
     default: {},
-    '640px': { '@media': 'screen and (min-width: 640px)' },
-    '768px': { '@media': 'screen and (min-width: 768px)' },
-    '1024px': { '@media': 'screen and (min-width: 1024px)' },
-    '1280px': { '@media': 'screen and (min-width: 1280px)' },
+    ...mapValues(breakpoints, (breakpoint) => ({
+      '@media': `screen and (min-width: ${breakpoint})`,
+    })),
   },
   defaultCondition: 'default',
   properties: {
@@ -32,7 +31,7 @@ const responsiveProperties = defineProperties({
     marginBottom: vars.space,
     marginLeft: { ...vars.space, auto: 'auto' },
     marginRight: { ...vars.space, auto: 'auto' },
-    gap: vars.space,
+    gap: { ...vars.space, none: 'none' },
     opacity: [0, 1],
     maxWidth: vars.contentWidth,
     fontSize: mapValues(vars.fontSizes, (fontSize) =>
@@ -82,6 +81,7 @@ const unconditionalProperties = defineProperties({
     left: [0],
     right: [0],
     flex: [0],
+    flexShrink: [0],
     zIndex: [-1, 0, 1],
     width: vars.sizes,
     height: vars.sizes,
