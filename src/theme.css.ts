@@ -7,6 +7,7 @@ const grid = 8;
 const baseline = 4;
 
 const px = (value: number) => `${value}px`;
+const pct = (value: number) => `${value * 100}%`;
 
 export const breakpoints = {
   '640px': px(640),
@@ -89,12 +90,16 @@ export const vars = createGlobalTheme(':root', {
     '9x': px(9 * grid),
   },
   sizes: {
-    '1/4': '25%',
-    '1/3': '33.3%',
-    '1/2': '50%',
-    '2/3': '66.66%',
-    '3/4': '75%',
-    full: '100%',
+    '1/2': pct(1 / 2),
+    '1/3': pct(1 / 3),
+    '2/3': pct(2 / 3),
+    '1/4': pct(1 / 4),
+    '3/4': pct(3 / 4),
+    '1/5': pct(1 / 5),
+    '2/5': pct(2 / 5),
+    '3/5': pct(3 / 5),
+    '4/5': pct(4 / 5),
+    full: pct(1),
   },
   radii: {
     '1x': px(1 * grid),
