@@ -23,7 +23,7 @@ export function Columns({
   className,
   ...props
 }: Props) {
-  let direction: StackProps['direction'];
+  let direction: StackProps['direction'] = 'horizontal';
 
   if (collapseBelow) {
     const collapseBelowIndex = breakpointsArr.indexOf(collapseBelow) + 1; // + 1 to account for default
@@ -44,8 +44,6 @@ export function Columns({
         default: 'vertical',
       } as Partial<Record<Breakpoints, 'vertical' | 'horizontal'>>
     );
-  } else {
-    direction = 'horizontal';
   }
 
   return (
