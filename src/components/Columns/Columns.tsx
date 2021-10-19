@@ -2,7 +2,6 @@ import React from 'react';
 import type { ReactElement } from 'react';
 
 import { Stack } from '../Stack';
-import type { ResponsiveDirection } from '../Stack';
 import type { StackProps } from '../Stack';
 import type { ColumnProps } from '../Column';
 import * as styles from './Columns.css';
@@ -24,7 +23,7 @@ export function Columns({
   className,
   ...props
 }: Props) {
-  let direction: ResponsiveDirection;
+  let direction: StackProps['direction'];
 
   if (collapseBelow) {
     const collapseBelowIndex = breakpointsArr.indexOf(collapseBelow) + 1; // + 1 to account for default
