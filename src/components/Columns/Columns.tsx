@@ -44,7 +44,7 @@ export function Columns({
       },
       {
         default: 'vertical',
-      } as Partial<Record<Breakpoints, 'vertical' | 'horizontal'>>
+      } as Partial<Record<Breakpoints | 'default', 'vertical' | 'horizontal'>>
     );
   }
 
