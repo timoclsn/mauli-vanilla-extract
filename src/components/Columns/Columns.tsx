@@ -28,7 +28,7 @@ export function Columns({
   let direction: StackProps['direction'] = 'horizontal';
 
   if (collapseBelow) {
-    const collapseBelowIndex = breakpointsArr.indexOf(collapseBelow) + 1; // + 1 to account for default
+    const collapseBelowIndex = breakpointsArr.indexOf(collapseBelow);
 
     direction = breakpointsArr.reduce(
       (acc, breakpoint, index) => {
