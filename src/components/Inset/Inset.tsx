@@ -12,13 +12,5 @@ interface Props {
 }
 
 export function Inset({ inset, insetX, insetY, ...props }: Props) {
-  return (
-    <Box
-      as="div"
-      padding={inset}
-      paddingX={insetX}
-      paddingY={insetY}
-      {...props}
-    />
-  );
+  return <Box padding={inset} paddingX={insetX} paddingY={insetY} {...props} />;
 }
