@@ -13,6 +13,8 @@ const breakpointsArr = Object.keys(breakpoints) as Breakpoints[];
 interface Props {
   children: ReactElement<ColumnProps> | ReactElement<ColumnProps>[];
   space?: StackProps['space'];
+  align?: StackProps['align'];
+  justify?: StackProps['justify'];
   collapseBelow?: Breakpoints;
   className?: StackProps['className'];
 }
