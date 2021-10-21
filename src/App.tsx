@@ -35,12 +35,7 @@ function App() {
               </Text>
             </Stack>
 
-            <Stack
-              direction={{
-                default: 'vertical',
-                '640px': 'horizontal',
-              }}
-            >
+            <Columns space="2x" collapseBelow="640px">
               <Card fullWidth>
                 <Stack>
                   <HeadingLevel>
@@ -131,7 +126,7 @@ function App() {
                   </HeadingLevel>
                 </Stack>
               </Card>
-            </Stack>
+            </Columns>
           </Stack>
         </Inset>
         <Container width="640px">
