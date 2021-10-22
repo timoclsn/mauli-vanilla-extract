@@ -3,11 +3,10 @@ import { gray, indigo } from '@radix-ui/colors';
 import { precomputeValues } from '@capsizecss/core';
 import fontMetrics from '@capsizecss/metrics/inter';
 
+import { pct, px } from './utils';
+
 const grid = 8;
 const baseline = 4;
-
-const px = (value: number) => `${value}px`;
-const pct = (value: number) => `${value * 100}%`;
 
 export const breakpoints = {
   '640px': px(640),

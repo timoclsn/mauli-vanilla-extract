@@ -208,7 +208,7 @@ function App() {
         </HeadingLevel>
       </Stack>
       <Columns space="4x" collapseBelow="640px">
-        <Column width="content">
+        <Column width="1/3">
           <Box background="indigo5">Column 1 dsadsa dsa sa sad a</Box>
         </Column>
         <Column>
