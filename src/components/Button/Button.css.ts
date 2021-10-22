@@ -49,7 +49,7 @@ const base = style([
   },
 ]);
 
-export type Varaints = RecipeVariants<typeof variants>;
+export type Variants = RecipeVariants<typeof variants>;
 
 export const variants = recipe({
   base,

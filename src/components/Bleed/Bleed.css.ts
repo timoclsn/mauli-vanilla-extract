@@ -8,7 +8,7 @@ import { vars } from '../../theme.css';
 
 const width = createVar();
 
-export type Varaints = RecipeVariants<typeof variants>;
+export type Variants = RecipeVariants<typeof variants>;
 
 export const variants = recipe({
   base: {

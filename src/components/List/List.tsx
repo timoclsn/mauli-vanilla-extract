@@ -5,7 +5,7 @@ import type { BoxProps } from '../Box';
 import { Text } from '../Text';
 import type { TextProps } from '../Text';
 import * as styles from './List.css';
-import type { Varaints } from './List.css';
+import type { Variants } from './List.css';
 import type { ListItemProps } from '../ListItem';
 
 interface ListBaseProps {
@@ -15,7 +15,7 @@ interface ListBaseProps {
   className?: BoxProps['className'];
 }
 
-type ListProps = ListBaseProps & Varaints;
+type ListProps = ListBaseProps & Variants;
 
 export function List({ type = 'bullet', className, ...props }: ListProps) {
   return (

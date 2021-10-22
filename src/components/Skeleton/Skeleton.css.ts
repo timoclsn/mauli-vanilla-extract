@@ -13,7 +13,7 @@ const pulse = keyframes({
   },
 });
 
-export type Varaints = RecipeVariants<typeof variants>;
+export type Variants = RecipeVariants<typeof variants>;
 
 export const variants = recipe({
   base: {

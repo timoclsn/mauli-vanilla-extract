@@ -3,7 +3,7 @@ import React from 'react';
 import { Box } from '../Box';
 import type { BoxProps } from '../Box';
 import * as styles from './Button.css';
-import type { Varaints } from './Button.css';
+import type { Variants } from './Button.css';
 
 interface CommmonProps {
   children: BoxProps['children'];
@@ -26,7 +26,7 @@ type ConditionalProps =
       disabled?: never;
     };
 
-type Props = CommmonProps & Varaints & ConditionalProps;
+type Props = CommmonProps & Variants & ConditionalProps;
 
 export function Button({
   type = 'button',

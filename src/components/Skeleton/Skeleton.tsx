@@ -3,7 +3,7 @@ import React from 'react';
 import { Box } from '../Box';
 import type { BoxProps } from '../Box';
 import * as styles from './Skeleton.css';
-import type { Varaints } from './Skeleton.css';
+import type { Variants } from './Skeleton.css';
 
 interface CommmonProps {
   className?: BoxProps['className'];
@@ -25,7 +25,7 @@ type ConditionalProps =
       count?: never;
     };
 
-type SkeletonProps = CommmonProps & ConditionalProps & Varaints;
+type SkeletonProps = CommmonProps & ConditionalProps & Variants;
 
 export function Skeleton({
   count = 1,

@@ -4,7 +4,7 @@ import { createVar } from '@vanilla-extract/css';
 
 const listStyleType = createVar();
 
-export type Varaints = RecipeVariants<typeof variants>;
+export type Variants = RecipeVariants<typeof variants>;
 
 export const variants = recipe({
   base: {
