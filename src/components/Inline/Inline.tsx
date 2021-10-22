@@ -8,6 +8,7 @@ interface Props {
   as?: StackProps['as'];
   space?: StackProps['space'];
   noWrap?: boolean;
+  reverse?: StackProps['reverse'];
   className?: StackProps['className'];
 }
 

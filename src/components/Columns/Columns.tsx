@@ -16,6 +16,7 @@ interface Props {
   align?: StackProps['align'];
   justify?: StackProps['justify'];
   collapseBelow?: Breakpoints;
+  reverse?: StackProps['reverse'];
   className?: StackProps['className'];
 }
 

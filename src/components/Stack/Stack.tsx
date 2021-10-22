@@ -35,6 +35,7 @@ export interface StackProps {
   align?: ResponsiveValue<keyof typeof alignToAlignItems>;
   justify?: ResponsiveValue<keyof typeof justifyToJustifyContent>;
   wrap?: boolean;
+  reverse?: boolean;
   className?: BoxProps['className'];
 }
 
@@ -45,16 +46,17 @@ export function Stack({
   align = 'stretch',
   justify = 'start',
   wrap = false,
+  reverse = false,
   ...props
 }: StackProps) {
   return (
     <Box
       as={as}
       display="flex"
-      flexDirection={mapResponsiveValue(
-        direction,
-        (value) => directionToFlexDirection[value]
-      )}
+      flexDirection={mapResponsiveValue(direction, (value) => {
+        const flexDirection = directionToFlexDirection[value];
+        return reverse ? `${flexDirection}-reverse` : flexDirection;
+      })}
       gap={space}
       alignItems={mapResponsiveValue(
         align,
