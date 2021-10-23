@@ -33,10 +33,6 @@ export function Columns({
 
     direction = breakpointsArr.reduce(
       (acc, breakpoint, index) => {
-        if (index < collapseBelowIndex) {
-          acc[breakpoint] = 'vertical';
-        }
-
         if (index === collapseBelowIndex) {
           acc[breakpoint] = 'horizontal';
         }
