@@ -20,6 +20,7 @@ import { Skeleton } from './components/Skeleton';
 import { HeadingLevel } from './components/Heading/HeadingLevel';
 import { Columns } from './components/Columns';
 import { Column } from './components/Column';
+import { Hidden } from './components/Hidden';
 
 function App() {
   return (
@@ -57,8 +58,12 @@ function App() {
                       <Label>Label</Label>
                       <Label>Label</Label>
                       <Label>Label</Label>
-                      <Label>Label</Label>
-                      <Label>Label</Label>
+                      <Hidden below="640px">
+                        <Label>Hidden on Mobile</Label>
+                      </Hidden>
+                      <Hidden above="1280px">
+                        <Label>Hidden on Desktop</Label>
+                      </Hidden>
                     </Inline>
                     <Stack
                       direction={{
