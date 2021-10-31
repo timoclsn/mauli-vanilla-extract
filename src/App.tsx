@@ -21,6 +21,8 @@ import { HeadingLevel } from './components/Heading/HeadingLevel';
 import { Columns } from './components/Columns';
 import { Column } from './components/Column';
 import { Hidden } from './components/Hidden';
+import { Breadcrumbs } from './components/Breadcrumbs';
+import { Crumb } from './components/Crumb';
 
 function App() {
   return (
@@ -34,6 +36,14 @@ function App() {
                 Experimental design system exploration with React and Vanilla
                 Extract.
               </Text>
+              <Breadcrumbs>
+                <Crumb url="/">Home</Crumb>
+                <Crumb url="/living">Living Room</Crumb>
+                <Crumb url="/living/couch">Couches</Crumb>
+                <Crumb url="/living/couch/sectional" isCurrentPage>
+                  Sectionals
+                </Crumb>
+              </Breadcrumbs>
             </Stack>
 
             <Columns space="2x" collapseBelow="640px">
