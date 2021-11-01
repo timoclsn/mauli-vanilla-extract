@@ -26,9 +26,10 @@ export function Crumb({
       {...props}
     >
       <Box
-        as="a"
-        href={url}
+        as={isCurrentPage ? 'span' : 'a'}
+        href={!isCurrentPage ? url : undefined}
         aria-current={isCurrentPage ? 'page' : undefined}
+        cursor="pointer"
         className={styles.link}
       >
         {children}
