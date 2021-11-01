@@ -6,6 +6,10 @@ import { sprinkles } from '../../sprinkles.css';
 export type Variants = RecipeVariants<typeof variants>;
 
 export const variants = recipe({
+  base: {
+    color: 'inherit',
+  },
+
   variants: {
     variant: {
       normal: [

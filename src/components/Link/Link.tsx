@@ -7,6 +7,7 @@ import type { Variants } from './Link.css';
 
 interface Props {
   children: BoxProps['children'];
+  as?: BoxProps['as'];
   url?: string;
   external?: boolean;
   className?: BoxProps['className'];
@@ -16,6 +17,7 @@ type LinkProps = Props & Variants;
 
 export function Link({
   url,
+  as = 'a',
   external,
   variant,
   className,
@@ -23,7 +25,7 @@ export function Link({
 }: LinkProps) {
   return (
     <Box
-      as="a"
+      as={as}
       href={url}
       target={external ? '_blank' : undefined}
       rel={external ? 'noopener noreferrer' : undefined}
