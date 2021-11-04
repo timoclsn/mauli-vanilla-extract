@@ -210,7 +210,8 @@ export const variants = recipe({
   },
 });
 
-globalStyle(`${base} svg`, {
+globalStyle(`${base} > svg`, {
+  display: 'block',
   width: '24px',
   height: '24px',
 });
