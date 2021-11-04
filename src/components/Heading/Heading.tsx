@@ -18,6 +18,7 @@ type HeadingLevel = keyof typeof levelToFontSize;
 
 interface Props {
   children: TextProps['children'];
+  id?: string;
   level?: HeadingLevel;
   color?: TextProps['color'];
   className?: TextProps['className'];
