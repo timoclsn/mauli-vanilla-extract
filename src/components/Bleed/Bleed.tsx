@@ -12,6 +12,6 @@ interface Props {
 
 type BleedProps = Props & Variants;
 
-export function Bleed({ width = 'full', className }: BleedProps) {
-  return <Box className={[styles.variants({ width }), className]} />;
+export function Bleed({ width = 'full', className, ...props }: BleedProps) {
+  return <Box className={[styles.variants({ width }), className]} {...props} />;
 }
