@@ -20,7 +20,7 @@ export const variants = recipe({
     borderRadius: '4px',
     lineHeight: '1',
     backgroundColor: color,
-    WebkitTransform: 'translate3d(0, 0, 0)', // Fix for Safari not respecting overflow: hidden
+    willChange: 'transform',
     selectors: {
       '&::before': {
         content: ' ',
