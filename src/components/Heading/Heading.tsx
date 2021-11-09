@@ -3,6 +3,7 @@ import React from 'react';
 import { Text } from '../Text';
 import type { TextProps } from '../Text';
 import { LevelContext } from './HeadingLevel';
+import * as styles from './Heading.css';
 
 const levelToFontSize = {
   1: '60px',
@@ -24,7 +25,12 @@ interface Props {
   className?: TextProps['className'];
 }
 
-export function Heading({ level = 2, color = 'highlight', ...props }: Props) {
+export function Heading({
+  level = 2,
+  color = 'highlight',
+  className,
+  ...props
+}: Props) {
   return (
     <>
       <LevelContext.Consumer>
@@ -45,6 +51,7 @@ export function Heading({ level = 2, color = 'highlight', ...props }: Props) {
               size={levelToFontSize[level]}
               weight="bold"
               color={color}
+              className={[styles.base, className]}
               {...props}
             />
           );

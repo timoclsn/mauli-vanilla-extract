@@ -50,7 +50,9 @@ function App() {
               <Card fullWidth>
                 <Stack>
                   <HeadingLevel>
-                    <Heading color="dark">Card Normal</Heading>
+                    <Heading color="dark" id="card">
+                      Card Normal
+                    </Heading>
                     <Text>
                       dsj ad sadhsa dhsdg asdgsa gdsagd asdgsgd agd
                       sgadsagdsasadsadsadsa dsa dsad sadsah dsahd sakdhashdk.
@@ -92,7 +94,7 @@ function App() {
                         Button
                       </Button>
                       <Button variant="ghost">Ghost</Button>
-                      <Button variant="link" url="https:timoclasen.de" external>
+                      <Button variant="link" url="#card">
                         <ArrowRight />
                         Link
                       </Button>
