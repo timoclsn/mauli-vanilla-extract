@@ -7,16 +7,23 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
       - name: Install modules
-        run: npm install
+        uses: bahmutov/npm-install@v1
+
       - name: Run tests
         run: npm run test
-  check-types:
+
+  typecheck:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repo
+      uses: actions/checkout@v2
+
       - name: Install modules
-        run: npm install
-      - name: Check types
+        uses: bahmutov/npm-install@v1
+
+      - name: Typecheck
         run: tsc
