@@ -1,6 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
+import { render, screen } from '../../test-utils';
 
 import { Box } from '../Box';
 import { Stack } from './Stack';
