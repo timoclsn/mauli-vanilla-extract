@@ -3,10 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "serve": "vite preview",
-    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc.json",
-    "test": "jest"
+    "format": "prettier --ignore-path .gitignore --write './**/*.{js,jsx,ts,tsx,css,md,json}'",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "typecheck": "tsc"
   },
   "dependencies": {
     "@capsizecss/core": "^3.0.0",
