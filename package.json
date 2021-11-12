@@ -8,6 +8,7 @@
     "format": "prettier --ignore-path .gitignore --write './**/*.{js,jsx,ts,tsx,css,md,json}'",
     "test": "jest",
     "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
     "typecheck": "tsc"
   },
   "dependencies": {

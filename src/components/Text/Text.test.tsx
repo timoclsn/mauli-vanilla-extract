@@ -9,4 +9,9 @@ describe('<Text />', () => {
     render(<Text>test</Text>);
     expect(screen.getByText('test')).toBeInTheDocument();
   });
+
+  it('renders truncated', () => {
+    render(<Text truncate>test</Text>);
+    expect(screen.getByText('test')).toBeInTheDocument();
+  });
 });

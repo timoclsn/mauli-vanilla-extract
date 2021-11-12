@@ -12,6 +12,11 @@ const config: Config.InitialOptions = {
   roots: ['<rootDir>'],
   testEnvironment: 'jsdom',
   testRegex: '.*\\.test\\.(ts|tsx)$',
+  collectCoverageFrom: [
+    'src/components/**/*.{ts,tsx}',
+    '!**/index.ts',
+    '!**/*.css.ts',
+  ],
 };
 
 export default config;
