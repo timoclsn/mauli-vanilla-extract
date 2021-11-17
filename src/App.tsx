@@ -47,7 +47,7 @@ function App() {
             </Stack>
 
             <Columns space="2x" collapseBelow="640px">
-              <Card fullWidth>
+              <Card fullWidth elevation="high">
                 <Stack>
                   <HeadingLevel>
                     <Heading color="dark" id="card">

@@ -93,6 +93,7 @@ const unconditionalProperties = defineProperties({
     textOverflow: ['ellipsis'],
     overflow: ['hidden'],
     whiteSpace: ['nowrap'],
+    boxShadow: vars.shadows,
   },
 });
 

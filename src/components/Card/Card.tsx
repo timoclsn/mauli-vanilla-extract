@@ -16,6 +16,7 @@ interface Props {
   children: BoxProps['children'];
   as?: typeof validElements[number];
   color?: 'normal' | 'highlight';
+  elevation?: BoxProps['boxShadow'];
   fullWidth?: boolean;
   className?: BoxProps['className'];
 }
@@ -23,6 +24,7 @@ interface Props {
 export function Card({
   as = 'div',
   color = 'normal',
+  elevation,
   fullWidth,
   ...props
 }: Props) {
@@ -33,6 +35,7 @@ export function Card({
       padding="4x"
       background={color === 'normal' ? 'gray3' : 'indigo9'}
       width={fullWidth ? 'full' : undefined}
+      boxShadow={elevation}
       {...props}
     />
   );
