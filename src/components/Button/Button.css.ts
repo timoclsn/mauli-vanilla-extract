@@ -7,8 +7,6 @@ import { vars } from '../../theme.css';
 
 const solidText = createVar();
 const solidBg = createVar();
-const solidBorderHover = createVar();
-const solidBorderActive = createVar();
 const solidBgActive = createVar();
 const solidBorderFocus = createVar();
 const solidBgDisabled = createVar();
@@ -89,12 +87,13 @@ export const variants = recipe({
         paddingRight: paddingX,
         paddingTop: paddingY,
         paddingBottom: paddingY,
+        transition: 'transform 200ms ease, box-shadow 200ms ease',
         ':hover': {
-          boxShadow: `inset 0 0 0 2px ${solidBorderHover}`,
+          transform: 'translateY(-2px) scale(1.02)',
+          boxShadow: vars.shadows.medium,
         },
         ':active': {
           backgroundColor: solidBgActive,
-          boxShadow: `inset 0 0 0 2px ${solidBorderActive}`,
         },
         ':focus-visible': {
           boxShadow: `inset 0 0 0 2px ${solidBorderFocus}`,
@@ -151,16 +150,14 @@ export const variants = recipe({
         vars: {
           [solidText]: vars.colors.gray2,
           [solidBg]: vars.colors.gray12,
-          [solidBorderHover]: vars.colors.gray11,
           [solidBgActive]: vars.colors.gray12,
-          [solidBorderActive]: vars.colors.gray11,
           [solidBorderFocus]: vars.colors.gray11,
           [solidBgDisabled]: vars.colors.gray7,
 
           [ghostText]: vars.colors.gray12,
           [ghostBorder]: vars.colors.gray12,
-          [ghostBgHover]: vars.colors.gray3,
-          [ghostBgActive]: vars.colors.gray3,
+          [ghostBgHover]: vars.colors.gray4,
+          [ghostBgActive]: vars.colors.gray4,
           [ghostTextFocus]: vars.colors.gray11,
           [ghostBorderFocus]: vars.colors.gray11,
           [ghostTextDisabled]: vars.colors.gray7,
@@ -178,16 +175,14 @@ export const variants = recipe({
         vars: {
           [solidText]: vars.colors.indigo2,
           [solidBg]: vars.colors.indigo9,
-          [solidBorderHover]: vars.colors.indigo12,
           [solidBgActive]: vars.colors.indigo11,
-          [solidBorderActive]: vars.colors.indigo12,
           [solidBorderFocus]: vars.colors.indigo12,
           [solidBgDisabled]: vars.colors.indigo7,
 
           [ghostText]: vars.colors.indigo9,
           [ghostBorder]: vars.colors.indigo9,
-          [ghostBgHover]: vars.colors.indigo3,
-          [ghostBgActive]: vars.colors.indigo3,
+          [ghostBgHover]: vars.colors.indigo4,
+          [ghostBgActive]: vars.colors.indigo4,
           [ghostTextFocus]: vars.colors.indigo11,
           [ghostBorderFocus]: vars.colors.indigo11,
           [ghostTextDisabled]: vars.colors.indigo7,
@@ -201,12 +196,6 @@ export const variants = recipe({
         },
       },
     },
-  },
-
-  defaultVariants: {
-    size: 'normal',
-    variant: 'solid',
-    color: 'normal',
   },
 });
 
