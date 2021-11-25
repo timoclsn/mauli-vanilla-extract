@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Box } from '../Box';
 import type { BoxProps } from '../Box';
-import type { Breakpoints } from '../../theme.css';
+import type { Breakpoint } from '../../tokens';
 import { resolveResponsiveValue } from '../../utils/resolveResponsiveValue';
 
 interface CommmonProps {
@@ -12,11 +12,11 @@ interface CommmonProps {
 
 type ConditionalProps =
   | {
-      below: Breakpoints;
+      below: Breakpoint;
       above?: never;
     }
   | {
-      above: Breakpoints;
+      above: Breakpoint;
       below?: never;
     };
 

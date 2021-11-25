@@ -5,7 +5,7 @@ import { Stack } from '../Stack';
 import type { StackProps } from '../Stack';
 import type { ColumnProps } from '../Column';
 import * as styles from './Columns.css';
-import type { Breakpoints } from '../../theme.css';
+import type { Breakpoint } from '../../tokens';
 import { resolveResponsiveValue } from '../../utils/resolveResponsiveValue';
 
 interface Props {
@@ -13,7 +13,7 @@ interface Props {
   space?: StackProps['space'];
   align?: StackProps['align'];
   justify?: StackProps['justify'];
-  collapseBelow?: Breakpoints;
+  collapseBelow?: Breakpoint;
   reverse?: StackProps['reverse'];
   className?: StackProps['className'];
 }

@@ -1,10 +1,10 @@
-import { breakpoints } from '../theme.css';
-import type { Breakpoints } from '../theme.css';
+import { breakpoints } from '../tokens';
+import type { Breakpoint } from '../tokens';
 
-const breakpointsArr = Object.keys(breakpoints) as Breakpoints[];
+const breakpointsArr = Object.keys(breakpoints) as Breakpoint[];
 
 export function resolveResponsiveValue<TValues>(
-  breakpoint: Breakpoints,
+  breakpoint: Breakpoint,
   startValue: TValues,
   endValue: TValues
 ) {
@@ -20,6 +20,6 @@ export function resolveResponsiveValue<TValues>(
     },
     {
       default: startValue,
-    } as Partial<Record<Breakpoints | 'default', TValues>>
+    } as Partial<Record<Breakpoint | 'default', TValues>>
   );
 }

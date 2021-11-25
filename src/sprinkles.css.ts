@@ -7,7 +7,8 @@ import {
   createMapValueFn,
 } from '@vanilla-extract/sprinkles';
 
-import { vars, breakpoints } from './theme.css';
+import { vars } from './theme.css';
+import { breakpoints } from './tokens';
 
 const responsiveProperties = defineProperties({
   conditions: {
