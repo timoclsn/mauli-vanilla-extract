@@ -78,6 +78,7 @@ export const variants = recipe({
 
     variant: {
       solid: {
+        position: 'relative',
         color: solidText,
         backgroundColor: solidBg,
         borderRadius: vars.radii.round,
@@ -85,10 +86,9 @@ export const variants = recipe({
         paddingRight: paddingX,
         paddingTop: paddingY,
         paddingBottom: paddingY,
-        transition: 'transform 200ms ease, box-shadow 200ms ease',
+        transition: 'transform 200ms ease',
         ':hover': {
           transform: 'translateY(-2px) scale(1.02)',
-          boxShadow: vars.shadows.medium,
         },
         ':active': {
           backgroundColor: solidBgActive,
@@ -98,6 +98,23 @@ export const variants = recipe({
         },
         ':disabled': {
           backgroundColor: solidBgDisabled,
+        },
+        selectors: {
+          '&::after': {
+            content: '',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            borderRadius: vars.radii.round,
+            boxShadow: vars.shadows.medium,
+            opacity: 0,
+            transition: 'opacity 200ms ease-in-out',
+          },
+          '&:hover::after': {
+            opacity: 1,
+          },
         },
       },
 
