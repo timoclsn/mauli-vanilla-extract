@@ -1,5 +1,5 @@
 import { createGlobalTheme } from '@vanilla-extract/css';
-import { precomputeValues } from '@capsizecss/core';
+import { precomputeValues } from '@capsizecss/vanilla-extract';
 import fontMetrics from '@capsizecss/metrics/inter';
 import { mapValues } from 'lodash';
 

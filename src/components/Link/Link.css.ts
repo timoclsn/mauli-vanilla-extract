@@ -2,6 +2,7 @@ import { recipe } from '@vanilla-extract/recipes';
 import type { RecipeVariants } from '@vanilla-extract/recipes';
 
 import { sprinkles } from '../../sprinkles.css';
+import { fontWeights } from '../../typography';
 
 export type Variants = RecipeVariants<typeof variants>;
 
@@ -25,8 +26,8 @@ export const variants = recipe({
       highlight: [
         sprinkles({
           textDecoration: 'underline',
-          fontWeight: 'bold',
         }),
+        fontWeights.bold,
         {
           ':hover': {
             opacity: 0.8,

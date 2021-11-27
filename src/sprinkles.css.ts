@@ -1,5 +1,4 @@
 import mapValues from 'lodash/mapValues';
-import { createStyleObject } from '@capsizecss/core';
 import type { ConditionalValue } from '@vanilla-extract/sprinkles';
 import {
   defineProperties,
@@ -35,9 +34,6 @@ const responsiveProperties = defineProperties({
     gap: { ...vars.space, none: 'none' },
     opacity: [0, 1],
     maxWidth: vars.contentWidth,
-    fontSize: mapValues(vars.fontSizes, (fontSize) =>
-      createStyleObject(fontSize)
-    ),
   },
   shorthands: {
     padding: ['paddingTop', 'paddingBottom', 'paddingLeft', 'paddingRight'],
@@ -74,8 +70,6 @@ const unconditionalProperties = defineProperties({
     height: vars.sizes,
     borderRadius: vars.radii,
     cursor: ['pointer'],
-    fontFamily: vars.fonts,
-    fontWeight: vars.fontWeights,
     textDecoration: ['none', 'underline', 'line-through'],
     textTransform: ['uppercase', 'lowercase', 'capitalize'],
     textAlign: ['left', 'center', 'right'],

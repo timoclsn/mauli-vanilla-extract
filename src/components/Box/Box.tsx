@@ -9,6 +9,7 @@ import type { Sprinkles } from '../../sprinkles.css';
 import type { BackgroundColor, ForegroundColor } from '../../color';
 import { BackgroundProvider } from '../../color/BackgroundProvider';
 import { useColorMode } from '../../color/ColorModeContext';
+import { fontFamilies, fontSizes, fontWeights } from '../../typography';
 
 export interface BoxProps
   extends Omit<
@@ -21,6 +22,9 @@ export interface BoxProps
   className?: ClassValue;
   contextualColor?: ForegroundColor;
   contextualBackground?: BackgroundColor;
+  fontFamily?: keyof typeof fontFamilies;
+  fontWeight?: keyof typeof fontWeights;
+  fontSize?: keyof typeof fontSizes;
 }
 
 export const Box = forwardRef<HTMLElement, BoxProps>(function Box(
@@ -31,6 +35,9 @@ export const Box = forwardRef<HTMLElement, BoxProps>(function Box(
     background,
     contextualColor,
     contextualBackground,
+    fontFamily,
+    fontSize,
+    fontWeight,
     ...props
   },
   ref
@@ -60,6 +67,9 @@ export const Box = forwardRef<HTMLElement, BoxProps>(function Box(
         ? contextualBackgroundValue.color
         : background,
     }),
+    fontFamily && fontFamilies[fontFamily],
+    fontWeight && fontWeights[fontWeight],
+    fontSize && fontSizes[fontSize].trimmed,
     className
   );
 

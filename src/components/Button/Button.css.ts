@@ -4,6 +4,7 @@ import type { RecipeVariants } from '@vanilla-extract/recipes';
 
 import { sprinkles } from '../../sprinkles.css';
 import { vars } from '../../theme.css';
+import { fontFamilies, fontSizes, fontWeights } from '../../typography';
 
 const solidText = createVar();
 const solidBg = createVar();
@@ -37,10 +38,11 @@ const base = style([
     cursor: 'pointer',
     textDecoration: 'none',
     gap: '1x',
-    fontSize: '16px',
-    fontFamily: 'sans',
   }),
+  fontFamilies.sans,
+  fontSizes['16px'].untrimmed,
   {
+    lineHeight: 1,
     ':focus': {
       outline: 'none',
     },
@@ -55,9 +57,7 @@ export const variants = recipe({
   variants: {
     size: {
       normal: [
-        sprinkles({
-          fontWeight: 'bold',
-        }),
+        fontWeights.bold,
         {
           vars: {
             [paddingX]: vars.space['3x'],
@@ -66,9 +66,7 @@ export const variants = recipe({
         },
       ],
       small: [
-        sprinkles({
-          fontWeight: 'normal',
-        }),
+        fontWeights.bold,
         {
           vars: {
             [paddingX]: vars.space['2x'],
@@ -201,6 +199,6 @@ export const variants = recipe({
 
 globalStyle(`${base} > svg`, {
   display: 'block',
-  width: '24px',
-  height: '24px',
+  width: '16px',
+  height: '16px',
 });
