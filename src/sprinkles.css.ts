@@ -56,23 +56,11 @@ export type ResponsiveValue<Value extends string | number> = ConditionalValue<
 export const mapResponsiveValue = createMapValueFn(responsiveProperties);
 
 const colorProperties = defineProperties({
-  conditions: {
-    lightMode: {},
-    darkMode: { '@media': '(prefers-color-scheme: dark)' },
-  },
-  defaultCondition: 'lightMode',
   properties: {
     color: vars.colors,
     background: vars.colors,
   },
 });
-
-export type ColorValue<Value extends string | number> = ConditionalValue<
-  typeof colorProperties,
-  Value
->;
-
-export const mapColorValue = createMapValueFn(colorProperties);
 
 const unconditionalProperties = defineProperties({
   properties: {

@@ -33,7 +33,7 @@ export function Card({
       as={as}
       borderRadius="4x"
       padding="4x"
-      background={color === 'normal' ? 'gray3' : 'indigo9'}
+      contextualBackground={color === 'normal' ? 'secondary' : 'highlight'}
       width={fullWidth ? 'full' : undefined}
       boxShadow={elevation}
       {...props}

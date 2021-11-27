@@ -2,8 +2,6 @@ import React, { Children } from 'react';
 
 import { Box } from '../Box';
 import type { BoxProps } from '../Box';
-import { mapColorValue } from '../../sprinkles.css';
-import type { ColorValue } from '../../sprinkles.css';
 import * as styles from './Text.css';
 import type { Variants } from './Text.css';
 
@@ -23,16 +21,10 @@ const validElements = [
   'label',
 ] as const;
 
-const colorToColor = {
-  dark: 'gray12',
-  light: 'gray1',
-  highlight: 'indigo11',
-} as const;
-
 interface Props {
   children: BoxProps['children'];
   as?: typeof validElements[number];
-  color?: ColorValue<keyof typeof colorToColor>;
+  color?: BoxProps['contextualColor'];
   size?: BoxProps['fontSize'];
   weight?: BoxProps['fontWeight'];
   decoration?: BoxProps['textDecoration'];
@@ -47,7 +39,7 @@ export type TextProps = Props & Variants;
 export function Text({
   children,
   as = 'p',
-  color = 'dark',
+  color = 'primary',
   size = '16px',
   weight = 'normal',
   decoration,
@@ -72,7 +64,7 @@ export function Text({
       fontFamily="sans"
       fontSize={size}
       fontWeight={weight}
-      color={mapColorValue(color, (value) => colorToColor[value])}
+      contextualColor={color}
       textDecoration={decoration}
       textTransform={transform}
       textAlign={align}

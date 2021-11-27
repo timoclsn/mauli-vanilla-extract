@@ -8,17 +8,20 @@ interface Props {
   className?: BoxProps['className'];
 }
 
-export function Label({ ...props }: Props) {
+export function Label({ children, ...props }: Props) {
   return (
     <Box
       fontSize="16px"
       fontFamily="sans"
       paddingX="2x"
       paddingY="1x"
-      color="indigo2"
-      background="indigo9"
+      contextualBackground="highlight"
       borderRadius="round"
       {...props}
-    />
+    >
+      <Box as="span" contextualColor="primary">
+        {children}
+      </Box>
+    </Box>
   );
 }

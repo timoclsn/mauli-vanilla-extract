@@ -102,6 +102,8 @@ export const contentWidth = {
   '1280px': '1280px',
 } as const;
 
+export type Color = keyof typeof colors;
+
 export const colors = {
   ...gray,
   ...indigo,

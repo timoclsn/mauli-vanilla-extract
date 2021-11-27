@@ -6,6 +6,9 @@ import type { ClassValue } from 'clsx';
 import * as resetStyles from '../../reset.css';
 import { sprinkles } from '../../sprinkles.css';
 import type { Sprinkles } from '../../sprinkles.css';
+import type { BackgroundColor, ForegroundColor } from '../../color';
+import { BackgroundProvider } from '../../color/BackgroundProvider';
+import { useColorMode } from '../../color/ColorModeContext';
 
 export interface BoxProps
   extends Omit<
@@ -16,10 +19,20 @@ export interface BoxProps
   children?: ReactNode;
   as?: ElementType;
   className?: ClassValue;
+  contextualColor?: ForegroundColor;
+  contextualBackground?: BackgroundColor;
 }
 
 export const Box = forwardRef<HTMLElement, BoxProps>(function Box(
-  { as: Element = 'div', className, ...props },
+  {
+    as: Element = 'div',
+    className,
+    color,
+    background,
+    contextualColor,
+    contextualBackground,
+    ...props
+  },
   ref
 ) {
   const atomProps: Record<string, unknown> = {};
@@ -33,12 +46,30 @@ export const Box = forwardRef<HTMLElement, BoxProps>(function Box(
     }
   }
 
+  const { foregroundColors, backgroundColors } = useColorMode();
+  const contextualColorValue = foregroundColors[contextualColor!];
+  const contextualBackgroundValue = backgroundColors[contextualBackground!];
+
   const styles = clsx(
     resetStyles.base,
     resetStyles.element[Element as keyof typeof resetStyles.element],
-    sprinkles(atomProps),
+    sprinkles({
+      ...atomProps,
+      color: contextualColorValue ? contextualColorValue : color,
+      background: contextualBackgroundValue
+        ? contextualBackgroundValue.color
+        : background,
+    }),
     className
   );
 
-  return <Element ref={ref} className={styles} {...nativeProps} />;
+  const element = <Element ref={ref} className={styles} {...nativeProps} />;
+
+  return contextualBackground ? (
+    <BackgroundProvider color={contextualBackground}>
+      {element}
+    </BackgroundProvider>
+  ) : (
+    element
+  );
 });

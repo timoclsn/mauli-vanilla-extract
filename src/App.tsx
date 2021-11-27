@@ -23,6 +23,7 @@ import { Column } from './components/Column';
 import { Hidden } from './components/Hidden';
 import { Breadcrumbs } from './components/Breadcrumbs';
 import { Crumb } from './components/Crumb';
+import { ColorModeProvider } from './color/ColorModeContext';
 
 function App() {
   return (
@@ -31,7 +32,9 @@ function App() {
         <Inset insetX="2x" insetY="4x">
           <Stack space="8x">
             <Stack>
-              <Heading level={1}>Mauli Design System</Heading>
+              <Heading level={1} color="highlight">
+                Mauli Design System
+              </Heading>
               <Text size="20px" color="highlight">
                 Experimental design system exploration with React and Vanilla
                 Extract.
@@ -50,7 +53,7 @@ function App() {
               <Card fullWidth elevation="high">
                 <Stack>
                   <HeadingLevel>
-                    <Heading color="dark" id="card">
+                    <Heading color="primary" id="card">
                       Card Normal
                     </Heading>
                     <Text>
@@ -105,8 +108,8 @@ function App() {
               <Card color="highlight" fullWidth>
                 <Stack>
                   <HeadingLevel>
-                    <Heading color="light">Card Highlight</Heading>
-                    <Text color="light" truncate={5}>
+                    <Heading>Card Highlight</Heading>
+                    <Text truncate={5}>
                       <Link url="#">Lorem</Link> ipsum dolor sit amet,
                       consectetuer adipiscing elit.{' '}
                       <Link
@@ -130,7 +133,7 @@ function App() {
                       Vivamus elementum semper nisi. Aenean vulputate eleifend
                       tellus.
                     </Text>
-                    <List type="number" color="light">
+                    <List type="number">
                       <ListItem>Item</ListItem>
                       <ListItem>Item</ListItem>
                       <ListItem>Item</ListItem>
@@ -166,9 +169,9 @@ function App() {
                 rebum.
               </Text>
               <Bleed>
-                <Box background="indigo9">
+                <Box contextualBackground="highlight">
                   <Inset insetY="4x">
-                    <Text align="center" color="light" weight="bold">
+                    <Text align="center" weight="bold">
                       I am bleeding!
                     </Text>
                   </Inset>
@@ -232,6 +235,34 @@ function App() {
           <Box background="gray5">Column 2</Box>
         </Column>
       </Columns>
+      <Stack space="4x">
+        <Box>
+          Light
+          <Box padding="4x" contextualBackground="highlight">
+            <Text>Test</Text>
+          </Box>
+          <Box padding="4x" contextualBackground="primary">
+            <Text>Test</Text>
+          </Box>
+          <Box padding="4x" contextualBackground="secondary">
+            <Text>Test</Text>
+          </Box>
+        </Box>
+        <Box>
+          Dark
+          <ColorModeProvider value="dark">
+            <Box padding="4x" contextualBackground="highlight">
+              <Text>Test</Text>
+            </Box>
+            <Box padding="4x" contextualBackground="primary">
+              <Text>Test</Text>
+            </Box>
+            <Box padding="4x" contextualBackground="secondary">
+              <Text>Test</Text>
+            </Box>
+          </ColorModeProvider>
+        </Box>
+      </Stack>
     </Container>
   );
 }
