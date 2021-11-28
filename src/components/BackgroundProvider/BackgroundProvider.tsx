@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { ColorModeProvider, useColorMode } from './ColorModeContext';
-import type { BackgroundColor } from './color';
+import { ColorModeProvider, useColorMode } from '../../color/ColorModeContext';
+import type { BackgroundColor } from '../../color';
 
 interface BackgroundProviderProps {
   color: BackgroundColor;

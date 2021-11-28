@@ -7,7 +7,7 @@ import * as resetStyles from '../../reset.css';
 import { sprinkles } from '../../sprinkles.css';
 import type { Sprinkles } from '../../sprinkles.css';
 import type { BackgroundColor, ForegroundColor } from '../../color';
-import { BackgroundProvider } from '../../color/BackgroundProvider';
+import { BackgroundProvider } from '../BackgroundProvider';
 import { useColorMode } from '../../color/ColorModeContext';
 import { fontFamilies, fontSizes, fontWeights } from '../../typography';
 
