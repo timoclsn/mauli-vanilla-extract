@@ -22,6 +22,7 @@ export interface BoxProps
   className?: ClassValue;
   contextualColor?: ForegroundColor;
   contextualBackground?: BackgroundColor;
+  contextualBorder?: ForegroundColor;
   fontFamily?: keyof typeof fontFamilies;
   fontWeight?: keyof typeof fontWeights;
   fontSize?: keyof typeof fontSizes;
@@ -34,8 +35,10 @@ export const Box = forwardRef<HTMLElement, BoxProps>(
       className,
       color,
       background,
+      borderColor,
       contextualColor,
       contextualBackground,
+      contextualBorder,
       fontFamily,
       fontSize,
       fontWeight,
@@ -58,6 +61,7 @@ export const Box = forwardRef<HTMLElement, BoxProps>(
     const { foregroundColors, backgroundColors } = useColorMode();
     const contextualColorValue = foregroundColors[contextualColor!];
     const contextualBackgroundValue = backgroundColors[contextualBackground!];
+    const contextualBorderValue = foregroundColors[contextualBorder!];
 
     const styles = clsx(
       resetStyles.base,
@@ -65,10 +69,11 @@ export const Box = forwardRef<HTMLElement, BoxProps>(
       sprinkles({
         ...atomProps,
         position: position || 'relative',
-        color: contextualColorValue ? contextualColorValue : color,
+        color: contextualColorValue || color,
         background: contextualBackgroundValue
           ? contextualBackgroundValue.color
           : background,
+        borderColor: contextualBorderValue || borderColor,
       }),
       fontFamily && fontFamilies[fontFamily],
       fontWeight && fontWeights[fontWeight],

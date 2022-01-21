@@ -55,6 +55,7 @@ const colorProperties = defineProperties({
   properties: {
     color: vars.colors,
     background: vars.colors,
+    borderColor: vars.colors,
   },
 });
 

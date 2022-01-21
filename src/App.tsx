@@ -26,6 +26,8 @@ import { Crumb } from './components/Crumb';
 import { ColorModeProvider } from './color/ColorModeContext';
 import { ThemeProvider } from './color/ThemeContext';
 import { Cover } from './components/Cover';
+import { Placeholder } from './components/Placeholder';
+import { sprinkles } from './sprinkles.css';
 
 function App() {
   return (
@@ -275,13 +277,16 @@ function App() {
             </Box>
           </Stack>
           <Box>
-            <Box background="gray5">Background</Box>
+            <Placeholder height={80} />
             <Cover>
-              <Stack align="center">
-                <Box width="2/3" background="indigo5">
-                  Cover
-                </Box>
-              </Stack>
+              <Box
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+                height="full"
+              >
+                <Placeholder width="2/3" background="indigo5" />
+              </Box>
             </Cover>
           </Box>
         </Container>

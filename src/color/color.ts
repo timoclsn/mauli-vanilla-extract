@@ -9,7 +9,7 @@ export type ContextualColorValue<Value> = {
   dark: Value;
 };
 
-export type ForegroundColor = 'highlight' | 'primary';
+export type ForegroundColor = 'highlight' | 'primary' | 'secondary';
 
 export const foregroundColors: Record<
   ForegroundColor,
@@ -22,6 +22,10 @@ export const foregroundColors: Record<
   primary: {
     light: 'gray12',
     dark: 'gray1',
+  },
+  secondary: {
+    light: 'gray7',
+    dark: 'gray9',
   },
 };
 
