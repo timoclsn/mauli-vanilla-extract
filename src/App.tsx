@@ -25,6 +25,7 @@ import { Breadcrumbs } from './components/Breadcrumbs';
 import { Crumb } from './components/Crumb';
 import { ColorModeProvider } from './color/ColorModeContext';
 import { ThemeProvider } from './color/ThemeContext';
+import { Cover } from './components/Cover';
 
 function App() {
   return (
@@ -273,6 +274,16 @@ function App() {
               </ColorModeProvider>
             </Box>
           </Stack>
+          <Box>
+            <Box background="gray5">Background</Box>
+            <Cover>
+              <Stack align="center">
+                <Box width="2/3" background="indigo5">
+                  Cover
+                </Box>
+              </Stack>
+            </Cover>
+          </Box>
         </Container>
       </Box>
     </ThemeProvider>

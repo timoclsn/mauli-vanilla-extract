@@ -38,6 +38,7 @@ export const Box = forwardRef<HTMLElement, BoxProps>(function Box(
     fontFamily,
     fontSize,
     fontWeight,
+    position,
     ...props
   },
   ref
@@ -62,6 +63,7 @@ export const Box = forwardRef<HTMLElement, BoxProps>(function Box(
     resetStyles.element[Element as keyof typeof resetStyles.element],
     sprinkles({
       ...atomProps,
+      position: position || 'relative',
       color: contextualColorValue ? contextualColorValue : color,
       background: contextualBackgroundValue
         ? contextualBackgroundValue.color
