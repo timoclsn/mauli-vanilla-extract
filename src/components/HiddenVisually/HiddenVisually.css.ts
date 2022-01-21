@@ -4,7 +4,6 @@ import { sprinkles } from '../../sprinkles.css';
 
 export const base = style([
   sprinkles({
-    position: 'absolute',
     overflow: 'hidden',
   }),
   {

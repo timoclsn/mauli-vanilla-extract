@@ -10,5 +10,12 @@ interface Props {
 }
 
 export function HiddenVisually({ className, ...props }: Props) {
-  return <Box as="span" className={[styles.base, className]} {...props} />;
+  return (
+    <Box
+      as="span"
+      position="absolute"
+      className={[styles.base, className]}
+      {...props}
+    />
+  );
 }
